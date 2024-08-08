@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 
 import solaceLogo from '../../public/assests/Solace Logo.svg';
-import MailSvg from '../../public/assests/mail.svg'
+// import MailSvg from '../../public/assests/mail.svg'
 import CallSvg from '../../public/assests/call.svg'
 import TiktokSvg from '../../public/assests/Tiktok.svg'
 import YoutubeSvg from '../../public/assests/youtub.svg'
