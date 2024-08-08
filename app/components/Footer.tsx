@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 
 import solaceLogo from '../../public/assests/Solace Logo.svg';
-import MailSvg from '../../public/assests/Mail.svg'
+// import MailSvg from '../../public/assests/Mail.svg'
 import CallSvg from '../../public/assests/call.svg'
 import TiktokSvg from '../../public/assests/Tiktok.svg'
 import YoutubeSvg from '../../public/assests/youtub.svg'
@@ -54,7 +54,7 @@ export function Footer() {
                     <div>
                         <h6 className="text-center lg:text-[20px] text-[17px] leading-[20px] font-semibold text-white  pt-[30px]">Contact</h6>
                         <div className="justify-center lg:justify-end flex items-center gap-[5px] pt-[10px]">
-                            <Image src={MailSvg} alt="emailSvg" />
+                            {/* <Image src={MailSvg} alt="emailSvg" /> */}
                             <span className="text-white">support@solace.com.ng</span>
                         </div>
                         <div className="justify-center lg:justify-end  pb-[30px] flex items-center gap-[5px] pt-[10px]">
