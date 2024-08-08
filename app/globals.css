@@ -2,32 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body {
+  background-color: #F9FAFB;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.partners {
+  padding-top: 25rem;
+}
+
+input::placeholder {
+  padding-left: 10px;
+}
+
+input{
+  text-indent: 10px;
+}
+
+
+.Footer-links:nth-child(2) {
+  border-left: 1px solid #ffffff;
+}
+
+
+
+
+@media screen  and (max-width: 1500px) {
+  .partners {
+    padding-top: 5rem;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media screen  and (max-width: 1400px) {
+  .partners {
+    padding-top: 5rem;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+
+@media screen  and (max-width: 1200px) {
+  .partners {
+    padding-top: 5rem;
+  }
+}
+
+@media screen  and (max-width: 1050px) {
+  .partners {
+    padding-top: 5rem;
+  }
+}
+
+
+@media screen  and (max-width: 1021px) {
+  .partners {
+    padding-top: 30rem;
+  }
+}
+
+@media screen  and (max-width: 900px) {
+  .partners {
+    padding-top: 30rem;
+  }
+}
+
+@media screen  and (max-width: 475px) {
+  .partners {
+    padding-top: 25rem;
   }
 }

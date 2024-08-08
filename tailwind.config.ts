@@ -8,13 +8,30 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        "Fozanova-Black": "#121933",
+        "p-grey": " #7A7D9C",
+        "Fozanova-gold": "#DBA73B",
+        "Homepage-background": "#F9FAFB",
+        "Fazanova-white": "#FFFFFF",
+        'border-custom': '#EFF0F6',
+        'border-customs' : '#EDF0EE'
       },
+
+
+      lineHeight: {
+        '24': '24px',
+        '82' : '82.8px',
+      },
+
+      letterSpacing: {
+        normal: '0.2px',
+        customTight: '-2px',  //custom value
+      },
+      
     },
   },
   plugins: [],
 };
 export default config;
+
