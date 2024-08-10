@@ -3,26 +3,21 @@ import { Navbar } from "@/app/components/Navbar";
 import Image from "next/image";
 import '../app/globals.css';
 
-import PlusSvg from '../public/assests/PlusIcon.svg'
-import MinusSvg from '../public/assests/minus.svg'
-import FrequentSvg from '../public/assests/Frequentlyasked.svg'
+import PlusSvg from '../public/assests/PlusIcon.svg';
+import MinusSvg from '../public/assests/minus.svg';
+import FrequentSvg from '../public/assests/Frequentlyasked.svg';
 import { Newsletter } from "@/app/components/Newsletter";
 import { Footer } from "@/app/components/Footer";
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const faqData = [
-    {
-      question: 'Is Solace a registered company?',
-      answer:
-        'Solace is a brand name owned by Gmonie Technologies Ltd. The company is a legally registered company recognized by the Corporate Affairs Commission of Nigeria. Our registration number is 2003597. This ensures our commitment to operating within legal frameworks and providing trustworthy services to our clients.',
-    },
+  const faqData: any[] = [
 
     {
       question: 'Is Solace a Financial Institution?',
       answer:
-        'No, Solace is not a financial institution. At Solace, we specialize in enabling the provision of top-quality elderly care services that go beyond ensuring that the older adults are free from illnesses or diseases. Our goal is to become the leading provider of wellness and farewel services to 14.8 million Nigerians aged 60 years and above.',
+      'No, Solace is not a financial institution. At Solace, we specialize in enabling the provision of top-quality elderly care services that go beyond ensuring that the older adults are free from illnesses or diseases. Our goal is to become the leading provider of wellness and farewel services to 14.8 million Nigerians aged 60 years and above.',
     },
 
     {
@@ -65,7 +60,7 @@ const FAQ = () => {
     {
       question: 'Is Solace open for partnership?',
       answer:
-        'Yes. Partnership is one of our core values at Solace and on it we believe we can constantly surpass our customer’s expectations. We unlock greater value for our clients by partnering on a global scale, empowering success across Africa. We are open to partnering with all stakeholders to constantly provide better service delivery to all our users, all the time.',
+        'Yes. Partnership is one of our core values at Solace and on it we believe we can constantly surpass our customers expectations. We unlock greater value for our clients by partnering on a global scale, empowering success across Africa. We are open to partnering with all stakeholders to constantly provide better service delivery to all our users, all the time.',
     },
 
     {
@@ -78,7 +73,7 @@ const FAQ = () => {
     {
       question: 'What are the benefits of joining the Healthy Elders Club?',
       answer:
-        'Solace Healthy Elders Club is designed to give older adults special privileges and cashbacks at partner Pharmacies, Hospitals and Laboratories nationwide. We help each member save up to ₦550,000 on their medical bills while giving them the rare opportunity to get treated like VIP’s.',
+        'Solace Healthy Elders Club is designed to give older adults special privileges and cashbacks at partner Pharmacies, Hospitals and Laboratories nationwide. We help each member save up to ₦550,000 on their medical bills while giving them the rare opportunity to get treated like VIPs.',
     },
 
     {
@@ -102,7 +97,7 @@ const FAQ = () => {
 
 
     {
-      question: 'Where do I enter my friend’s referral code?',
+      question: 'Where do I enter my friends referral code?',
       answer:
         'For your friend to get their referral commission for referring you, you must enter the referral code they sent you in the input field on the payment page while paying for a subscription on the Solace website or mobile app. Your friend will be notified instantly via email.',
     },
@@ -157,7 +152,7 @@ const FAQ = () => {
     {
       question: 'Can I cancel my subscription at any time?',
       answer:
-        'Yes, you can cancel your subscription at any time. Ensure you review the cancellation policy, follow the required steps and obtain a confirmation of cancellation to avoid future charges. However, we will hate to see you leave us and we hope you won’t have to cancel your subscription with us.',
+        'Yes, you can cancel your subscription at any time. Ensure you review the cancellation policy, follow the required steps and obtain a confirmation of cancellation to avoid future charges. However, we will hate to see you leave us and we hope you wont have to cancel your subscription with us.',
     },
 
     {
@@ -165,7 +160,6 @@ const FAQ = () => {
       answer:
         'For assistance, users can reach out to Solace via email at support@solace.com.ng or by calling +234 802 756 4943. Additionally, users can engage with Solace through its social media channels for prompt support and assistance. Solace&#39;s customer support team is dedicated to addressing users queries promptly.',
     },
-    // Add more FAQ items here as needed
   ];
 
   const toggleFAQ = (index: number) => {
@@ -187,36 +181,37 @@ const FAQ = () => {
           </p>
         </div>
 
-        <div className="lg:pt-20  pt-16 grid grid-cols-1 lg:grid-cols-2 gap-6 p-4 max-w-[1136px] mx-auto">
-          {faqData.map((item, index) => (
-            <div key={index} className="border-b   border-Fozanova-Black py-4 max-w-[522px]">
-              <div
-                className="flex justify-between  items-center cursor-pointer"
-                onClick={() => toggleFAQ(index)}
-              >
-                <h1 className="text-lg text-Fozanova-Black lg:text-[20px] text-[17px] lg:leading-[27.42px] leading-[25px] tracking-[-0.96px] font-semibold">{item.question}</h1>
-                {openIndex === index ? (
-                  <Image src={MinusSvg} alt="MinusSvg" width={26} height={26} />
-                ) : (
-                  <Image src={PlusSvg} alt="PlusSvg" width={20} height={20} />
-                )}
-              </div>
-              {openIndex === index && (
-                <p className="mt-2 max-w-[497px] text-p-grey lg:text-[17px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4%]">{item.answer}</p>
-              )}
-            </div>
-          ))}
-        </div>
+        <div className="lg:pt-20 pt-16  p-4 max-w-[1136px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto gap-6">
+              {faqData.map((item, index) => (
+                <>
+                <div key={index} className="border-b border-Fozanova-Black py-4 max-w-[1058px] w-full">
+                    <div
+                      className="flex justify-between items-center cursor-pointer"
+                      onClick={() => toggleFAQ(index)}
+                    >
+                      <h1 className="text-lg text-Fozanova-Black lg:text-[20px] text-[17px] lg:leading-[27.42px] leading-[25px] tracking-[-0.96px] font-semibold">{item.question}</h1>
+                      {openIndex === index ? (
+                        <Image src={MinusSvg} alt="MinusSvg" width={26} height={26} />
+                      ) : (
+                        <Image src={PlusSvg} alt="PlusSvg" width={20} height={20} />
+                      )}
+                    </div>
+                    {openIndex === index && (
+                      <p className="mt-2  text-p-grey lg:text-[17px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4%]">{item.answer}</p>
+                    )}
+                  </div></>
+              ))}
+
+          </div>
+        </div> 
       </div>
 
-      <Newsletter />
+       <Newsletter />
 
-      <Footer />
+       <Footer />
     </>
   );
 };
 
 export default FAQ;
-
-
-       

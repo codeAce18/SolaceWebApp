@@ -99,7 +99,7 @@ const JoinCareGiver = () => {
                             <div className="flex flex-col justify-center items-center">
                                 <Image src={CertifiedNutritionistSvg} alt="CertifiedNutritionistSvg" className="mx-auto" />
 
-                                <h1 className="text-Fozanova-Black text-[17px] lg:text-[20px] leading-[27.42px] tracking-[-0.96px]">Certified Nutritionist</h1>
+                                <h1 className="text-Fozanova-Black text-[17px] lg:text-[20px] leading-[27.42px] tracking-[-0.96px] text-center">Certified Nutritionist</h1>
 
                                 <Link href="/">
 

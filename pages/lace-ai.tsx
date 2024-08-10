@@ -1,10 +1,16 @@
 import { Navbar } from "@/app/components/Navbar";
 import Image from "next/image";
+import { Newsletter } from "@/app/components/Newsletter";
+import { Footer } from "@/app/components/Footer";
+// import { Button } from 'antd';
+
+
 
 import '../app/globals.css'
 import LaceImg from '../public/assests/LaceImg.png'
 import ComingSoonSvg from '../public/assests/ComingSoon.svg'
 import JoinTheWaitingListSvg from '../public/assests/JoinTheWaitingListImg.svg'
+import Form from "@/app/components/Form";
 
 
 
@@ -41,7 +47,15 @@ const LaceAI = () => {
               <p className="text-p-grey lg:leading-[26px] leading-[22px] text-center tracking-[-0.2px] max-w-[742px] lg:text-[18px] text-[16px]">Fill the form below and you will be among the first enjoy our freebies when we launch Lace AI.</p>
             </div>
           </div>
+
         </div>
+
+        <Form />
+
+        <Newsletter />
+
+        <Footer />
+        
 
       </>
     );

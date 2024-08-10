@@ -13,7 +13,7 @@ const navLinks = [
   { name: 'Lace AI', path: '/lace-ai' },
   { name: 'Career', path: '/career' },
   { name: 'FAQ', path: '/faq' },
-  { name: 'Blog', path: '/blog' },
+  { name: 'Blog', path: 'https://gmonie.com.ng/blog/' },
 ];
 
 export function Navbar() {
@@ -24,7 +24,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="lg:fixed top-0 left-0 right-0 flex w-full items-center justify-between px-[20px] py-[14px] lg:mt-[10px] lg:rounded-lg z-50 bg-Fozanova-Black lg:container mx-auto">
+    <nav className="lg:fixed top-0 left-0 right-0  flex w-full items-center justify-between px-[20px] py-[14px]   z-50 bg-Fozanova-Black">
       <div className="flex flex-start items-center w-[100%]">
         <a href="/">
             <Image className="lg:w-[200px]" width={186} height={42} src={solaceLogo} alt="solaceLogo" />

@@ -35,7 +35,7 @@ const HealthyEldersClub = () => {
                 </h1>
                 <p className="lg:pt-20 pt-10 text-center lg:max-w-[930px] max-w-[350px] mx-auto text-p-grey lg:text-[17px] text-[15px] leading-[22px] lg:leading-[26px] tracking-[-0.4%]">Joining the Club yourself or registering your elderly as a beneficiary of HEC is easy; pay a monthly membership fee of ₦1,000. Afterwards, a prestigious membership card will be delivered to your doorstep within a few days. This card unlocks exclusive benefits at partner pharmacies, hospitals and laboratories nationwide, including priority services, cashback on medical expenses and other privileges on the Solace app.</p>
 
-                <a href="/" className="lg:pt-20 pt-10 mx-auto ">
+                <a href="/healthy-elders-subscription-form" className="lg:pt-20 pt-10 mx-auto ">
                     <button className=" bg-Fozanova-gold text-Fazanova-white lg:text-[17px] text-[15px] font-semibold leading-[24px] lg:w-[640px] rounded-[8px]   h-[56px] py-[15px] px-[37px]">
                         Subscribe to Healthy Elders Club
                     </button>
@@ -64,34 +64,34 @@ const HealthyEldersClub = () => {
                         </div>
 
                         <div className="flex flex-col gap-y-[10px] p-[20px] lg:p-0">
-                            <div className="flex flex-row items-start">
+                            <div className="flex gap-[10px] flex-row items-start">
                                 <Image width={23.98} height={24} src={CheckSvg} alt="CheckSvg" />
                                 <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:leading-[22px] leading-[20px] lg:text-[17px] text-[15px]">Get cashback of up to 25% on all medical expenses made with HEC card in all partner Pharmacies, Hospitals and Labs.</p>
                             </div>
-                            <div className="flex items-start">
+                            <div className="flex gap-[10px] items-start">
                                 <Image width={23.98} height={24} src={CheckSvg} alt="CheckSvg" />
                                 <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:text-[17px] text-[15px] lg:leading-[22px] leading-[20px]">Get cashback of up to 25% on all medical expenses made with HEC card in all partner Pharmacies, Hospitals and Labs.</p>
                             </div>
-                            <div className="flex items-start">
+                            <div className="flex gap-[10px] items-start">
                                 <Image width={23.98} height={24} src={CheckSvg} alt="CheckSvg" />
                                 <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:text-[17px] text-[15px] lg:leading-[22px] leading-[20px]">Get cashback of up to 25% on all medical expenses made with HEC card in all partner Pharmacies, Hospitals and Labs.</p>
                             </div>
-                            <div className="flex items-start">
+                            <div className="flex gap-[10px] items-start">
                                 <Image width={23.98} height={24} src={CheckSvg} alt="CheckSvg" />
                                 <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:text-[17px] text-[15px] lg:leading-[22px] leading-[20px]">Get cashback of up to 25% on all medical expenses made with HEC card in all partner Pharmacies, Hospitals and Labs.</p>
                             </div>
-                            <div className="flex items-start">
+                            <div className="flex gap-[10px] items-start">
                                 <Image width={23.98} height={24} src={CheckSvg} alt="CheckSvg" />
                                 <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:text-[17px] text-[15px] lg:leading-[22px] leading-[20px]">Get cashback of up to 25% on all medical expenses made with HEC card in all partner Pharmacies, Hospitals and Labs.</p>
                             </div>
-                            <div className="flex items-start">
+                            <div className="flex gap-[10px] items-start">
                                 <Image width={23.98} height={24} src={CheckSvg} alt="CheckSvg" />
                                 <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:text-[17px] text-[15px] lg:leading-[22px] leading-[20px]">Get cashback of up to 25% on all medical expenses made with HEC card in all partner Pharmacies, Hospitals and Labs.</p>
                             </div>
 
                             <div className="pt-10 mx-auto">
                                 <button className="mx-auto py-[4px] px-[8px] bg-Fozanova-gold text-white text-[16px] lg:w-[409px] w-[300px] h-[50px] lg:h-[56px] font-semibold rounded-md leading-24">
-                                    <Link href="/">
+                                    <Link href="/healthy-elders-subscription-form">
                                         <p>Subscribe to Healthy Elders Club</p>
                                     </Link>
                                 </button>
