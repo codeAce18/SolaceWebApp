@@ -21,7 +21,7 @@ const Career = () => {
 
         <div className="lg:pt-32 pt-16">
           <div className="flex flex-col items-center justify-center">
-            <h1 className="text-center font-normal lg:text-[48px] text-[40px] lg:leading-[58px] leading-[50px] text-Fozanova-Black max-w-[935px] tracking-[-1px]">Join us, let's give the elderly solace</h1>
+            <h1 className="text-center font-normal lg:text-[48px] text-[40px] lg:leading-[58px] leading-[50px] text-Fozanova-Black max-w-[935px] tracking-[-1px]">Join us, let&apos;s give the elderly solace</h1>
 
             <p className="lg:pt-[20px] pt-[16px] text-[15px] lg:text-[17px] tracking-[-0.4%] leading-[22px] max-w-[930px] text-center text-p-grey lg:leading-[26px]">Looking for an opportunity to showcase your skills and bring your creativity to live? Join our global team of talented workforce today and be part of the team revolutionizing the elderly care industry in Africa. </p>
 
@@ -53,7 +53,7 @@ const Career = () => {
               <div className="border-[1px] border-[#EFF0F6] lg:rounded-[8px] lg:max-w-[570px] mx-auto lg:mx-0 py-[22px] px-[20px]  bg-Fazanova-white">
                 <h1 className="border-b-[1px] border-b-[#D9D9D9] pb-[10px] lg:text-[20px] text-[17px] font-normal leading-[27.42px] tracking-[-0.96px] text-Fozanova-Black">Flexible Work Environment</h1>
 
-                <p className="text-[15px] pt-[10px] lg:text-[17px] text-p-grey lg:leading-[26px] leading-[22px] tracking-[-0.4%] max-w-[492px] ">Enjoy the freedom to work from anywhere in the world, whether it's the comfort of your home office or the excitement of a new city. Embrace a work-life balance that suits your needs.</p>
+                <p className="text-[15px] pt-[10px] lg:text-[17px] text-p-grey lg:leading-[26px] leading-[22px] tracking-[-0.4%] max-w-[492px] ">Enjoy the freedom to work from anywhere in the world, whether it&apos;s the comfort of your home office or the excitement of a new city. Embrace a work-life balance that suits your needs.</p>
               </div>
 
               <div className="border-[1px] border-[#EFF0F6] lg:rounded-[8px] max-w-[570px]  mx-auto lg:mx-0 py-[22px] px-[20px]  bg-Fazanova-white">

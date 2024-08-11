@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Image from "next/image";
 import { CountUp } from 'countup.js';
 import { useInView } from 'react-intersection-observer';
@@ -9,9 +9,10 @@ import Googlestore from '../../public/assests/googlestore.svg';
 import HeroImg from '../../public/assests/oldwoman.png';
 
 export function Hero() {
-    const count1Ref = useRef(null);
-    const count2Ref = useRef(null);
-    const count3Ref = useRef(null);
+    // Define the refs with a type that includes null and HTMLElement
+    const count1Ref = useRef<HTMLSpanElement>(null);
+    const count2Ref = useRef<HTMLSpanElement>(null);
+    const count3Ref = useRef<HTMLSpanElement>(null);
 
     // Observe the elements
     const { ref: h1Ref, inView: h1InView } = useInView();
@@ -20,15 +21,16 @@ export function Hero() {
     const { ref: imageRef, inView: imageInView } = useInView();
     const { ref: statsRef, inView: statsInView } = useInView();
 
-    // Trigger CountUp animations
-    if (statsInView) {
-        const countUp1 = new CountUp(count1Ref.current, 8000, { duration: 2, formattingFn: (num) => num.toFixed(0) });
-        const countUp2 = new CountUp(count2Ref.current, 2425, { duration: 2 });
-        const countUp3 = new CountUp(count3Ref.current, 98, { duration: 2 });
-        if (!countUp1.error) countUp1.start();
-        if (!countUp2.error) countUp2.start();
-        if (!countUp3.error) countUp3.start();
-    }
+    useEffect(() => {
+        if (statsInView) {
+            const countUp1 = new CountUp(count1Ref.current as HTMLElement, 8000, { duration: 2, formattingFn: (num) => num.toFixed(0) });
+            const countUp2 = new CountUp(count2Ref.current as HTMLElement, 2425, { duration: 2 });
+            const countUp3 = new CountUp(count3Ref.current as HTMLElement, 98, { duration: 2 });
+            if (!countUp1.error) countUp1.start();
+            if (!countUp2.error) countUp2.start();
+            if (!countUp3.error) countUp3.start();
+        }
+    }, [statsInView]);
 
     return (
         <div className="lg:pt-40 pt-16">
