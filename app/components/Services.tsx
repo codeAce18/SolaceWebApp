@@ -9,6 +9,7 @@ import Wellness from "../../public/assests/wellness.svg";
 import SolacePremium from "../../public/assests/solacepremium.svg";
 import Teleconsultation from "../../public/assests/Teleconsultation.svg";
 import Holistic from "../../public/assests/Holistic.svg";
+import Link from "next/link";
 import Tech from "../../public/assests/Tech.svg";
 import ArrowRightIcon from "./ArrowIconRight";
 
@@ -32,25 +33,25 @@ export function Services() {
                         <div className="lg:border-r-[1px] border-r-[#EFF0F6] lg:pr-8 flex flex-col justify-center items-center">
                             <Image className="mx-auto" width={32.58} height={36} src={SolacePremium} alt="SolacePremium" />
                             <h1 className="pt-5 text-center max-w-[262px] lg:text-[28px] text-[24px] font-normal lg:leading-[32px] leading-[30px] text-Fozanova-Black">Solace Premium Farewell Cover </h1>
-                            <p className="pt-5 text-center max-w-[262px] font-normal lg:text-[17px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4%] text-p-grey">Solace Farewell Cover provides funeral expense coverage for self or subscribers' loved ones in the event of their passing.</p>
-                            <a href="/cover">
+                            <p className="pt-5 text-center max-w-[262px] font-normal lg:text-[17px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4%] text-p-grey">Solace Farewell Cover provides funeral expense coverage for self or subscribers&apos; loved ones in the event of their passing.</p>
+                            <Link href="/cover">
                                 <button className="flex items-center gap-[5px] pt-3 lg:text-[17px] text-[15px] font-semibold lg:leading-[24px] leading-[22px] text-Fozanova-gold">
                                     See pricing
                                     <ArrowRightIcon className="text-[#DBA73B]" />
                                 </button>
-                            </a>
+                            </Link>
                         </div>
 
                         <div className="flex flex-col justify-center items-center">
                             <Image className="mx-auto" width={39.3} height={37} src={Holistic} alt="HolisticImg" />
                             <h1 className="pt-5 text-center max-w-[262px] text-[28px] font-normal leading-[32px] text-Fozanova-Black">Healthy Elders Club for Older Adults</h1>
                             <p className="pt-5 text-center max-w-[262px] font-normal text-[17px] leading-[26px] tracking-[-0.4%] text-p-grey">Subscribe self or your elders to enjoy exclusive benefits and privileges at partner pharmacies, hospitals and laboratories Nationwide.</p>
-                            <a href="/healthy-elders-club">
+                            <Link href="/healthy-elders-club">
                                 <button className="flex items-center gap-[5px] pt-3 text-[17px] font-semibold leading-[24px] text-Fozanova-gold">
                                     See pricing
                                     <ArrowRightIcon className="text-[#DBA73B]" />
                                 </button>
-                            </a>
+                            </Link>
                         </div>
 
                         <div className="lg:border-l-[1px] border-l-[#EFF0F6] lg:pl-8 flex flex-col justify-center items-center">
@@ -65,13 +66,13 @@ export function Services() {
                         <div className="lg:border-r-[1px] border-r-[#EFF0F6] lg:pr-8 flex flex-col justify-center items-center">
                             <Image className="mx-auto" width={37.04} height={37} src={Tech} alt="TechImg" />
                             <h1 className="pt-5 text-center max-w-[262px] text-[28px] font-normal leading-[32px] text-Fozanova-Black">Lace AI Proactive Care Solution</h1>
-                            <p className="pt-5 text-center max-w-[262px] font-normal text-[17px] leading-[26px] tracking-[-0.4%] text-p-grey">Lace AI monitors elders' health, offers insights & facilitates communication for total well-being in real-time.</p>
-                            <a href="/lace-ai">
+                            <p className="pt-5 text-center max-w-[262px] font-normal text-[17px] leading-[26px] tracking-[-0.4%] text-p-grey">Lace AI monitors elders&apos; health, offers insights & facilitates communication for total well-being in real-time.</p>
+                            <Link href="/lace-ai">
                                 <button className="flex items-center gap-[5px] pt-3 text-[17px] font-semibold leading-[24px] text-Fozanova-gold">
                                     Learn More
                                     <ArrowRightIcon className="text-[#DBA73B]" />
                                 </button>
-                            </a>
+                            </Link>
                         </div>
 
                         <div className="flex flex-col justify-center items-center">

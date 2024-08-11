@@ -35,11 +35,11 @@ const HealthyEldersClub = () => {
                 </h1>
                 <p className="lg:pt-20 pt-10 text-center lg:max-w-[930px] max-w-[350px] mx-auto text-p-grey lg:text-[17px] text-[15px] leading-[22px] lg:leading-[26px] tracking-[-0.4%]">Joining the Club yourself or registering your elderly as a beneficiary of HEC is easy; pay a monthly membership fee of ₦1,000. Afterwards, a prestigious membership card will be delivered to your doorstep within a few days. This card unlocks exclusive benefits at partner pharmacies, hospitals and laboratories nationwide, including priority services, cashback on medical expenses and other privileges on the Solace app.</p>
 
-                <a href="/healthy-elders-subscription-form" className="lg:pt-20 pt-10 mx-auto ">
+                <Link href="/healthy-elders-subscription-form" className="lg:pt-20 pt-10 mx-auto ">
                     <button className=" bg-Fozanova-gold text-Fazanova-white lg:text-[17px] text-[15px] font-semibold leading-[24px] lg:w-[640px] rounded-[8px]   h-[56px] py-[15px] px-[37px]">
                         Subscribe to Healthy Elders Club
                     </button>
-                </a>
+                </Link>
             </div>
 
             <div className="lg:pt-16 pt-10 px-[20px] lg:px-0  max-w-[1058px] mx-auto">

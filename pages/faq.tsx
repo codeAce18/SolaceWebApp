@@ -176,7 +176,7 @@ const FAQ = () => {
             Answers to some of your questions
           </h1>
           <p className="text-center lg:max-w-[720px] max-w-[300px] pt-[20px] lg:text-[17px] text-[15px] font-normal lg:leading-[26px] leading-[22px] tracking-[-0.4%] text-p-grey">
-            Didn't find the answers you were looking for? Contact us at{' '}
+            Didn&apos;t find the answers you were looking for? Contact us at{' '}
             <span className="text-Fozanova-gold">support@solace.com.ng</span>
           </p>
         </div>

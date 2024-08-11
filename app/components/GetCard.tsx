@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import Vector from '../../public/assests/Vector.svg';
 import SolaceCardBanner from '../../public/assests/SolaceCardBanner.svg';
 import { useInView } from 'react-intersection-observer';
@@ -19,7 +20,7 @@ export function GetCard() {
                         Save up to ₦1.8M yearly on elderly medical expenses.
                     </h1>
 
-                    <a href="/healthy-elders-club" className="inline-flex items-center lg:pt-16 pt-10">
+                    <Link href="/healthy-elders-club" className="inline-flex items-center lg:pt-16 pt-10">
                         <button
                             className="lg:text-[20px] text-[15px] font-semibold leading-[24px] rounded-[16.43px] py-[12.32px] px-[24.65px] border-[2px] border-white text-Fazanova-white shadow-lg flex items-center"
                             style={{
@@ -31,7 +32,7 @@ export function GetCard() {
                                 <Image src={Vector} alt="ArrowRight" />
                             </span>
                         </button>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="absolute top-[-139px] right-[-250px] bottom-0">

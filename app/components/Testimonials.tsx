@@ -82,7 +82,7 @@ export function Testimonials() {
     <div className="pt-16">
       <div className="flex flex-col justify-center items-center">
         <h1 className="lg:text-[48px] text-[39px] lg:leading-[58px] leading-[50px] text-center font-normal tracking-[-1px] text-Fozanova-Black max-w-[529px] lg:max-w-[600px]">
-          Don't take our words for it
+          Don&apos;t take our words for it
         </h1>
       </div>
 
