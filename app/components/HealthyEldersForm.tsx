@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import SecuredByPaystack from '../../public/assests/Secured by Paystack.svg';
+import { SelectChangeEvent } from '@mui/material';
 import {
   Stepper,
   Step,
@@ -153,7 +154,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
     fetchCities();
   }, [receiverState]);
 
-  const handleStateChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+  const handleStateChange = (event: SelectChangeEvent<string>) => {
     setReceiverState(event.target.value as string);
   };
 
@@ -217,9 +218,9 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
     }
   };
 
-  const handleSelectChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-    setHowDidYouHear(event.target.value as string);
-  };
+  // const handleStateChange = (event: SelectChangeEvent<string>) => {
+  //   setReceiverState(event.target.value as string);
+  // };
 
   const handleReceiverSelectChange = (event: React.ChangeEvent<{ value: unknown }>, type: 'state' | 'city') => {
     if (type === 'state') {
@@ -236,7 +237,10 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
   const handleClickShowConfirmPassword = () => {
     setShowConfirmPassword((show) => !show);
   };
-
+  const handleSelectChange = (event: SelectChangeEvent<string>) => {
+    setHowDidYouHear(event.target.value as string);
+  };
+  
   const isStepValid = () => {
     if (activeStep === 0) {
       return (
@@ -489,7 +493,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 <InputLabel>City of Residence</InputLabel>
                 <Select
                   value={receiverCity}
-                  onChange={handleCityChange}
+                  onChange={handleSelectChange}
                   disabled={loadingCities || !receiverState}
                 >
                   {loadingCities ? (
@@ -541,7 +545,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   <InputLabel>Renewal Option</InputLabel>
                   <Select
                     value={renewalOption}
-                    onChange={handleRenewalOptionChange}
+                    onChange={handleSelectChange}
                   >
                     <MenuItem value="autoRenew">Auto Renew On</MenuItem>
                     <MenuItem value="manualRenew">Manual Renew</MenuItem>
@@ -551,7 +555,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   <InputLabel>Payment Method</InputLabel>
                   <Select
                     value={paymentMethod}
-                    onChange={handlePaymentMethodChange}
+                    onChange={handleSelectChange}
                   >
                     <MenuItem value="debitCard">Pay with Debit Card</MenuItem>
                     <MenuItem value="creditCard">Pay with Credit Card</MenuItem>

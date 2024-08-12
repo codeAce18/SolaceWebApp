@@ -76,7 +76,7 @@ export function Discovery() {
                                 Cutting-Edge Tech Infrastructure
                             </h1>
                             <p className={`mt-[20px] max-w-[271px] text-center lg:text-[17px] text-[15px] text-p-grey font-normal mx-auto transition-opacity duration-1000 ${techInView ? 'opacity-100' : 'opacity-0'}`}>
-                                Because it doesn't exist, we are building the most advanced tech infrastructure that will drive the provision of world-class holistic care for the elderly in Africa.
+                                Because it doesn&apos;t exist, we are building the most advanced tech infrastructure that will drive the provision of world-class holistic care for the elderly in Africa.
                             </p>
                         </div>
                     </div>

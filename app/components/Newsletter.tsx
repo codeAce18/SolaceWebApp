@@ -21,7 +21,7 @@ export function Newsletter() {
         </div>
 
         <h1 className={`pt-[20px] font-normal lg:text-[48px] text-[40px] lg:leading-[58px] leading-[50px] tracking-[-1px] max-w-[633px] text-center text-Fazanova-white transition-transform duration-1000 ${newsletterInView ? 'transform translate-x-0' : 'transform translate-x-10'}`}>
-          Let's help you enjoy your elderhood!
+          Let&apos;s help you enjoy your elderhood!
         </h1>
 
         <p className={`pt-[15px] font-normal lg:text-[17px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4%] max-w-[410.12px] text-Fazanova-white text-center transition-transform duration-1000 ${newsletterInView ? 'transform translate-x-0' : 'transform translate-x-10'}`}>

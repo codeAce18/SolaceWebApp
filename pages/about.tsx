@@ -110,7 +110,7 @@ const About = () => {
                 <div className="lg:border-r-[1px] border-r-[#EFF0F6] lg:pr-8 flex flex-col justify-center items-center">
                   <Image className="mx-auto" width={36} height={36} src={CustomercentricSvg} alt="customerCentricSvg" />
                   <h1 className="pt-5 text-center max-w-[262px] lg:text-[28px] text-[24px] font-normal leading-[32px] text-Fozanova-Black">Customer Centric</h1>
-                  <p className="pt-5 text-center max-w-[262px] font-normal text-[17px] leading-[26px] tracking-[-0.4%] text-p-grey"> Putting our customers is at the heart of everything we do, delivering exceptional experiences and exceeding their expectations./p>
+                  <p className="pt-5 text-center max-w-[262px] font-normal text-[17px] leading-[26px] tracking-[-0.4%] text-p-grey"> Putting our customers is at the heart of everything we do, delivering exceptional experiences and exceeding their expectations.</p>
                 </div>
                 <div className="flex flex-col justify-center items-center">
                   <Image className="mx-auto" width={36} height={36} src={SustainabilitySvg} alt="sustainabilitySvg" />

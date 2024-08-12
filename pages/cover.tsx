@@ -2,6 +2,7 @@ import { SetStateAction, useState } from "react";
 import { Navbar } from "@/app/components/Navbar";
 import '../app/globals.css';
 import Image from "next/image";
+import Link from "next/link";
 import Checksvg from '../public/assests/CheckSvg.svg';
 import { Newsletter } from "@/app/components/Newsletter";
 import { Footer } from "@/app/components/Footer";
@@ -24,14 +25,18 @@ const PaymentPlans = {
   ],
 };
 
+const PaymentPlanKeys = ['quarterly', 'biannual', 'annual'] as const;
+type PaymentPlanKey = typeof PaymentPlanKeys[number];
 const Cover = () => {
   const [selectedPlan, setSelectedPlan] = useState(PaymentPlans.quarterly);
   const [selectedButton, setSelectedButton] = useState('quarterly');
 
-  const handleButtonClick = (button: SetStateAction<string>) => {
+ 
+  const handleButtonClick = (button: PaymentPlanKey) => {
     setSelectedPlan(PaymentPlans[button]);
     setSelectedButton(button);
   };
+
 
   return (
     <>
@@ -69,11 +74,11 @@ const Cover = () => {
 
                   <div className="pt-[30px] lg:pt-[35px]">
                     <div className="flex flex-col justify-center items-center">
-                      <a href="/" >
+                      <Link href="/" >
                         <button className="lg:text-[17px] text-[15px] font-semibold rounded-[8px] lg:leading-[24px] leading-[22px] mx-auto text-Fazanova-white bg-Fozanova-gold w-[240px] h-[48px]">
                           Subscribe
                         </button>
-                      </a>
+                      </Link>
                       <p className="text-center lg:text-[17px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4px] font-medium text-Fozanova-gold max-w-[269px] pt-[25px]">
                         Service Benefits worth ₦{plan.benefit} (T&C Apply)
                       </p>

@@ -10,6 +10,7 @@ import {
   Box 
 } from '@mui/material';
 import { useRouter } from 'next/router'; // Import useRouter for navigation
+import { SelectChangeEvent } from '@mui/material/Select'; // Import SelectChangeEvent
 
 interface State {
   id: string;
@@ -55,7 +56,7 @@ const Form: React.FC = () => {
   }, []);
 
   // Fetch towns when a state is selected
-  const handleStateChange = async (event: React.ChangeEvent<{ value: unknown }>) => {
+  const handleStateChange = async (event: SelectChangeEvent<string>) => {
     const stateName = event.target.value as string;
     setSelectedState(stateName);
     setLoadingTowns(true);
@@ -78,7 +79,7 @@ const Form: React.FC = () => {
   };
 
   // Handle changes in the town selection
-  const handleTownChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+  const handleTownChange = (event: SelectChangeEvent<string>) => {
     setSelectedTown(event.target.value as string);
   };
 
@@ -102,7 +103,7 @@ const Form: React.FC = () => {
   };
 
   // Handle dropdown changes
-  const handleSelectChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+  const handleSelectChange = (event: SelectChangeEvent<string>) => {
     const { name, value } = event.target;
     switch (name) {
       case 'interests':
@@ -275,65 +276,47 @@ const Form: React.FC = () => {
                 label="What Interests You About LaceAI?"
                 required
               >
-                <MenuItem value="">
-                  {'Select your reasons'}
+                <MenuItem value="Customer Service">
+                  Customer Service
                 </MenuItem>
-                <MenuItem value="Option 1">Just Curious</MenuItem>
-                <MenuItem value="Option 2">My Dad's Health</MenuItem>
-                <MenuItem value="Option 3">My Mom's Health</MenuItem>
-                <MenuItem value="Option 1">My Personal Health</MenuItem>
-                <MenuItem value="Option 2">My Guardian's Health</MenuItem>
-                <MenuItem value="Option 3">My Children's Health</MenuItem>
-                <MenuItem value="Option 2">Nothing</MenuItem>
+                <MenuItem value="Personal Development">
+                  Personal Development
+                </MenuItem>
+                <MenuItem value="Leadership">
+                  Leadership
+                </MenuItem>
+                <MenuItem value="Community">
+                  Community
+                </MenuItem>
+                <MenuItem value="Volunteering">
+                  Volunteering
+                </MenuItem>
               </Select>
             </FormControl>
           </Box>
           <Box width={{ xs: '100%', sm: '45%', md: 'w-96' }} p={1}>
             <FormControl fullWidth margin="normal">
-              <InputLabel>How Did You Hear About Us?</InputLabel>
+              <InputLabel>Where Did You Hear About Us?</InputLabel>
               <Select
                 name="referral"
                 value={referral}
                 onChange={handleSelectChange}
-                label="How Did You Hear About Us?"
+                label="Where Did You Hear About Us?"
                 required
               >
-                <MenuItem value="">
-                  {'Select from list'}
+                <MenuItem value="Social Media">Social Media</MenuItem>
+                <MenuItem value="Friends and Family">
+                  Friends and Family
                 </MenuItem>
-                <MenuItem value="Option 1">On Radio</MenuItem>
-                <MenuItem value="Option 2">On Linkedin</MenuItem>
-                <MenuItem value="Option 3">On Youtube</MenuItem>
-                <MenuItem value="Option 1">On Tiktok</MenuItem>
-                <MenuItem value="Option 2">On Instagram</MenuItem>
-                <MenuItem value="Option 3">On Television</MenuItem>
-                <MenuItem value="Option 2">Via Word of Mouth</MenuItem>
-                <MenuItem value="Option 3">On Others Platform</MenuItem>
+                <MenuItem value="LaceAI Event">LaceAI Event</MenuItem>
+                <MenuItem value="Website">Website</MenuItem>
               </Select>
             </FormControl>
           </Box>
         </Box>
 
-        <Box textAlign="center" mt={2}>
-          <Button
-            type="submit"
-            variant="contained"
-            sx={{
-              backgroundColor: '#DBA73B',
-              color: '#fff',
-              width: '420px', // Set the button width
-              '&:hover': {
-                backgroundColor: '#DBA73B', // Slightly darker shade on hover
-              },
-
-              '&.Mui-disabled': {
-                backgroundColor: '#DBA73B', // Disabled color
-                color: '#fff', // Text color when disabled
-                opacity: 0.3,
-              },
-            }}
-            disabled={!isFormValid()}
-          >
+        <Box display="flex" justifyContent="center" p={1}>
+          <Button type="submit" variant="contained" color="primary" disabled={!isFormValid()}>
             Submit
           </Button>
         </Box>
