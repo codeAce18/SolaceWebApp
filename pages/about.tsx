@@ -90,7 +90,7 @@ const About = () => {
                 initial="hidden"
                 whileInView="visible"
                 transition={{ duration: 0.8 }}
-                className="bg-Fazanova-white rounded-[16px] border-[1px] border-[#EFF0F6] py-[47px] px-[32px] max-w-[1055px] grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-20 lg:gap-y-36 gap-y-28"
+                className="bg-Fazanova-white rounded-[16px] border-[1px] border-[#EFF0F6] py-[47px] px-[32px] max-w-[1055px] grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-20 lg:gap-y-20 gap-y-16"
               >
                 <div className="lg:border-r-[1px] border-r-[#EFF0F6] lg:pr-8 flex flex-col justify-center items-center">
                   <Image className="mx-auto" width={36} height={36} src={HeartsSvg} alt="HeartSvg" />

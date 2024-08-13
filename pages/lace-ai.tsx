@@ -2,15 +2,14 @@ import { Navbar } from "@/app/components/Navbar";
 import Image from "next/image";
 import { Newsletter } from "@/app/components/Newsletter";
 import { Footer } from "@/app/components/Footer";
-// import { Button } from 'antd';
-
-
-
 import '../app/globals.css'
 import LaceImg from '../public/assests/LaceImg.png'
 import ComingSoonSvg from '../public/assests/ComingSoon.svg'
 import JoinTheWaitingListSvg from '../public/assests/JoinTheWaitingListImg.svg'
 import Form from "@/app/components/Form";
+
+
+
 
 
 

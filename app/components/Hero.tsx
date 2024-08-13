@@ -3,23 +3,21 @@
 import { useRef, useEffect } from 'react';
 import Image from "next/image";
 import { CountUp } from 'countup.js';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Appstore from '../../public/assests/Appstore.svg';
 import Googlestore from '../../public/assests/googlestore.svg';
 import HeroImg from '../../public/assests/oldwoman.png';
 
 export function Hero() {
-    // Define the refs with a type that includes null and HTMLElement
     const count1Ref = useRef<HTMLSpanElement>(null);
     const count2Ref = useRef<HTMLSpanElement>(null);
     const count3Ref = useRef<HTMLSpanElement>(null);
 
-    // Observe the elements
-    const { ref: h1Ref, inView: h1InView } = useInView();
-    const { ref: pRef, inView: pInView } = useInView();
-    const { ref: buttonsRef, inView: buttonsInView } = useInView();
-    const { ref: imageRef, inView: imageInView } = useInView();
-    const { ref: statsRef, inView: statsInView } = useInView();
+    const { ref: statsRef, inView: statsInView } = useInView({
+        triggerOnce: true,  // Only trigger once
+        threshold: 0.5     // Trigger when 50% of the element is visible
+    });
 
     useEffect(() => {
         if (statsInView) {
@@ -35,23 +33,29 @@ export function Hero() {
     return (
         <div className="lg:pt-40 pt-16">
             <div className="px-[20px]">
-                <h1
-                    ref={h1Ref}
-                    className={`text-center lg:text-[72px] text-[34px] mx-auto text-Fozanova-Black font-bold lg:leading-82 leading-[40px] lg:max-w-[1058px] mx-w-[1050px] lg:tracking-customTight transition-opacity duration-1000 ${h1InView ? 'opacity-100' : 'opacity-0'}`}
+                <motion.h1
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    className={`text-center lg:text-[72px] text-[34px] mx-auto text-Fozanova-Black font-bold lg:leading-82 leading-[40px] lg:max-w-[1058px] mx-w-[1050px] lg:tracking-customTight`}
                 >
                     The older adults in your family deserve very good care and a befitting farewell.
-                </h1>
+                </motion.h1>
 
-                <p
-                    ref={pRef}
-                    className={`pt-6 text-center font-normal lg:text-[17px] text-[15px] lg:leading-[27px] leading-[25px] text-p-grey lg:max-w-[1050px] max-w-[1050px] mx-auto tracking-normal transition-transform duration-1000 ${pInView ? 'translate-x-0' : '-translate-x-full'}`}
+                <motion.p
+                    initial={{ y: '100%' }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 1 }}
+                    className={`pt-6 text-center font-normal lg:text-[17px] text-[15px] lg:leading-[27px] leading-[25px] text-p-grey lg:max-w-[1050px] max-w-[1050px] mx-auto tracking-normal`}
                 >
                     Solace is a healthcare app for the 14.8 million older adults aged 60 and above in Nigeria. Healthy Elders Club offers elderly members up to 25% cashback on medical expenses yearly and more. Solace Farewell Cover provides subscribers with a dignified farewell for their loved ones in the event of their passing, offering a service benefit of up to ₦8 million.
-                </p>
+                </motion.p>
 
-                <div
-                    ref={buttonsRef}
-                    className={`pt-8 flex items-center justify-center gap-[15px] w-full transition-opacity duration-1000 ${buttonsInView ? 'opacity-100' : 'opacity-0'}`}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    className={`pt-8 flex items-center justify-center gap-[15px] w-full`}
                 >
                     <a href="#">
                         <button>
@@ -63,18 +67,23 @@ export function Hero() {
                             <Image width={169.71} height={63.67} src={Googlestore} alt="googlestore" />
                         </button>
                     </a>
-                </div>
+                </motion.div>
 
-                <div
-                    ref={imageRef}
-                    className={`pt-6 max-w-[1058px] mx-auto transition-transform duration-1000 ${imageInView ? 'translate-y-0' : 'translate-y-full'}`}
+                <motion.div
+                    initial={{ y: '100%' }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 1 }}
+                    className={`pt-6 max-w-[1058px] mx-auto`}
                 >
                     <Image src={HeroImg} alt="HeroImg" className="rounded-xl" />
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
                     ref={statsRef}
-                    className={`pt-10 transition-opacity duration-1000 ${statsInView ? 'opacity-100' : 'opacity-0'}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    className={`pt-10`}
                 >
                     <div className="bg-Fazanova-white max-w-[931px] border border-border-custom py-[16px] rounded-xl px-[48px] flex text-center lg:flex-row flex-col lg:gap-32 gap-20 mx-auto">
                         <div className="text-center">
@@ -98,7 +107,7 @@ export function Hero() {
                             <p className="text-[17px] text-center font-semibold leading-[24px] text-Fozanova-Black">Satisfied Customers</p>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     );

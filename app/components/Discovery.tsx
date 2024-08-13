@@ -16,7 +16,7 @@ export function Discovery() {
     const { ref: intuitiveRef, inView: intuitiveInView } = useInView();
 
     return (
-        <div className="pt-32">
+        <div className="pt-24">
             <div className="flex flex-col items-center justify-center">
                 <Image
                     ref={badgeRef}

@@ -181,8 +181,8 @@ const FAQ = () => {
           </p>
         </div>
 
-        <div className="lg:pt-20 pt-16  p-4 max-w-[1136px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto gap-6">
+        <div className="lg:pt-20 pt-16  p-4 max-w-[522px] lg:max-w-[1136px] mx-auto">
+          <div className="grid grid-cols-1  mx-auto gap-6">
               {faqData.map((item, index) => (
                 <>
                 <div key={index} className="border-b border-Fozanova-Black py-4 max-w-[1058px] w-full">

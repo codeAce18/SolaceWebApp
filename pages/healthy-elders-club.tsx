@@ -31,7 +31,7 @@ const HealthyEldersClub = () => {
         
             <div className="flex flex-col items-center justify-center">
                 <h1 className="font-normal lg:text-[48px] text-[35px] tracking-[-1px] text-center lg:max-w-[935px] max-w-[600px] mx-auto text-Fozanova-Black lg:leading-[58px] leading-[50px] lg:h-[116px]">
-                Our goal is to become the leading provider of wellness and farewell services to 14.8 million Nigerians aged 60 years and above.
+                Healthy Elders Club gives older adults in Nigeria access to special privileges and benefits for their enjoyment.
                 </h1>
                 <p className="lg:pt-20 pt-10 text-center lg:max-w-[930px] max-w-[350px] mx-auto text-p-grey lg:text-[17px] text-[15px] leading-[22px] lg:leading-[26px] tracking-[-0.4%]">Joining the Club yourself or registering your elderly as a beneficiary of HEC is easy; pay a monthly membership fee of ₦1,000. Afterwards, a prestigious membership card will be delivered to your doorstep within a few days. This card unlocks exclusive benefits at partner pharmacies, hospitals and laboratories nationwide, including priority services, cashback on medical expenses and other privileges on the Solace app.</p>
 
@@ -70,23 +70,23 @@ const HealthyEldersClub = () => {
                             </div>
                             <div className="flex gap-[10px] items-start">
                                 <Image width={23.98} height={24} src={CheckSvg} alt="CheckSvg" />
-                                <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:text-[17px] text-[15px] lg:leading-[22px] leading-[20px]">Get cashback of up to 25% on all medical expenses made with HEC card in all partner Pharmacies, Hospitals and Labs.</p>
+                                <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:text-[17px] text-[15px] lg:leading-[22px] leading-[20px]">Card is linked seamlessly to your Solace mobile wallet for easy medical expense management.</p>
                             </div>
                             <div className="flex gap-[10px] items-start">
                                 <Image width={23.98} height={24} src={CheckSvg} alt="CheckSvg" />
-                                <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:text-[17px] text-[15px] lg:leading-[22px] leading-[20px]">Get cashback of up to 25% on all medical expenses made with HEC card in all partner Pharmacies, Hospitals and Labs.</p>
+                                <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:text-[17px] text-[15px] lg:leading-[22px] leading-[20px]">Get priority services at partner Pharmacies Hospitals & Labs nationwide, including on partner online medical stores .</p>
                             </div>
                             <div className="flex gap-[10px] items-start">
                                 <Image width={23.98} height={24} src={CheckSvg} alt="CheckSvg" />
-                                <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:text-[17px] text-[15px] lg:leading-[22px] leading-[20px]">Get cashback of up to 25% on all medical expenses made with HEC card in all partner Pharmacies, Hospitals and Labs.</p>
+                                <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:text-[17px] text-[15px] lg:leading-[22px] leading-[20px]">Effortlessly manage prescriptions, doctors appointments, eating and sleeping routine of the elderly with Lace AI assistant.</p>
                             </div>
                             <div className="flex gap-[10px] items-start">
                                 <Image width={23.98} height={24} src={CheckSvg} alt="CheckSvg" />
-                                <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:text-[17px] text-[15px] lg:leading-[22px] leading-[20px]">Get cashback of up to 25% on all medical expenses made with HEC card in all partner Pharmacies, Hospitals and Labs.</p>
+                                <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:text-[17px] text-[15px] lg:leading-[22px] leading-[20px]">Get dedicated account manager and priority customer care service at a click of a button on the Solace app.</p>
                             </div>
                             <div className="flex gap-[10px] items-start">
                                 <Image width={23.98} height={24} src={CheckSvg} alt="CheckSvg" />
-                                <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:text-[17px] text-[15px] lg:leading-[22px] leading-[20px]">Get cashback of up to 25% on all medical expenses made with HEC card in all partner Pharmacies, Hospitals and Labs.</p>
+                                <p className="max-w-[351px] text-Fozanova-Black tracking-[-0.2px] lg:text-[17px] text-[15px] lg:leading-[22px] leading-[20px]">Get free membership card replacement in the case of misplacement or damaged after the first 365 days of issuance. </p>
                             </div>
 
                             <div className="pt-10 mx-auto">
@@ -113,7 +113,7 @@ const HealthyEldersClub = () => {
 
                 <div className="p-10">
                     <div className="flex justify-center items-center">
-                        <div className="bg-Fazanova-white rounded-[16px] border-[1px] border-[#EFF0F6] py-[47px] px-[65px] max-w-[1168px] grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-20 lg:gap-y-36 gap-y-28">
+                        <div className="bg-Fazanova-white rounded-[16px] border-[1px] border-[#EFF0F6] py-[47px] px-[65px] max-w-[1168px] grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-20 lg:gap-y-20 gap-y-16">
                             <div className="lg:border-r-[1px] border-r-[#EFF0F6]  lg:pr-8  flex flex-col justify-center items-center">
                                 <Image className="mx-auto" width={40} height={40} src={SignUpSvg} alt="signUpSvg" />
                                 <h1 className="pt-5 text-center max-w-[262px] lg:text-[28px] text-[24px] font-normal  lg:leading-[32px] leading-[30px] text-Fozanova-Black">Sign-up Easily</h1>
@@ -122,27 +122,27 @@ const HealthyEldersClub = () => {
                             <div className="flex flex-col justify-center items-center">
                                 <Image className="mx-auto" width={40} height={40} src={PaymentSvg} alt="paymentSvg" />
                                 <h1 className="pt-5 text-center max-w-[262px] lg:text-[28px] text-[24px] font-normal  leading-[32px] text-Fozanova-Black">Make Payment</h1>
-                                <p className="pt-5 text-center max-w-[262px] font-normal text-[17px] leading-[26px] tracking-[-0.4%] text-p-grey">Make a secure payment of  ₦1,000 per month, billed annually for your membership fee .</p>
+                                <p className="pt-5 text-center max-w-[262px] font-normal lg:text-[17px] text-[15px] leading-[26px] tracking-[-0.4%] text-p-grey">Make a secure payment of  ₦1,000 per month, billed annually for your membership fee .</p>
                             </div>
                             <div className="lg:border-l-[1px] border-l-[#EFF0F6]  lg:pl-8 flex flex-col justify-center items-center">
                                 <Image className="mx-auto" width={40} height={40} src={CardLinkingSvg} alt="cardLinkingSvg" />
                                 <h1 className="pt-5 text-center max-w-[262px] lg:text-[28px] text-[24px] font-normal  leading-[32px] text-Fozanova-Black">Card Linking</h1>
-                                <p className="pt-5 text-center max-w-[262px] font-normal text-[17px] leading-[26px] tracking-[-0.4%] text-p-grey">Your smart card is automatically connected to your Solace app for easy fund management.</p>
+                                <p className="pt-5 text-center max-w-[262px] font-normal lg:text-[17px] text-[15px] leading-[26px] tracking-[-0.4%] text-p-grey">Your smart card is automatically connected to your Solace app for easy fund management.</p>
                             </div>
                             <div className="lg:border-r-[1px] border-r-[#EFF0F6]  lg:pr-8 flex flex-col justify-center items-center">
                                 <Image className="mx-auto" width={40} height={40} src={InputAdressSvg} alt="inputAdressSvg" />
                                 <h1 className="pt-5 text-center max-w-[262px]  lg:text-[28px] text-[24px] font-normal  leading-[32px] text-Fozanova-Black">Input Address</h1>
-                                <p className="pt-5 text-center max-w-[231px] font-normal text-[17px] leading-[26px] tracking-[-0.4%] text-p-grey"> Provide the detailed address of where you want your Solace card to be sent to.</p>
+                                <p className="pt-5 text-center max-w-[231px] font-normal lg:text-[17px] text-[15px] leading-[26px] tracking-[-0.4%] text-p-grey"> Provide the detailed address of where you want your Solace card to be sent to.</p>
                             </div>
                             <div className="flex flex-col justify-center items-center">
                                 <Image className="mx-auto" width={40} height={40} src={DispatchSvg} alt="dispatchSvg" />
                                 <h1 className="pt-5 text-center max-w-[262px] lg:text-[28px] text-[24px] font-normal  leading-[32px] text-Fozanova-Black">Prompt Dispatch</h1>
-                                <p className="pt-5 text-center max-w-[262px] font-normal text-[17px] leading-[26px] tracking-[-0.4%] text-p-grey">We will promptly send your Solace card to the provided address for your convenience.</p>
+                                <p className="pt-5 text-center max-w-[262px] font-normal lg:text-[17px] text-[15px] leading-[26px] tracking-[-0.4%] text-p-grey">We will promptly send your Solace card to the provided address for your convenience.</p>
                             </div>
                             <div className="lg:border-l-[1px] border-l-[#EFF0F6]  lg:pl-8 flex flex-col justify-center items-center">
                                 <Image className="mx-auto" width={40} height={40} src={ActivateCardSvg} alt="ActivateCardSvg" />
                                 <h1 className="pt-5 text-center max-w-[262px] lg:text-[28px] text-[24px] font-normal  leading-[32px] text-Fozanova-Black">Activate Card</h1>
-                                <p className="pt-5 text-center max-w-[262px] font-normal text-[17px] leading-[26px] tracking-[-0.4%] text-p-grey">Activate your membership card on the Solace app by paying for medical expense on the app.</p>
+                                <p className="pt-5 text-center max-w-[262px] font-normal lg:text-[17px] text-[15px] leading-[26px] tracking-[-0.4%] text-p-grey">Activate your membership card on the Solace app by paying for medical expense on the app.</p>
                             </div>
                         </div>
                     </div>

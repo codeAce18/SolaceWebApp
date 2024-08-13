@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from "next/image";
+import { useRouter } from 'next/router';
 import SecuredByPaystack from '../../public/assests/Secured by Paystack.svg';
 import { SelectChangeEvent } from '@mui/material';
 import {
@@ -56,6 +57,7 @@ const StyledStepIcon = (props: any) => {
 };
 
 const HealthyEldersForm: React.FC = () => {
+  const router = useRouter(); // Initialize the router
   const [activeStep, setActiveStep] = useState<number>(0);
   const [firstName, setFirstName] = useState<string>('');
   const [lastName, setLastName] = useState<string>('');
@@ -75,6 +77,7 @@ const HealthyEldersForm: React.FC = () => {
   const [receiverState, setReceiverState] = useState<string>('');
   const [receiverCity, setReceiverCity] = useState<string>('');
   const [receiverAddress, setReceiverAddress] = useState<string>('');
+
 
   const [states, setStates] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]);
@@ -158,12 +161,17 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
     setReceiverState(event.target.value as string);
   };
 
-  const handleCityChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+  const handleCityChange = (event: SelectChangeEvent<string>) => {
     setReceiverCity(event.target.value as string);
   };
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    if (activeStep === steps.length - 1) {
+      // Navigate to 'subscribed' page on final step
+      router.push('/subscribedsuccess');
+    } else {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    }
   };
 
   const handleBack = () => {
@@ -231,12 +239,14 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
   };
 
   const handleClickShowPassword = () => {
-    setShowPassword((show) => !show);
+    setShowPassword((show) => !show); // Toggles the state
   };
 
+
   const handleClickShowConfirmPassword = () => {
-    setShowConfirmPassword((show) => !show);
+    setShowConfirmPassword((show) => !show); // Toggles the state
   };
+
   const handleSelectChange = (event: SelectChangeEvent<string>) => {
     setHowDidYouHear(event.target.value as string);
   };
@@ -327,8 +337,29 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 onChange={handleChange}
                 fullWidth
                 margin="normal"
-                sx={{ flex: 1 }}
+                sx={{ 
+                  flex: 1 ,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': {
+                      borderColor: '#DBA73B', // Border color on hover
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#DBA73B', // Border color when focused
+                    },
+                  },
+  
+                  '& .MuiInputLabel-root': {
+                    color: '#DBA73B', // Default label color
+                  },
+                  
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#DBA73B', // Label color when focused
+                  },
+                }}
               />
+
+
+
               <TextField
                 name="lastName"
                 label="Last Name"
@@ -336,10 +367,28 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 onChange={handleChange}
                 fullWidth
                 margin="normal"
-                sx={{ flex: 1 }}
+                sx={{ 
+                  flex: 1 ,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': {
+                      borderColor: '#DBA73B', // Border color on hover
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#DBA73B', // Border color when focused
+                    },
+                  },
+  
+                  '& .MuiInputLabel-root': {
+                    color: '#DBA73B', // Default label color
+                  },
+                  
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#DBA73B', // Label color when focused
+                  },
+                }}
               />
             </Box>
-            <Box display="flex" flexDirection="row" gap={2} mb={2}>
+            <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
               <TextField
                 name="email"
                 label="Email Address"
@@ -347,7 +396,25 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 onChange={handleChange}
                 fullWidth
                 margin="normal"
-                sx={{ flex: 1 }}
+                sx={{ 
+                  flex: 1 ,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': {
+                      borderColor: '#DBA73B', // Border color on hover
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#DBA73B', // Border color when focused
+                    },
+                  },
+  
+                  '& .MuiInputLabel-root': {
+                    color: '#DBA73B', // Default label color
+                  },
+                  
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#DBA73B', // Label color when focused
+                  },
+                }}
               />
               <TextField
                 name="phoneNumber"
@@ -356,10 +423,28 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 onChange={handleChange}
                 fullWidth
                 margin="normal"
-                sx={{ flex: 1 }}
+                sx={{ 
+                  flex: 1 ,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': {
+                      borderColor: '#DBA73B', // Border color on hover
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#DBA73B', // Border color when focused
+                    },
+                  },
+  
+                  '& .MuiInputLabel-root': {
+                    color: '#DBA73B', // Default label color
+                  },
+                  
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#DBA73B', // Label color when focused
+                  },
+                }}
               />
             </Box>
-            <Box display="flex" flexDirection="row" gap={2} mb={2}>
+            <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
               <TextField
                 name="referralCode"
                 label="Referral Code (optional)"
@@ -367,11 +452,48 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 onChange={handleChange}
                 fullWidth
                 margin="normal"
-                sx={{ flex: 1 }}
+                sx={{ 
+                  flex: 1 ,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': {
+                      borderColor: '#DBA73B', // Border color on hover
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#DBA73B', // Border color when focused
+                    },
+                  },
+  
+                  '& .MuiInputLabel-root': {
+                    color: '#DBA73B', // Default label color
+                  },
+                  
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#DBA73B', // Label color when focused
+                  },
+                }}
               />
-              <FormControl fullWidth margin="normal" sx={{ flex: 1 }}>
+              <FormControl fullWidth margin="normal" sx={{ 
+                  flex: 1 ,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': {
+                      borderColor: '#DBA73B', // Border color on hover
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#DBA73B', // Border color when focused
+                    },
+                  },
+  
+                  '& .MuiInputLabel-root': {
+                    color: '#DBA73B', // Default label color
+                  },
+                  
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#DBA73B', // Label color when focused
+                  },
+                }}>
                 <InputLabel>How Did You Hear About Us?</InputLabel>
                 <Select
+                  label="How Did You Hear About Us?"
                   value={howDidYouHear}
                   onChange={handleSelectChange}
                 >
@@ -382,56 +504,95 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 </Select>
               </FormControl>
             </Box>
-            <Box display="flex" flexDirection="row" gap={2} mb={2}>
-              <TextField
-                name="password"
-                label="Password"
-                type={showPassword ? 'text' : 'password'}
-                value={password}
-                onChange={handleChange}
-                fullWidth
-                margin="normal"
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        onClick={handleClickShowPassword}
-                        edge="end"
-                      >
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
+            <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
+            <TextField
+              name="password"
+              label="Password"
+              type={showPassword ? 'text' : 'password'} // Show/hide based on state
+              value={password}
+              onChange={handleChange}
+              fullWidth
+              margin="normal"
+              sx={{ 
+                flex: 1 ,
+                '& .MuiOutlinedInput-root': {
+                  '&:hover fieldset': {
+                    borderColor: '#DBA73B', // Border color on hover
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#DBA73B', // Border color when focused
+                  },
+                },
+
+                '& .MuiInputLabel-root': {
+                  color: '#DBA73B', // Default label color
+                },
+                
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: '#DBA73B', // Label color when focused
+                },
+              }}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      onClick={handleClickShowPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <Visibility /> : <VisibilityOff />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+
               />
               <TextField
-                name="confirmPassword"
-                label="Confirm Password"
-                type={showConfirmPassword ? 'text' : 'password'}
-                value={confirmPassword}
-                onChange={handleChange}
-                fullWidth
-                margin="normal"
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        onClick={handleClickShowConfirmPassword}
-                        edge="end"
-                      >
-                        {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-              />
+              name="confirmPassword"
+              label="Confirm Password"
+              type={showConfirmPassword ? 'text' : 'password'} // Show/hide based on state
+              value={confirmPassword}
+              onChange={handleChange}
+              fullWidth
+              margin="normal"
+              sx={{ 
+                flex: 1 ,
+                '& .MuiOutlinedInput-root': {
+                  '&:hover fieldset': {
+                    borderColor: '#DBA73B', // Border color on hover
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#DBA73B', // Border color when focused
+                  },
+                },
+
+                '& .MuiInputLabel-root': {
+                  color: '#DBA73B', // Default label color
+                },
+                
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: '#DBA73B', // Label color when focused
+                },
+              }}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      onClick={handleClickShowConfirmPassword}
+                      edge="end"
+                    >
+                      {showConfirmPassword ? <Visibility /> : <VisibilityOff />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
             </Box>
             <PasswordStrengthBar password={password} />
           </Box>
         )}
         {activeStep === 1 && (
           <Box>
-            <Box display="flex" flexDirection="row" gap={2} mb={2}>
+            <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
               <TextField
                 name="receiverFirstName"
                 label="Receiver's First Name"
@@ -439,7 +600,25 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 onChange={handleReceiverChange}
                 fullWidth
                 margin="normal"
-                sx={{ flex: 1 }}
+                sx={{ 
+                  flex: 1 ,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': {
+                      borderColor: '#DBA73B', // Border color on hover
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#DBA73B', // Border color when focused
+                    },
+                  },
+  
+                  '& .MuiInputLabel-root': {
+                    color: '#DBA73B', // Default label color
+                  },
+                  
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#DBA73B', // Label color when focused
+                  },
+                }}
               />
               <TextField
                 name="receiverLastName"
@@ -448,10 +627,28 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 onChange={handleReceiverChange}
                 fullWidth
                 margin="normal"
-                sx={{ flex: 1 }}
+                sx={{ 
+                  flex: 1 ,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': {
+                      borderColor: '#DBA73B', // Border color on hover
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#DBA73B', // Border color when focused
+                    },
+                  },
+  
+                  '& .MuiInputLabel-root': {
+                    color: '#DBA73B', // Default label color
+                  },
+                  
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#DBA73B', // Label color when focused
+                  },
+                }}
               />
             </Box>
-            <Box display="flex" flexDirection="row" gap={2} mb={2}>
+            <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
               <TextField
                 name="receiverEmail"
                 label="Receiver's Email Address"
@@ -459,7 +656,25 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 onChange={handleReceiverChange}
                 fullWidth
                 margin="normal"
-                sx={{ flex: 1 }}
+                sx={{ 
+                  flex: 1 ,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': {
+                      borderColor: '#DBA73B', // Border color on hover
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#DBA73B', // Border color when focused
+                    },
+                  },
+  
+                  '& .MuiInputLabel-root': {
+                    color: '#DBA73B', // Default label color
+                  },
+                  
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#DBA73B', // Label color when focused
+                  },
+                }}
               />
               <TextField
                 name="receiverPhoneNumber"
@@ -468,13 +683,50 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 onChange={handleReceiverChange}
                 fullWidth
                 margin="normal"
-                sx={{ flex: 1 }}
+                sx={{ 
+                  flex: 1 ,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': {
+                      borderColor: '#DBA73B', // Border color on hover
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#DBA73B', // Border color when focused
+                    },
+                  },
+  
+                  '& .MuiInputLabel-root': {
+                    color: '#DBA73B', // Default label color
+                  },
+                  
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#DBA73B', // Label color when focused
+                  },
+                }}
               />
             </Box>
-            <Box display="flex" flexDirection="row" gap={2} mb={2}>
-              <FormControl fullWidth margin="normal" sx={{ flex: 1 }}>
+            <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
+              <FormControl fullWidth margin="normal" sx={{ 
+                  flex: 1 ,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': {
+                      borderColor: '#DBA73B', // Border color on hover
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#DBA73B', // Border color when focused
+                    },
+                  },
+  
+                  '& .MuiInputLabel-root': {
+                    color: '#DBA73B', // Default label color
+                  },
+                  
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#DBA73B', // Label color when focused
+                  },
+                }}>
                 <InputLabel>State of Residence</InputLabel>
                 <Select
+                   label="State of Residence"
                   value={receiverState}
                   onChange={handleStateChange}
                 >
@@ -489,11 +741,30 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   )}
                 </Select>
               </FormControl>
-              <FormControl fullWidth margin="normal" sx={{ flex: 1 }}>
+              <FormControl fullWidth margin="normal" sx={{ 
+                  flex: 1 ,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': {
+                      borderColor: '#DBA73B', // Border color on hover
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#DBA73B', // Border color when focused
+                    },
+                  },
+  
+                  '& .MuiInputLabel-root': {
+                    color: '#DBA73B', // Default label color
+                  },
+                  
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#DBA73B', // Label color when focused
+                  },
+                }}>
                 <InputLabel>City of Residence</InputLabel>
                 <Select
+                 label="city of Residence"
                   value={receiverCity}
-                  onChange={handleSelectChange}
+                  onChange={handleCityChange}
                   disabled={loadingCities || !receiverState}
                 >
                   {loadingCities ? (
@@ -515,12 +786,31 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
               onChange={handleReceiverChange}
               fullWidth
               margin="normal"
+              sx={{ 
+                flex: 1 ,
+                '& .MuiOutlinedInput-root': {
+                  '&:hover fieldset': {
+                    borderColor: '#DBA73B', // Border color on hover
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#DBA73B', // Border color when focused
+                  },
+                },
+
+                '& .MuiInputLabel-root': {
+                  color: '#DBA73B', // Default label color
+                },
+                
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: '#DBA73B', // Label color when focused
+                },
+              }}
             />
           </Box>
         )}
         {activeStep === 2 && (
             <Box>
-              <Box display="flex" flexDirection="row" gap={2} mb={2}>
+              <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
                 <TextField
                   name="monthlyMembershipFee"
                   label="Monthly Membership Fee (Paid Annually)"
@@ -528,7 +818,25 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   onChange={handlePaymentChange}
                   fullWidth
                   margin="normal"
-                  sx={{ flex: 1 }}
+                  sx={{ 
+                    flex: 1 ,
+                    '& .MuiOutlinedInput-root': {
+                      '&:hover fieldset': {
+                        borderColor: '#DBA73B', // Border color on hover
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: '#DBA73B', // Border color when focused
+                      },
+                    },
+    
+                    '& .MuiInputLabel-root': {
+                      color: '#DBA73B', // Default label color
+                    },
+                    
+                    '& .MuiInputLabel-root.Mui-focused': {
+                      color: '#DBA73B', // Label color when focused
+                    },
+                  }}
                 />
                 <TextField
                   name="totalAmount"
@@ -537,13 +845,50 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   onChange={handlePaymentChange}
                   fullWidth
                   margin="normal"
-                  sx={{ flex: 1 }}
+                  sx={{ 
+                    flex: 1 ,
+                    '& .MuiOutlinedInput-root': {
+                      '&:hover fieldset': {
+                        borderColor: '#DBA73B', // Border color on hover
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: '#DBA73B', // Border color when focused
+                      },
+                    },
+    
+                    '& .MuiInputLabel-root': {
+                      color: '#DBA73B', // Default label color
+                    },
+                    
+                    '& .MuiInputLabel-root.Mui-focused': {
+                      color: '#DBA73B', // Label color when focused
+                    },
+                  }}
                 />
               </Box>
-              <Box display="flex" flexDirection="row" gap={2} mb={2}>
-                <FormControl fullWidth margin="normal" sx={{ flex: 1 }}>
+              <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
+                <FormControl fullWidth margin="normal" sx={{ 
+                  flex: 1 ,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': {
+                      borderColor: '#DBA73B', // Border color on hover
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#DBA73B', // Border color when focused
+                    },
+                  },
+  
+                  '& .MuiInputLabel-root': {
+                    color: '#DBA73B', // Default label color
+                  },
+                  
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#DBA73B', // Label color when focused
+                  },
+                }}>
                   <InputLabel>Renewal Option</InputLabel>
                   <Select
+                    label="Renewal Option"
                     value={renewalOption}
                     onChange={handleSelectChange}
                   >
@@ -551,9 +896,28 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     <MenuItem value="manualRenew">Manual Renew</MenuItem>
                   </Select>
                 </FormControl>
-                <FormControl fullWidth margin="normal" sx={{ flex: 1 }}>
+                <FormControl fullWidth margin="normal" sx={{ 
+                  flex: 1 ,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': {
+                      borderColor: '#DBA73B', // Border color on hover
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#DBA73B', // Border color when focused
+                    },
+                  },
+  
+                  '& .MuiInputLabel-root': {
+                    color: '#DBA73B', // Default label color
+                  },
+                  
+                  '& .MuiInputLabel-root.Mui-focused': {
+                    color: '#DBA73B', // Label color when focused
+                  },
+                }}>
                   <InputLabel>Payment Method</InputLabel>
                   <Select
+                    label="Payment Method"
                     value={paymentMethod}
                     onChange={handleSelectChange}
                   >
@@ -563,7 +927,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   </Select>
                 </FormControl>
               </Box>
-              <Box display="flex" flexDirection="row" gap={2} mb={2}>
+              <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
                 <TextField
                   name="referralCode"
                   label="Enter Referral Code (optional)"
@@ -571,7 +935,25 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   onChange={handlePaymentChange}
                   fullWidth
                   margin="normal"
-                  sx={{ flex: 1 }}
+                  sx={{ 
+                    flex: 1 ,
+                    '& .MuiOutlinedInput-root': {
+                      '&:hover fieldset': {
+                        borderColor: '#DBA73B', // Border color on hover
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: '#DBA73B', // Border color when focused
+                      },
+                    },
+    
+                    '& .MuiInputLabel-root': {
+                      color: '#DBA73B', // Default label color
+                    },
+                    
+                    '& .MuiInputLabel-root.Mui-focused': {
+                      color: '#DBA73B', // Label color when focused
+                    },
+                  }}
                 />
                 <TextField
                   name="referralName"
@@ -580,7 +962,25 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   onChange={handlePaymentChange}
                   fullWidth
                   margin="normal"
-                  sx={{ flex: 1 }}
+                  sx={{ 
+                    flex: 1 ,
+                    '& .MuiOutlinedInput-root': {
+                      '&:hover fieldset': {
+                        borderColor: '#DBA73B', // Border color on hover
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: '#DBA73B', // Border color when focused
+                      },
+                    },
+    
+                    '& .MuiInputLabel-root': {
+                      color: '#DBA73B', // Default label color
+                    },
+                    
+                    '& .MuiInputLabel-root.Mui-focused': {
+                      color: '#DBA73B', // Label color when focused
+                    },
+                  }}
                 />
               </Box>
               <div>
@@ -589,7 +989,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
             </Box>
          )}
           
-        <Box mt={2} className="lg:flex justify-between items-center">
+        <Box mt={2} className="lg:flex lg:justify-between flex  justify-center items-center pt-[20px] lg:p-0">
           <Button
             disabled={activeStep === 0}
             onClick={handleBack}
@@ -605,13 +1005,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
               color: '#fff',
               width: '150px',
               minWidth: '150px',
-              padding: '8px', // Adjust padding to fit text inside the width
+              padding: '20px 10px', // Adjust padding to fit text inside the width
               fontSize: '0.75rem', // Adjust font size if needed
             }}
           >
             Back
           </Button>
-          <Button href="/laceaisuccess"
+          <Button
             disabled={!isStepValid()}
             onClick={handleNext}
             sx={{
@@ -624,7 +1024,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
               color: '#fff',
               width: '150px',
               minWidth: '150px',
-              padding: '8px', // Adjust padding to fit text inside the width
+              padding: '20px 10px', // Adjust padding to fit text inside the width
               fontSize: '0.75rem', // Adjust font size if needed
             }}
           >

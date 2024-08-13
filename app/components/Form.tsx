@@ -140,22 +140,10 @@ const Form: React.FC = () => {
   };
 
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      p={2}
-      sx={{ maxWidth: 1200, margin: 'auto' }}
-    >
+    <Box  className="w-full max-w-[600px] mx-auto lg:pt-12 pt-8 lg:p-0 p-[20px]">
       <form onSubmit={handleSubmit}>
-        <Box
-          display="flex"
-          flexDirection={{ xs: 'column', sm: 'row' }}
-          flexWrap="wrap"
-          justifyContent="center"
-        >
-          <Box width={{ xs: '100%', sm: '45%', md: 'w-96' }} p={1}>
+        <Box>
+          <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
             <TextField
               label="First Name"
               name="firstName"
@@ -164,10 +152,30 @@ const Form: React.FC = () => {
               fullWidth
               margin="normal"
               required
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '&:hover fieldset': {
+                    borderColor: '#DBA73B', // Border color on hover
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#DBA73B', // Border color when focused
+                  },
+                },
+
+                '& .MuiInputLabel-root': {
+                  color: '#DBA73B', // Default label color
+                },
+                
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: '#DBA73B', // Label color when focused
+                },
+              }}
+
+                  
             />
-          </Box>
-          <Box width={{ xs: '100%', sm: '45%', md: 'w-96' }} p={1}>
-            <TextField
+
+
+              <TextField
               label="Last Name"
               name="lastName"
               value={lastName}
@@ -175,17 +183,32 @@ const Form: React.FC = () => {
               fullWidth
               margin="normal"
               required
+
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '&:hover fieldset': {
+                    borderColor: '#DBA73B', // Border color on hover
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#DBA73B', // Border color when focused
+                  },
+                },
+
+                '& .MuiInputLabel-root': {
+                  color: '#DBA73B', // Default label color
+                },
+                
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: '#DBA73B', // Label color when focused
+                },
+
+                  
+              }}
             />
           </Box>
-        </Box>
 
-        <Box
-          display="flex"
-          flexDirection={{ xs: 'column', sm: 'row' }}
-          flexWrap="wrap"
-          justifyContent="center"
-        >
-          <Box width={{ xs: '100%', sm: '45%', md: 'w-96' }} p={1}>
+
+          <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
             <TextField
               label="Email Address"
               name="email"
@@ -195,10 +218,30 @@ const Form: React.FC = () => {
               margin="normal"
               required
               type="email"
+
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '&:hover fieldset': {
+                    borderColor: '#DBA73B', // Border color on hover
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#DBA73B', // Border color when focused
+                  },
+                },
+
+                '& .MuiInputLabel-root': {
+                  color: '#DBA73B', // Default label color
+                },
+                
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: '#DBA73B', // Label color when focused
+                },
+
+                  
+              }}
             />
-          </Box>
-          <Box width={{ xs: '100%', sm: '45%', md: 'w-96' }} p={1}>
-            <TextField
+
+              <TextField
               label="Phone Number"
               name="phoneNumber"
               value={phoneNumber}
@@ -207,116 +250,212 @@ const Form: React.FC = () => {
               margin="normal"
               required
               type="tel"
+
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '&:hover fieldset': {
+                    borderColor: '#DBA73B', // Border color on hover
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#DBA73B', // Border color when focused
+                  },
+                },
+
+                '& .MuiInputLabel-root': {
+                  color: '#DBA73B', // Default label color
+                },
+                
+                '& .MuiInputLabel-root.Mui-focused': {
+                  color: '#DBA73B', // Label color when focused
+                },
+
+                  
+              }}
             />
           </Box>
         </Box>
 
-        <Box
-          display="flex"
-          flexDirection={{ xs: 'column', sm: 'row' }}
-          flexWrap="wrap"
-          justifyContent="center"
-        >
-          <Box width={{ xs: '100%', sm: '45%', md: 'w-96' }} p={1}>
-            <FormControl fullWidth margin="normal">
-              <InputLabel>State of Residence</InputLabel>
-              <Select
-                value={selectedState}
-                onChange={handleStateChange}
-                label="State of Residence"
-                required
-              >
-                <MenuItem value="">
-                  {loadingStates ? <CircularProgress size={24} /> : 'Select your state'}
+        <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
+          <FormControl fullWidth margin="normal" 
+          sx={{
+            '& .MuiInputLabel-root': {
+              color: '#DBA73B', // Default label color
+            },
+            '& .MuiInputLabel-root.Mui-focused': {
+              color: '#DBA73B', // Label color when focused
+            },
+            '& .MuiOutlinedInput-root': {
+              '&:hover fieldset': {
+                borderColor: '#DBA73B', // Border color on hover
+              },
+              '&.Mui-focused fieldset': {
+                borderColor: '#DBA73B', // Border color when focused
+              },
+            },
+          }}
+          >
+            <InputLabel>State of Residence</InputLabel>
+            <Select
+              value={selectedState}
+              onChange={handleStateChange}
+              label="State of Residence"
+              required
+            >
+              <MenuItem value="">
+                {loadingStates ? <CircularProgress size={24} /> : 'Select your state'}
+              </MenuItem>
+              {states.map((state) => (
+                <MenuItem key={state.id} value={state.name}>
+                  {state.name}
                 </MenuItem>
-                {states.map((state) => (
-                  <MenuItem key={state.id} value={state.name}>
-                    {state.name}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Box>
-          <Box width={{ xs: '100%', sm: '45%', md: 'w-96' }} p={1}>
-            <FormControl fullWidth margin="normal">
-              <InputLabel>City of Residence</InputLabel>
-              <Select
-                value={selectedTown}
-                onChange={handleTownChange}
-                label="City of Residence"
-                required
-                disabled={!selectedState} // Disable if no state is selected
-              >
-                <MenuItem value="">
-                  {loadingTowns ? <CircularProgress size={24} /> : 'Select your city'}
+              ))}
+            </Select>
+          </FormControl>
+
+          <FormControl fullWidth margin="normal"  
+            sx={{
+              '& .MuiInputLabel-root': {
+                color: '#DBA73B', // Default label color
+              },
+              '& .MuiInputLabel-root.Mui-focused': {
+                color: '#DBA73B', // Label color when focused
+              },
+              '& .MuiOutlinedInput-root': {
+                '&:hover fieldset': {
+                  borderColor: '#DBA73B', // Border color on hover
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#DBA73B', // Border color when focused
+                },
+              },
+            }}
+          
+          >
+            <InputLabel>City of Residence</InputLabel>
+            <Select
+              value={selectedTown}
+              onChange={handleTownChange}
+              label="City of Residence"
+              required
+              disabled={!selectedState} // Disable if no state is selected
+            >
+              <MenuItem value="">
+                {loadingTowns ? <CircularProgress size={24} /> : 'Select your city'}
+              </MenuItem>
+              {towns.map((town) => (
+                <MenuItem key={town.id} value={town.name}>
+                  {town.name}
                 </MenuItem>
-                {towns.map((town) => (
-                  <MenuItem key={town.id} value={town.name}>
-                    {town.name}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Box>
+              ))}
+            </Select>
+          </FormControl>
         </Box>
 
-        <Box
-          display="flex"
-          flexDirection={{ xs: 'column', sm: 'row' }}
-          flexWrap="wrap"
-          justifyContent="center"
-        >
-          <Box width={{ xs: '100%', sm: '45%', md: 'w-96' }} p={1}>
-            <FormControl fullWidth margin="normal">
-              <InputLabel>What Interests You About LaceAI?</InputLabel>
-              <Select
-                name="interests"
-                value={interests}
-                onChange={handleSelectChange}
-                label="What Interests You About LaceAI?"
-                required
-              >
-                <MenuItem value="Customer Service">
-                  Customer Service
-                </MenuItem>
-                <MenuItem value="Personal Development">
-                  Personal Development
-                </MenuItem>
-                <MenuItem value="Leadership">
-                  Leadership
-                </MenuItem>
-                <MenuItem value="Community">
-                  Community
-                </MenuItem>
-                <MenuItem value="Volunteering">
-                  Volunteering
-                </MenuItem>
-              </Select>
-            </FormControl>
-          </Box>
-          <Box width={{ xs: '100%', sm: '45%', md: 'w-96' }} p={1}>
-            <FormControl fullWidth margin="normal">
-              <InputLabel>Where Did You Hear About Us?</InputLabel>
-              <Select
-                name="referral"
-                value={referral}
-                onChange={handleSelectChange}
-                label="Where Did You Hear About Us?"
-                required
-              >
-                <MenuItem value="Social Media">Social Media</MenuItem>
-                <MenuItem value="Friends and Family">
-                  Friends and Family
-                </MenuItem>
-                <MenuItem value="LaceAI Event">LaceAI Event</MenuItem>
-                <MenuItem value="Website">Website</MenuItem>
-              </Select>
-            </FormControl>
-          </Box>
+      
+        
+        <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
+          <FormControl fullWidth margin="normal"  
+            sx={{
+              '& .MuiInputLabel-root': {
+                color: '#DBA73B', // Default label color
+              },
+              '& .MuiInputLabel-root.Mui-focused': {
+                color: '#DBA73B', // Label color when focused
+              },
+              '& .MuiOutlinedInput-root': {
+                '&:hover fieldset': {
+                  borderColor: '#DBA73B', // Border color on hover
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#DBA73B', // Border color when focused
+                },
+              },
+            }}
+          >
+            <InputLabel>What Interests You About LaceAI?</InputLabel>
+            <Select
+              name="interests"
+              value={interests}
+              onChange={handleSelectChange}
+              label="What Interests You About LaceAI?"
+              required
+            >
+              <MenuItem value="Customer Service">
+                Customer Service
+              </MenuItem>
+              <MenuItem value="Personal Development">
+                Personal Development
+              </MenuItem>
+              <MenuItem value="Leadership">
+                Leadership
+              </MenuItem>
+              <MenuItem value="Community">
+                Community
+              </MenuItem>
+              <MenuItem value="Volunteering">
+                Volunteering
+              </MenuItem>
+            </Select>
+          </FormControl>
+
+          <FormControl fullWidth margin="normal"  
+            sx={{
+              '& .MuiInputLabel-root': {
+                color: '#DBA73B', // Default label color
+              },
+              '& .MuiInputLabel-root.Mui-focused': {
+                color: '#DBA73B', // Label color when focused
+              },
+              '& .MuiOutlinedInput-root': {
+                '&:hover fieldset': {
+                  borderColor: '#DBA73B', // Border color on hover
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#DBA73B', // Border color when focused
+                },
+              },
+            }}
+          >
+            <InputLabel>Where Did You Hear About Us?</InputLabel>
+            <Select
+              name="referral"
+              value={referral}
+              onChange={handleSelectChange}
+              label="Where Did You Hear About Us?"
+              required
+            >
+              <MenuItem value="Social Media">Social Media</MenuItem>
+              <MenuItem value="Friends and Family">
+                Friends and Family
+              </MenuItem>
+              <MenuItem value="LaceAI Event">LaceAI Event</MenuItem>
+              <MenuItem value="Website">Website</MenuItem>
+            </Select>
+          </FormControl>
         </Box>
 
         <Box display="flex" justifyContent="center" p={1}>
-          <Button type="submit" variant="contained" color="primary" disabled={!isFormValid()}>
+          <Button 
+            type="submit" 
+            variant="contained" 
+            color="primary" 
+            disabled={!isFormValid()}
+            sx={{
+              backgroundColor: '#DBA73B',
+              color: 'white',  // Specific background color
+              padding: '12px 24px', // Adjust padding as needed
+              width: {
+                xs: '100%', // 100% width on mobile
+                md: '700px', // Specific width on desktop
+              },
+              '&:hover': {
+                backgroundColor: '#c49130', // Darker shade on hover
+              },
+              '&.Mui-disabled': {
+                backgroundColor: 'rgba(219, 167, 59, 0.5)', // Same color with lower opacity when inactive
+              },
+            }}
+            >
             Submit
           </Button>
         </Box>

@@ -44,10 +44,10 @@ const Cover = () => {
       <div className="lg:pt-32 pt-16">
         <div className="flex flex-col justify-center items-center">
           <h1 className="max-w-[935px] lg:text-[48px] text-[40px] lg:leading-[58px] leading-[50px] tracking-[-1px] text-center text-Fozanova-Black">
-            Subscribe to Solace Farewell Cover, Get Up To ₦1,000,000 Cashback on Every 5 Subscriptions Paid.
+            Subscribe to Solace Farewell Cover, Get Up To ₦1,000,000 Cashback on Every<br/> 5 Subscriptions Paid.
           </h1>
           <p className="lg:pt-[30px] pt-[20px] lg:text-[17px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4%] lg:max-w-[930px] max-w-[380px] text-p-grey text-center">
-            Solace Farewell Cover (SFC) is a form of funeral management package that provides funeral expenses coverage to subscribers on behalf of themselves or their loved ones in the case of their demise. While your plan is active, we automatically reimburse you with up to ₦1,000,000 for every five subscriptions paid, depending on your plan type, if no loss of self or a loved one occurs during that period.
+            Solace Farewell Cover (SFC) is a form of funeral management package that provides funeral expenses coverage to subscribers on behalf of themselves or their loved ones in the case of their demise. While your plan is active, we automatically reimburse you with up to ₦1,000,000 for every five subscriptions paid, depending<br/> on your plan type, if no loss of self or a loved one occurs during that period.
           </p>
         </div>
 

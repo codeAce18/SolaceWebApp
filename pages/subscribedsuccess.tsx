@@ -5,7 +5,7 @@ import OvalSvg from '../public/assests/Oval.svg'
 import SendSvg from '../public/assests/Send.svg'
 
 
-const LaceAiSuccess = () => {
+const SubscribedSuccess = () => {
     return (
         <div className="relative flex flex-col justify-center items-center min-h-[100vh]">
             <div className="relative">
@@ -21,9 +21,9 @@ const LaceAiSuccess = () => {
 
                 
 
-            <h1 className="pt-10 font-normal text-[32px] leading-[38px] text-[#121933] ">Congratulations!</h1>
+            <h1 className="pt-10 font-normal text-[32px] leading-[38px] text-[#121933] text-center">Payment Made Successfully</h1>
 
-            <p className="lg:text-[17px] pt-[10px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4%] text-[#7A7D9C] max-w-[534px] text-center">Your details have been submitted successfully. You will be update from time-to-time on the progress we are making before the official launch of Lace AI</p>
+            <p className="lg:text-[17px] pt-[10px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4%] text-[#7A7D9C] max-w-[534px] text-center">Your payment was made successfully. Check your email for your receipt of payment. Thank you for subscribing. </p>
 
             <a href="/" className="pt-16">
                 <button className="bg-[#DBA73B] lg:text-[17px] text-[15px] font-semibold text-white py-[15px] lg:px-[200px] px-[80px] rounded-[8px]">
@@ -35,4 +35,4 @@ const LaceAiSuccess = () => {
 }
 
 
-export default LaceAiSuccess
+export default SubscribedSuccess

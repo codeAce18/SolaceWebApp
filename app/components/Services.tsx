@@ -18,7 +18,7 @@ export function Services() {
     const { ref: serviceRef, inView: serviceInView } = useInView();
 
     return (
-        <div className="pt-32">
+        <div className="pt-36">
             <div ref={headerRef} className={`flex flex-col items-center justify-center text-center transition-opacity duration-1000 ${headerInView ? 'opacity-100' : 'opacity-0'}`}>
                 <Image width={143} height={40} src={OurServices} alt="ourServicesImg" />
 
@@ -29,7 +29,7 @@ export function Services() {
 
             <div className="pt-10">
                 <div className="flex justify-center items-center">
-                    <div ref={serviceRef} className={`bg-Fazanova-white rounded-[16px] border-[1px] border-[#EFF0F6] py-[47px] px-[32px] max-w-[1055px] grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-20 lg:gap-y-36 gap-y-28 transition-transform duration-1000 ${serviceInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                    <div ref={serviceRef} className={`bg-Fazanova-white rounded-[16px] border-[1px] border-[#EFF0F6] py-[47px] px-[32px] max-w-[1055px] grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-20 lg:gap-y-20 gap-y-16 transition-transform duration-1000 ${serviceInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                         <div className="lg:border-r-[1px] border-r-[#EFF0F6] lg:pr-8 flex flex-col justify-center items-center">
                             <Image className="mx-auto" width={32.58} height={36} src={SolacePremium} alt="SolacePremium" />
                             <h1 className="pt-5 text-center max-w-[262px] lg:text-[28px] text-[24px] font-normal lg:leading-[32px] leading-[30px] text-Fozanova-Black">Solace Premium Farewell Cover </h1>

@@ -10,7 +10,7 @@ export function GetCard() {
     const { ref: cardRef, inView: cardInView } = useInView();
 
     return (
-        <div className="pt-32">
+        <div className="pt-24">
             <div
                 ref={cardRef}
                 className={`relative lg:rounded-[18px] bg-[#6B5AED] max-w-[1058px] lg:h-[446.5px] h-[395px] overflow-hidden mx-auto flex items-center transition-transform duration-1000 ${cardInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}

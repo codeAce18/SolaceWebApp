@@ -104,10 +104,10 @@ export function Testimonials() {
           </div>
 
           {/* Navigation Buttons */}
-          <button onClick={goToPrevious} className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-[#121933] text-white p-2 rounded-full">
+          <button onClick={goToPrevious} className="absolute lg:ml-10 top-1/2 left-0 transform -translate-y-1/2 bg-[#121933] text-white p-2 rounded-full">
             &#8249;
           </button>
-          <button onClick={goToNext} className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-[#121933] text-white p-2 rounded-full">
+          <button onClick={goToNext} className="absolute lg:mr-10 top-1/2 right-0 transform -translate-y-1/2 bg-[#121933] text-white p-2 rounded-full">
             &#8250;
           </button>
 

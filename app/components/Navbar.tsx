@@ -24,7 +24,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="lg:fixed top-0 left-0 right-0  flex w-full items-center justify-between px-[20px] py-[14px]   z-50 bg-Fozanova-Black">
+    <nav className="lg:fixed top-0 left-0 right-0  flex w-full items-center justify-between px-[20px] py-[14px]  z-50 bg-Fozanova-Black">
       <div className="flex flex-start items-center w-[100%]">
         <a href="/">
             <Image className="lg:w-[200px]" width={186} height={42} src={solaceLogo} alt="solaceLogo" />
@@ -57,18 +57,18 @@ export function Navbar() {
       <div className={`fixed top-0 left-0 w-64 h-full bg-Fozanova-Black transform ${menuOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out lg:hidden z-20`}>
         <div className="flex justify-end gap-[50px]  p-4">
             <a href="/">
-              <Image width={130} height={150} src={solaceLogo} alt='solacenavLogo' />
+              <Image width={145} height={150} src={solaceLogo} alt='solacenavLogo' />
             </a>
           <Image width={25} src={Close} alt="CloseBtn" className="cursor-pointer" onClick={toggleMenu} />
         </div>
         <div className="flex flex-col items-start px-8">
           {navLinks.map((item, index) => (
             <Link key={index} href={item.path} passHref>
-              <p className="text-Fazanova-white text-[16px] hover:text-Fozanova-gold font-medium my-4" onClick={toggleMenu}>{item.name}</p>
+              <p className="text-Fazanova-white text-[18px] hover:text-Fozanova-gold font-medium my-4" onClick={toggleMenu}>{item.name}</p>
             </Link>
           ))}
 
-            <button className=" py-[4px] px-[8px] bg-Fozanova-gold text-white text-[16px] lg:w-[261px] lg:h-[40px] font-semibold rounded-md leading-24">
+            <button className=" py-[10px] px-[15px] bg-Fozanova-gold text-white text-[18px] lg:w-[261px] lg:h-[40px] font-semibold rounded-md leading-24">
               <Link href="/healthy-elders-club">
                 <p>Join Healthy Elders Club</p>
               </Link>

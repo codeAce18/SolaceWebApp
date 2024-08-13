@@ -32,7 +32,7 @@ export function Footer() {
               <Image className="mx-auto lg:mx-0" src={solaceLogo} alt="FooterLogo" />
             </a>
           </div>
-          <div className="lg:flex gap-20 items-center">
+          <div className="lg:flex gap-[45px] items-center">
             {footerLinks.map((item, index) => (
               <Link key={index} href={item.path} passHref>
                 <p className={`Footer-links pt-[20px] lg:pt-0 mx-auto lg:mx-0 text-center text-Fazanova-white transition-transform duration-1000 ${footerInView ? 'transform translate-x-0' : 'transform translate-x-10'} hover:text-Fozanova-gold lg:text-[17px] text-[15px] font-medium leading-[27px] tracking-[-0.2%]`}>
@@ -74,11 +74,11 @@ export function Footer() {
         </div>
 
         <div className="lg:flex items-center justify-between max-w-[1280px] mx-auto pt-[25px]">
-          <p className="lg:max-w-[781px] max-w-[300px] mx-auto lg:mx-0 text-center lg:text-left lg:text-[12px] text-[10px] font-normal leading=[18px] tracking-[0.4px] text-white">
+          <p className="lg:max-w-[781px] max-w-[300px] mx-auto lg:mx-0 text-center lg:text-left lg:text-[12px] text-[10px] font-normal leading=[18px] tracking-[0.4px] text-white lg:pl-20 pl-0">
             © 2024 Gmonie Technologies Ltd. All rights reserved. Solace is a health technology platform, not an insurance company or a bank. All services are provided by our licensed partners. By using this website, you accept our <span className="text-[#DBA73B]">Terms of Use</span> and <span className="text-[#DBA73B]">Privacy Policy.</span>
           </p>
 
-          <div className="flex items-center gap-[15px] justify-center lg:justify-end pt-[10px]">
+          <div className="flex items-center gap-[15px] justify-center lg:justify-end pt-[10px] lg:pr-20">
             <a href="/">
               <Image width={13.87} height={16} src={TiktokSvg} alt="tiktoksvg" />
             </a>
