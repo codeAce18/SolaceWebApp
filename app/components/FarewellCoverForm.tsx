@@ -791,46 +791,46 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 color: '#646464', // Label color when focused
               }, 
             }}>
-                    <InputLabel>Beneficiary's gender</InputLabel>
-                    <Select
-                    name="receiverGender"
-                    label="Beneficiary's gender"
-                    value={receiverGender}
-                    onChange={handleGenderChange}
-                    placeholder='Select your gender'
-                    >
-                    <MenuItem value="Male">Male</MenuItem>
-                    <MenuItem value="Female">Female</MenuItem>
-                    <MenuItem value="Other">Other</MenuItem>
-                    {/* Add other gender options if needed */}
-                    </Select>
-                </FormControl>
+            <InputLabel>Beneficiary's gender</InputLabel>
+            <Select
+            name="receiverGender"
+            label="Beneficiary's gender"
+            value={receiverGender}
+            onChange={handleGenderChange}
+            placeholder='Select your gender'
+            >
+            <MenuItem value="Male">Male</MenuItem>
+            <MenuItem value="Female">Female</MenuItem>
+            <MenuItem value="Other">Other</MenuItem>
+            {/* Add other gender options if needed */}
+            </Select>
+        </FormControl>
                 
-                <TextField
-                    name="receiverDOB"
-                    label="Beneficiary's date of birth"
-                    type="date"
-                    value={receiverDOB}
-                    onChange={handleDOBChange}
-                    fullWidth
-                    InputLabelProps={{ shrink: true }}
-                    sx={{
-                    flex: 1,
-                    marginTop: 2,
-                    '& .MuiOutlinedInput-root': {
-                        '&:hover fieldset': { borderColor: '#DBA73B' },
-                        '&.Mui-focused fieldset': { borderColor: '#DBA73B' },
-                    },
-                    '& .MuiInputLabel-root': {
-                      color: '#646464', // Default label color
-                    },
-                    
-                    '& .MuiInputLabel-root.Mui-focused': {
-                      color: '#646464', // Label color when focused
-                    },
-                    }}
-                />
-            </Box>
+        <TextField
+            name="receiverDOB"
+            label="Beneficiary's date of birth"
+            type="date"
+            value={receiverDOB}
+            onChange={handleDOBChange}
+            fullWidth
+            InputLabelProps={{ shrink: true }}
+            sx={{
+            flex: 1,
+            marginTop: 2,
+            '& .MuiOutlinedInput-root': {
+                '&:hover fieldset': { borderColor: '#DBA73B' },
+                '&.Mui-focused fieldset': { borderColor: '#DBA73B' },
+            },
+            '& .MuiInputLabel-root': {
+              color: '#646464', // Default label color
+            },
+            
+            '& .MuiInputLabel-root.Mui-focused': {
+              color: '#646464', // Label color when focused
+            },
+            }}
+        />
+        </Box>
             <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
               <FormControl fullWidth margin="normal" sx={{ 
                   flex: 1 ,
@@ -1006,7 +1006,9 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
             <FileUpload onDrop={handleFileUpload} />
           </Box>
         </Box>
-        )}
+      )}&rbrace;
+
+
         {activeStep === 2 && (
             <Box>
               <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
