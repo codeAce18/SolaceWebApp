@@ -163,11 +163,10 @@ const Form: React.FC = () => {
                 },
 
                 '& .MuiInputLabel-root': {
-                  color: '#DBA73B', // Default label color
+                  color: '#646464', // Default label color
                 },
-                
                 '& .MuiInputLabel-root.Mui-focused': {
-                  color: '#DBA73B', // Label color when focused
+                  color: '#646464', // Label color when focused
                 },
               }}
 
@@ -195,13 +194,11 @@ const Form: React.FC = () => {
                 },
 
                 '& .MuiInputLabel-root': {
-                  color: '#DBA73B', // Default label color
+                  color: '#646464', // Default label color
                 },
-                
                 '& .MuiInputLabel-root.Mui-focused': {
-                  color: '#DBA73B', // Label color when focused
+                  color: '#646464', // Label color when focused
                 },
-
                   
               }}
             />
@@ -230,11 +227,10 @@ const Form: React.FC = () => {
                 },
 
                 '& .MuiInputLabel-root': {
-                  color: '#DBA73B', // Default label color
+                  color: '#646464', // Default label color
                 },
-                
                 '& .MuiInputLabel-root.Mui-focused': {
-                  color: '#DBA73B', // Label color when focused
+                  color: '#646464', // Label color when focused
                 },
 
                   
@@ -262,11 +258,10 @@ const Form: React.FC = () => {
                 },
 
                 '& .MuiInputLabel-root': {
-                  color: '#DBA73B', // Default label color
+                  color: '#646464', // Default label color
                 },
-                
                 '& .MuiInputLabel-root.Mui-focused': {
-                  color: '#DBA73B', // Label color when focused
+                  color: '#646464', // Label color when focused
                 },
 
                   
@@ -279,10 +274,10 @@ const Form: React.FC = () => {
           <FormControl fullWidth margin="normal" 
           sx={{
             '& .MuiInputLabel-root': {
-              color: '#DBA73B', // Default label color
+              color: '#646464', // Default label color
             },
             '& .MuiInputLabel-root.Mui-focused': {
-              color: '#DBA73B', // Label color when focused
+              color: '#646464', // Label color when focused
             },
             '& .MuiOutlinedInput-root': {
               '&:hover fieldset': {
@@ -315,10 +310,10 @@ const Form: React.FC = () => {
           <FormControl fullWidth margin="normal"  
             sx={{
               '& .MuiInputLabel-root': {
-                color: '#DBA73B', // Default label color
+                color: '#646464', // Default label color
               },
               '& .MuiInputLabel-root.Mui-focused': {
-                color: '#DBA73B', // Label color when focused
+                color: '#646464', // Label color when focused
               },
               '& .MuiOutlinedInput-root': {
                 '&:hover fieldset': {
@@ -357,10 +352,10 @@ const Form: React.FC = () => {
           <FormControl fullWidth margin="normal"  
             sx={{
               '& .MuiInputLabel-root': {
-                color: '#DBA73B', // Default label color
+                color: '#646464', // Default label color
               },
               '& .MuiInputLabel-root.Mui-focused': {
-                color: '#DBA73B', // Label color when focused
+                color: '#646464', // Label color when focused
               },
               '& .MuiOutlinedInput-root': {
                 '&:hover fieldset': {
@@ -401,10 +396,10 @@ const Form: React.FC = () => {
           <FormControl fullWidth margin="normal"  
             sx={{
               '& .MuiInputLabel-root': {
-                color: '#DBA73B', // Default label color
+                color: '#646464', // Default label color
               },
               '& .MuiInputLabel-root.Mui-focused': {
-                color: '#DBA73B', // Label color when focused
+                color: '#646464', // Label color when focused
               },
               '& .MuiOutlinedInput-root': {
                 '&:hover fieldset': {

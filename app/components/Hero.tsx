@@ -21,8 +21,8 @@ export function Hero() {
 
     useEffect(() => {
         if (statsInView) {
-            const countUp1 = new CountUp(count1Ref.current as HTMLElement, 8000, { duration: 2, formattingFn: (num) => num.toFixed(0) });
-            const countUp2 = new CountUp(count2Ref.current as HTMLElement, 2425, { duration: 2 });
+            const countUp1 = new CountUp(count1Ref.current as HTMLElement, 4000, { duration: 2, formattingFn: (num) => num.toFixed(0) });
+            const countUp2 = new CountUp(count2Ref.current as HTMLElement, 1425, { duration: 2 });
             const countUp3 = new CountUp(count3Ref.current as HTMLElement, 98, { duration: 2 });
             if (!countUp1.error) countUp1.start();
             if (!countUp2.error) countUp2.start();
@@ -85,23 +85,23 @@ export function Hero() {
                     transition={{ duration: 1 }}
                     className={`pt-10`}
                 >
-                    <div className="bg-Fazanova-white max-w-[931px] border border-border-custom py-[16px] rounded-xl px-[48px] flex text-center lg:flex-row flex-col lg:gap-32 gap-20 mx-auto">
-                        <div className="text-center">
+                    <div className="bg-Fazanova-white max-w-[1058px] border border-border-custom py-[16px] rounded-xl px-[48px] flex text-center lg:flex-row flex-col lg:gap-32 gap-20 mx-auto">
+                        <div className="text-center ">
                             <h1 className="text-center text-[44px] font-bold leading-[58px] text-Fozanova-gold">
-                                <span ref={count1Ref}>0</span>K
+                                <span ref={count1Ref}>0</span>
                             </h1>
                             <p className="text-[17px] text-center font-semibold leading-[24px] text-Fozanova-Black">Active App Users</p>
                         </div>
 
-                        <div className='lg:border-l-[1px] lg:border-r-[1px] lg:border-r-border-custom lg:border-l-border-custom lg:pl-10 lg:pr-10'>
+                        <div className='lg:border-l-[1px] lg:border-r-[1px] lg:border-r-border-custom lg:border-l-border-custom lg:pl-20 lg:pr-20'>
                             <h1 className="text-center text-[44px] font-bold leading-[58px] text-Fozanova-gold">
                                 <span ref={count2Ref}>0</span>
                             </h1>
                             <p className="text-[17px] text-center font-semibold leading-[24px] text-Fozanova-Black">Caregivers & Partners</p>
                         </div>
 
-                        <div>
-                            <h1 className="text-center text-[44px] font-bold leading-[58px] text-Fozanova-gold">
+                        <div className="lg:pr-10">
+                            <h1 className="text-center text-[44px]  font-bold leading-[58px] text-Fozanova-gold">
                                 <span ref={count3Ref}>0</span>%
                             </h1>
                             <p className="text-[17px] text-center font-semibold leading-[24px] text-Fozanova-Black">Satisfied Customers</p>

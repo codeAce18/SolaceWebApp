@@ -111,7 +111,7 @@ const HealthyEldersClub = () => {
                     <p className="pt-[13px] font-normal lg:text-[17px] text-[15px] leading-[26px] tracking-[-0.4%] lg:max-w-[824px] max-w-[350px] text-p-grey">The process of joining the exclusive Health Elders Club is simple and straight forward. The benefits and privileges are carefully designed for older adults who wants premium care services and comfort.</p>
                 </div>
 
-                <div className="p-10">
+                <div className="p-5 pt-10">
                     <div className="flex justify-center items-center">
                         <div className="bg-Fazanova-white rounded-[16px] border-[1px] border-[#EFF0F6] py-[47px] px-[65px] max-w-[1168px] grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-20 lg:gap-y-20 gap-y-16">
                             <div className="lg:border-r-[1px] border-r-[#EFF0F6]  lg:pr-8  flex flex-col justify-center items-center">

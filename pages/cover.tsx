@@ -28,8 +28,8 @@ const PaymentPlans = {
 const PaymentPlanKeys = ['quarterly', 'biannual', 'annual'] as const;
 type PaymentPlanKey = typeof PaymentPlanKeys[number];
 const Cover = () => {
-  const [selectedPlan, setSelectedPlan] = useState(PaymentPlans.quarterly);
-  const [selectedButton, setSelectedButton] = useState('quarterly');
+  const [selectedPlan, setSelectedPlan] = useState(PaymentPlans.annual);
+  const [selectedButton, setSelectedButton] = useState('annual');
 
  
   const handleButtonClick = (button: PaymentPlanKey) => {
@@ -43,10 +43,10 @@ const Cover = () => {
       <Navbar />
       <div className="lg:pt-32 pt-16">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="max-w-[935px] lg:text-[48px] text-[40px] lg:leading-[58px] leading-[50px] tracking-[-1px] text-center text-Fozanova-Black">
+          <h1 className="lg:max-w-[935px] max-w-[350px] lg:text-[48px] text-[40px] lg:leading-[58px] leading-[50px] tracking-[-1px] text-center text-Fozanova-Black">
             Subscribe to Solace Farewell Cover, Get Up To ₦1,000,000 Cashback on Every<br/> 5 Subscriptions Paid.
           </h1>
-          <p className="lg:pt-[30px] pt-[20px] lg:text-[17px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4%] lg:max-w-[930px] max-w-[380px] text-p-grey text-center">
+          <p className="lg:pt-[30px] pt-[20px] lg:text-[17px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4%] lg:max-w-[930px] max-w-[350px] text-p-grey text-center">
             Solace Farewell Cover (SFC) is a form of funeral management package that provides funeral expenses coverage to subscribers on behalf of themselves or their loved ones in the case of their demise. While your plan is active, we automatically reimburse you with up to ₦1,000,000 for every five subscriptions paid, depending<br/> on your plan type, if no loss of self or a loved one occurs during that period.
           </p>
         </div>
@@ -74,7 +74,7 @@ const Cover = () => {
 
                   <div className="pt-[30px] lg:pt-[35px]">
                     <div className="flex flex-col justify-center items-center">
-                      <Link href="/" >
+                      <Link href="/farewellcoversubscriptionform" >
                         <button className="lg:text-[17px] text-[15px] font-semibold rounded-[8px] lg:leading-[24px] leading-[22px] mx-auto text-Fazanova-white bg-Fozanova-gold w-[240px] h-[48px]">
                           Subscribe
                         </button>

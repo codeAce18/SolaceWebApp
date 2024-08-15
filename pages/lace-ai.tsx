@@ -42,7 +42,7 @@ const LaceAI = () => {
             <div className="flex flex-col items-center justify-center">
               <Image src={JoinTheWaitingListSvg } alt="JoinTheWaitingListSvg " />
 
-              <h1 className="max-w-[800px] lg:text-[48px] text-[40px] text-Fozanova-Black leading-[58px] font-normal text-center">Join hundreds on the waiting list to experience Lace AI in Africa</h1>
+              <h1 className="lg:max-w-[800px] max-w-[350px] lg:text-[48px] text-[40px] text-Fozanova-Black leading-[50px] lg:leading-[58px] font-normal text-center">Join hundreds on the waiting list to experience Lace AI in Africa</h1>
               <p className="text-p-grey lg:leading-[26px] leading-[22px] text-center tracking-[-0.2px] max-w-[742px] lg:text-[18px] text-[16px]">Fill the form below and you will be among the first enjoy our freebies when we launch Lace AI.</p>
             </div>
           </div>
