@@ -4,6 +4,7 @@ import Image from "next/image";
 import PartnerWithUsSvg from '../../public/assests/PartnerWithUs.svg';
 import PartnerWithUsImg from '../../public/assests/partnerwithus.png';
 import { useInView } from 'react-intersection-observer';
+import Link from "next/link"
 
 export function PartnerWithUs() {
     const { ref: sectionRef, inView: sectionInView } = useInView();
@@ -31,11 +32,11 @@ export function PartnerWithUs() {
                         <p className="pt-5 lg:pt-0 font-normal lg:text-[17px] text-[15px] text-p-grey leading-[26px] tracking-[-0.4%] max-w-[440px]">
                             Join forces with us to elevate your business and make a meaningful impact! We are teaming up with licensed pharmacies, hospitals and laboratories across Nigeria to offer exclusive privileges and benefits to over 500,000 elders. Our members enjoy cashback on medical expenses, priority services and more at our partner locations. Become a Solace Partner and provide elderly Nigerians the exceptional care they deserve while boosting your patronage. Together, let&apos;s give the elders of Nigeria the Solace they truly need.
                         </p>
-                        <a href="/partnerwithus" className="lg:pt-[17px] pt-[40px]">
+                        <Link href="/partnerwithus" className="lg:pt-[17px] pt-[40px]">
                             <button className="border-[1px] border-[#DBA73B] bg-Fozanova-gold text-Fazanova-white font-semibold lg:text-[17px] text-[15px] leading-[24px] lg:w-[439px] py-[12px] px-[12px] rounded-[8px]">
                                 <span className="lg:max-w-[335px]">Click Here to Become a Solace Partner</span>
                             </button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
