@@ -683,7 +683,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
 
                 <TextField
                   name="receiverFirstName"
-                  label="Beneficiary's first Name"
+                  label="Beneficiary&apos;s first Name"
                   value={receiverFirstName}
                   onChange={handleReceiverChange}
                   fullWidth
@@ -717,7 +717,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
             <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
               <TextField
                 name="receiverLastName"
-                label="Beneficiary's last Name"
+                label="Beneficiary&apos;s last Name"
                 value={receiverLastName}
                 onChange={handleReceiverChange}
                 fullWidth
@@ -745,7 +745,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
 
               <TextField
                 name="receiverPhoneNumber"
-                label="Beneficiary's phone number"
+                label="Beneficiary&apos;s phone number"
                 value={receiverPhoneNumber}
                 onChange={handleReceiverChange}
                 fullWidth
@@ -791,10 +791,10 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 color: '#646464', // Label color when focused
               }, 
             }}>
-            <InputLabel>Beneficiary's gender</InputLabel>
+            <InputLabel>Beneficiary&apos;s gender</InputLabel>
             <Select
             name="receiverGender"
-            label="Beneficiary's gender"
+            label="Beneficiary&apos;s gender"
             value={receiverGender}
             onChange={handleGenderChange}
             placeholder='Select your gender'
@@ -808,7 +808,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 
         <TextField
             name="receiverDOB"
-            label="Beneficiary's date of birth"
+            label="Beneficiary&apos;s date of birth"
             type="date"
             value={receiverDOB}
             onChange={handleDOBChange}
@@ -851,9 +851,9 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     color: '#646464', // Label color when focused
                   },
                 }}>
-                <InputLabel>Beneficiary's state of residence</InputLabel>
+                <InputLabel>Beneficiary&apos;s state of residence</InputLabel>
                 <Select
-                   label="Beneficiary's state of residence"
+                   label="Beneficiary&apos;s state of residence"
                   value={receiverState}
                   onChange={handleStateChange}
                 >
@@ -887,9 +887,9 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     color: '#646464', // Label color when focused
                   },
                 }}>
-                <InputLabel>Beneficiary's LGA of residence</InputLabel>
+                <InputLabel>Beneficiary&apos;s LGA of residence</InputLabel>
                 <Select
-                 label="Beneficiary's state of residence"
+                 label="Beneficiary&apos;s state of residence"
                   value={receiverCity}
                   onChange={handleCityChange}
                   disabled={loadingCities || !receiverState}
@@ -908,7 +908,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
             </Box>
             <TextField
               name="receiverAddress"
-              label="Beneficiary's residential address"
+              label="Beneficiary&apos;s residential address"
               value={receiverAddress}
               onChange={handleReceiverChange}
               fullWidth
@@ -1006,8 +1006,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
             <FileUpload onDrop={handleFileUpload} />
           </Box>
         </Box>
-      )}&rbrace;
-
+      )}
 
         {activeStep === 2 && (
             <Box>
