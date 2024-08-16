@@ -1013,7 +1013,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
               <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
                 <TextField
                   name="monthlyMembershipFee"
-                  label="Monthly Membership Fee (Paid Annually)"
+                  label="Worth of service benefit"
                   value={monthlyMembershipFee}
                   onChange={handlePaymentChange}
                   fullWidth
@@ -1039,9 +1039,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   }}
                 />
                 
-              </Box>
-              <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
-                {/* <FormControl fullWidth margin="normal" sx={{ 
+                <FormControl fullWidth margin="normal" sx={{ 
                   flex: 1 ,
                   '& .MuiOutlinedInput-root': {
                     '&:hover fieldset': {
@@ -1069,7 +1067,9 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     <MenuItem value="autoRenew">Auto Renew On</MenuItem>
                     <MenuItem value="manualRenew">Manual Renew</MenuItem>
                   </Select>
-                </FormControl> */}
+                </FormControl> 
+              </Box>
+              <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
                 <TextField
                   name="totalAmount"
                   label="Total Amount to be Paid"

@@ -348,12 +348,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     },
                   },
   
+                  
                   '& .MuiInputLabel-root': {
-                    color: '#DBA73B', // Default label color
+                    color: '#646464', // Default label color
                   },
                   
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#DBA73B', // Label color when focused
+                    color: '#646464', // Label color when focused
                   },
                 }}
               />
@@ -378,12 +379,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     },
                   },
   
+                 
                   '& .MuiInputLabel-root': {
-                    color: '#DBA73B', // Default label color
+                    color: '#646464', // Default label color
                   },
                   
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#DBA73B', // Label color when focused
+                    color: '#646464', // Label color when focused
                   },
                 }}
               />
@@ -407,12 +409,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     },
                   },
   
+                  
                   '& .MuiInputLabel-root': {
-                    color: '#DBA73B', // Default label color
+                    color: '#646464', // Default label color
                   },
                   
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#DBA73B', // Label color when focused
+                    color: '#646464', // Label color when focused
                   },
                 }}
               />
@@ -434,12 +437,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     },
                   },
   
+                  
                   '& .MuiInputLabel-root': {
-                    color: '#DBA73B', // Default label color
+                    color: '#646464', // Default label color
                   },
                   
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#DBA73B', // Label color when focused
+                    color: '#646464', // Label color when focused
                   },
                 }}
               />
@@ -463,12 +467,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     },
                   },
   
+                 
                   '& .MuiInputLabel-root': {
-                    color: '#DBA73B', // Default label color
+                    color: '#646464', // Default label color
                   },
                   
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#DBA73B', // Label color when focused
+                    color: '#646464', // Label color when focused
                   },
                 }}
               />
@@ -483,12 +488,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     },
                   },
   
+                 
                   '& .MuiInputLabel-root': {
-                    color: '#DBA73B', // Default label color
+                    color: '#646464', // Default label color
                   },
                   
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#DBA73B', // Label color when focused
+                    color: '#646464', // Label color when focused
                   },
                 }}>
                 <InputLabel>How Did You Hear About Us?</InputLabel>
@@ -524,12 +530,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   },
                 },
 
+               
                 '& .MuiInputLabel-root': {
-                  color: '#DBA73B', // Default label color
+                  color: '#646464', // Default label color
                 },
                 
                 '& .MuiInputLabel-root.Mui-focused': {
-                  color: '#DBA73B', // Label color when focused
+                  color: '#646464', // Label color when focused
                 },
               }}
               InputProps={{
@@ -565,12 +572,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   },
                 },
 
+               
                 '& .MuiInputLabel-root': {
-                  color: '#DBA73B', // Default label color
+                  color: '#646464', // Default label color
                 },
                 
                 '& .MuiInputLabel-root.Mui-focused': {
-                  color: '#DBA73B', // Label color when focused
+                  color: '#646464', // Label color when focused
                 },
               }}
               InputProps={{
@@ -611,12 +619,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     },
                   },
   
+                  
                   '& .MuiInputLabel-root': {
-                    color: '#DBA73B', // Default label color
+                    color: '#646464', // Default label color
                   },
                   
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#DBA73B', // Label color when focused
+                    color: '#646464', // Label color when focused
                   },
                 }}
               />
@@ -638,12 +647,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     },
                   },
   
+                 
                   '& .MuiInputLabel-root': {
-                    color: '#DBA73B', // Default label color
+                    color: '#646464', // Default label color
                   },
                   
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#DBA73B', // Label color when focused
+                    color: '#646464', // Label color when focused
                   },
                 }}
               />
@@ -667,12 +677,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     },
                   },
   
+                 
                   '& .MuiInputLabel-root': {
-                    color: '#DBA73B', // Default label color
+                    color: '#646464', // Default label color
                   },
                   
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#DBA73B', // Label color when focused
+                    color: '#646464', // Label color when focused
                   },
                 }}
               />
@@ -694,12 +705,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     },
                   },
   
+
                   '& .MuiInputLabel-root': {
-                    color: '#DBA73B', // Default label color
+                    color: '#646464', // Default label color
                   },
                   
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#DBA73B', // Label color when focused
+                    color: '#646464', // Label color when focused
                   },
                 }}
               />
@@ -716,12 +728,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     },
                   },
   
+                  
                   '& .MuiInputLabel-root': {
-                    color: '#DBA73B', // Default label color
+                    color: '#646464', // Default label color
                   },
                   
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#DBA73B', // Label color when focused
+                    color: '#646464', // Label color when focused
                   },
                 }}>
                 <InputLabel>State of Residence</InputLabel>
@@ -752,12 +765,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     },
                   },
   
+                  
                   '& .MuiInputLabel-root': {
-                    color: '#DBA73B', // Default label color
+                    color: '#646464', // Default label color
                   },
                   
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#DBA73B', // Label color when focused
+                    color: '#646464', // Label color when focused
                   },
                 }}>
                 <InputLabel>City of Residence</InputLabel>
@@ -797,12 +811,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   },
                 },
 
+                
                 '& .MuiInputLabel-root': {
-                  color: '#DBA73B', // Default label color
+                  color: '#646464', // Default label color
                 },
                 
                 '& .MuiInputLabel-root.Mui-focused': {
-                  color: '#DBA73B', // Label color when focused
+                  color: '#646464', // Label color when focused
                 },
               }}
             />
@@ -829,12 +844,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                       },
                     },
     
+                    
                     '& .MuiInputLabel-root': {
-                      color: '#DBA73B', // Default label color
+                      color: '#646464', // Default label color
                     },
                     
                     '& .MuiInputLabel-root.Mui-focused': {
-                      color: '#DBA73B', // Label color when focused
+                      color: '#646464', // Label color when focused
                     },
                   }}
                 />
@@ -856,12 +872,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                       },
                     },
     
+                    
                     '& .MuiInputLabel-root': {
-                      color: '#DBA73B', // Default label color
+                      color: '#646464', // Default label color
                     },
                     
                     '& .MuiInputLabel-root.Mui-focused': {
-                      color: '#DBA73B', // Label color when focused
+                      color: '#646464', // Label color when focused
                     },
                   }}
                 />
@@ -878,12 +895,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     },
                   },
   
+                  
                   '& .MuiInputLabel-root': {
-                    color: '#DBA73B', // Default label color
+                    color: '#646464', // Default label color
                   },
                   
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#DBA73B', // Label color when focused
+                    color: '#646464', // Label color when focused
                   },
                 }}>
                   <InputLabel>Renewal Option</InputLabel>
@@ -907,12 +925,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     },
                   },
   
+                 
                   '& .MuiInputLabel-root': {
-                    color: '#DBA73B', // Default label color
+                    color: '#646464', // Default label color
                   },
                   
                   '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#DBA73B', // Label color when focused
+                    color: '#646464', // Label color when focused
                   },
                 }}>
                   <InputLabel>Payment Method</InputLabel>
@@ -946,12 +965,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                       },
                     },
     
+                    
                     '& .MuiInputLabel-root': {
-                      color: '#DBA73B', // Default label color
+                      color: '#646464', // Default label color
                     },
                     
                     '& .MuiInputLabel-root.Mui-focused': {
-                      color: '#DBA73B', // Label color when focused
+                      color: '#646464', // Label color when focused
                     },
                   }}
                 />
@@ -973,12 +993,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                       },
                     },
     
+                   
                     '& .MuiInputLabel-root': {
-                      color: '#DBA73B', // Default label color
+                      color: '#646464', // Default label color
                     },
                     
                     '& .MuiInputLabel-root.Mui-focused': {
-                      color: '#DBA73B', // Label color when focused
+                      color: '#646464', // Label color when focused
                     },
                   }}
                 />

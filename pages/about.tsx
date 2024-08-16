@@ -83,7 +83,7 @@ const About = () => {
             <p className="pt-[10px] text-center font-normal lg:text-[17px] text-[15px] leading-[27px] tracking-[-0.2px] text-p-grey lg:max-w-[800px] max-w-[400px]">Our core values are essentially our guiding principles, the beliefs that inform every action we take and every decision we make. Below are the values in which the Solace brand is built on.</p>
           </div>
 
-          <div className="p-10">
+          <div className="p-5">
             <div className="flex justify-center items-center">
               <motion.div 
                 variants={imageVariants}
