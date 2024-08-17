@@ -89,18 +89,21 @@ const FarewellCoverForm: React.FC = () => {
   const [loadingStates, setLoadingStates] = useState<boolean>(true);
   const [loadingCities, setLoadingCities] = useState<boolean>(true);
 
-    const [monthlyMembershipFee, setMonthlyMembershipFee] = useState<string>('');
-    const [totalAmount, setTotalAmount] = useState<string>('');
-    const [renewalOption, setRenewalOption] = useState<string>('autoRenew');
-    const [paymentMethod, setPaymentMethod] = useState<string>('debitCard');
-    const [referralName, setReferralName] = useState<string>('');
+  const [monthlyMembershipFee, setMonthlyMembershipFee] = useState<string>('');
+  const [totalAmount, setTotalAmount] = useState<string>('');
+  const [renewalOption, setRenewalOption] = useState<string>('autoRenew');
+  const [paymentMethod, setPaymentMethod] = useState<string>('debitCard');
+  const [referralName, setReferralName] = useState<string>('');
 
-    const [receiverSalutation, setReceiverSalutation] = useState('');
-    const [receiverGender, setReceiverGender] = useState('');
-    const [receiverDOB, setReceiverDOB] = useState('');
-    const [receiverHealthCondition, setReceiverHealthCondition] = useState('');
-    const [receiverReferralSource, setReceiverReferralSource] = useState('');
-    const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+  const [receiverSalutation, setReceiverSalutation] = useState('');
+  const [receiverGender, setReceiverGender] = useState('');
+  const [receiverDOB, setReceiverDOB] = useState('');
+  const [receiverHealthCondition, setReceiverHealthCondition] = useState('');
+  const [receiverReferralSource, setReceiverReferralSource] = useState('');
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+  const [serviceDuration, setServiceDuration] = useState('');
+  const [farewellPlan, setFarewellPlan] = useState('');
+
 
 
 const handlePaymentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -963,10 +966,11 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 label="Current Health Condition of Beneficiary"
                 onChange={handleHealthConditionChange}
               >
-                <MenuItem value="Good">Good</MenuItem>
-                <MenuItem value="Fair">Fair</MenuItem>
-                <MenuItem value="Poor">Poor</MenuItem>
-                <MenuItem value="Other">Other</MenuItem>
+                <MenuItem value="Good">Chronic and Metabolic disease</MenuItem>
+                <MenuItem value="Fair">Cognitive & Mental Health Issue</MenuItem>
+                <MenuItem value="Poor">Gastrointestinal Health Condition</MenuItem>
+                <MenuItem value="Other">Physical and Nutritional Health Issue</MenuItem>
+                <MenuItem value="Other">No Health Issue Whatsoever</MenuItem>
               </Select>
             </FormControl>
 
@@ -994,9 +998,12 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 label="How did you hear about us?"
                 onChange={handleReferralSourceChange}
               >
-                <MenuItem value="Social Media">Social Media</MenuItem>
-                <MenuItem value="Friend">Friend</MenuItem>
-                <MenuItem value="Advertisement">Advertisement</MenuItem>
+                <MenuItem value="Social Media">Father</MenuItem>
+                <MenuItem value="Friend">Mother</MenuItem>
+                <MenuItem value="Advertisement">Uncle</MenuItem>
+                <MenuItem value="Advertisement">Auntie</MenuItem>
+                <MenuItem value="Advertisement">Grandfather</MenuItem>
+                <MenuItem value="Advertisement">Grandmother</MenuItem>
                 {/* Add other referral sources as needed */}
               </Select>
             </FormControl>
@@ -1011,6 +1018,30 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
         {activeStep === 2 && (
             <Box>
               <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
+                
+                <FormControl fullWidth margin="normal" sx={{ flex: 1,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': { borderColor: '#DBA73B' },
+                    '&.Mui-focused fieldset': { borderColor: '#DBA73B' },
+                  },
+                  '& .MuiInputLabel-root': { color: '#646464' },
+                  '& .MuiInputLabel-root.Mui-focused': { color: '#646464' },
+                }}>
+                  <InputLabel>Choose a Farewell Plan</InputLabel>
+                  <Select
+                    name="farewellPlan"
+                    label="Choose a Farewell Plan"
+                    value={farewellPlan}
+                    onChange={(e) => setFarewellPlan(e.target.value)}
+                  >
+                    <MenuItem value="Basic">Pink Diamond Plan</MenuItem>
+                    <MenuItem value="Standard">Blue Diamond Plan</MenuItem>
+                    <MenuItem value="Premium">Red Diamond Plan</MenuItem>
+                    {/* Add other options as needed */}
+                  </Select>
+                </FormControl>
+
+
                 <TextField
                   name="monthlyMembershipFee"
                   label="Worth of service benefit"
@@ -1038,6 +1069,29 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     },
                   }}
                 />
+              </Box>
+              <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
+                <FormControl fullWidth margin="normal" sx={{ flex: 1,
+                  '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': { borderColor: '#DBA73B' },
+                    '&.Mui-focused fieldset': { borderColor: '#DBA73B' },
+                  },
+                  '& .MuiInputLabel-root': { color: '#646464' },
+                  '& .MuiInputLabel-root.Mui-focused': { color: '#646464' },
+                }}>
+                  <InputLabel>Select Duration of Service</InputLabel>
+                  <Select
+                    name="serviceDuration"
+                    label="Select Duration of Service"
+                    value={serviceDuration}
+                    onChange={(e) => setServiceDuration(e.target.value)}
+                  >
+                    <MenuItem value="1 Month">Per Quaterly</MenuItem>
+                    <MenuItem value="3 Months">Per Bi-Annual</MenuItem>
+                    <MenuItem value="6 Months">Per Annual</MenuItem>
+                    {/* Add other options as needed */}
+                  </Select>
+                </FormControl>
                 
                 <FormControl fullWidth margin="normal" sx={{ 
                   flex: 1 ,
@@ -1067,8 +1121,9 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     <MenuItem value="autoRenew">Auto Renew On</MenuItem>
                     <MenuItem value="manualRenew">Manual Renew</MenuItem>
                   </Select>
-                </FormControl> 
+                </FormControl>
               </Box>
+                
               <Box className="lg:flex  lg:flex-row flex flex-col" gap={2} mb={2}>
                 <TextField
                   name="totalAmount"

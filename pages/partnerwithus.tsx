@@ -27,7 +27,7 @@ const partnerwithus = () => {
                     <div className="lg:border-r-[1px] border-r-[#EFF0F6] lg:pr-8 pr-0">
                         <Image className="mx-auto" src={PharmacyIcon} alt="PharmacyIcon" />
                         <h6 className="text-center lg:text-[20px] text-[17px] text-Fozanova-Black lg:leading-[27.42px] leading-[25px] tracking-[-0.96px] pt-[5px] font-medium">Pharmacies</h6>
-                        <Link href="/">
+                        <Link href="/partnerpharmacyform">
                             <h6 className="text-center  text-Fozanova-gold lg:text-[17px] text-[15px] tracking-[-0.4%] lg:leading-[26px] leading-[22px]">Register Here</h6>
                         </Link>
                     </div>

@@ -32,7 +32,7 @@ export function Services() {
                     <div ref={serviceRef} className={`bg-Fazanova-white rounded-[16px] border-[1px] border-[#EFF0F6] py-[47px] px-[32px] max-w-[1055px] grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-20 lg:gap-y-20 gap-y-16 transition-transform duration-1000 ${serviceInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                         <div className="lg:border-r-[1px] border-r-[#EFF0F6] lg:pr-8 flex flex-col justify-center items-center">
                             <Image className="mx-auto" width={32.58} height={36} src={SolacePremium} alt="SolacePremium" />
-                            <h1 className="pt-5 text-center max-w-[262px] lg:text-[28px] text-[24px] font-normal lg:leading-[32px] leading-[30px] text-Fozanova-Black">Solace Premium Farewell Cover </h1>
+                            <h1 className="pt-5 text-center max-w-[262px] text-[28px] font-normal lg:leading-[32px] leading-[30px] text-Fozanova-Black">Solace Premium Farewell Cover </h1>
                             <p className="pt-5 text-center max-w-[262px] font-normal lg:text-[17px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4%] text-p-grey">Solace Farewell Cover provides funeral expense coverage for self or subscribers&apos; loved ones in the event of their passing.</p>
                             <Link href="/cover">
                                 <button className="flex items-center gap-[5px] pt-3 lg:text-[17px] text-[15px] font-semibold lg:leading-[24px] leading-[22px] text-Fozanova-gold">
