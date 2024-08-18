@@ -8,7 +8,7 @@ interface FileUploadProps {
     onDrop: (acceptedFiles: File[]) => void;
 }
 
-const FileUpload: React.FC<FileUploadProps> = ({ onDrop }) => {
+const FileUploadPharm: React.FC<FileUploadProps> = ({ onDrop }) => {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop: (acceptedFiles) => {
       // Call the passed onDrop function with the accepted files
@@ -19,7 +19,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onDrop }) => {
       'image/*': [],         // Accept all image types
     },
     maxSize: 5242880, // Set maximum file size to 5MB
-  });
+});
 
   return (
     <Box
@@ -43,13 +43,13 @@ const FileUpload: React.FC<FileUploadProps> = ({ onDrop }) => {
         <Image src={UploadIcon} alt="UploadIcon" />
       </IconButton>
       <Typography>
-        <span className="text-Fozanova-gold font-semibold lg:text-[17px] text-[15px]">Click to upload</span> or drag and drop
+        <span className="text-Fozanova-gold font-semibold lg:text-[17px] text-[15px]">Click to upload photo of CAC certificate or BN here</span> or drag and drop
       </Typography>
       <Typography className="text-p-grey lg:text-[15px] text-[12px]">
-        PDF, PNG or JPG [max. 5mb]
+        PDF, PNG or JPG (max. 50mb)
       </Typography>
     </Box>
   );
 };
 
-export default FileUpload;
+export default FileUploadPharm;

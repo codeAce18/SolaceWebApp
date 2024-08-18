@@ -35,7 +35,7 @@ const partnerwithus = () => {
                     <div>
                         <Image className="mx-auto" src={HospitalIcon} alt="HospitalIcon" />
                         <h6 className="text-center lg:text-[20px] text-[17px] text-Fozanova-Black lg:leading-[27.42px] leading-[25px] tracking-[-0.96px] pt-[5px]  font-medium">Hospitals & Clinics</h6>
-                        <Link href="/">
+                        <Link href="/partnerhospitalform">
                             <h6 className="text-center  text-Fozanova-gold lg:text-[17px] text-[15px] tracking-[-0.4%] lg:leading-[26px] leading-[22px]">Register Here</h6>
                         </Link>
                     </div>

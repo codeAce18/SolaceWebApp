@@ -12,8 +12,10 @@ import {
 import { useRouter } from 'next/router'; // Import useRouter for navigation
 import { SelectChangeEvent } from '@mui/material/Select'; // Import SelectChangeEvent
 import FileUploadPharm from './FileUploadPharm';
-import FileUploadFharm from './FileUploadFharm';
-import FileUploadPharma from './FileUploadPharma';
+// import FileUploadFharm from './FileUploadFharm';
+// import FileUploadPharma from './FileUploadPharma';
+import FileUploadHospital from './FileUploadHospital';
+import FileUploadHospt from './FileUploadHospt';
 
 interface State {
   id: string;
@@ -28,7 +30,7 @@ interface Town {
 
   
 
-const PharmacyForm: React.FC = () => {
+const HospitalForm: React.FC = () => {
   const [states, setStates] = useState<State[]>([]);
   const [towns, setTowns] = useState<Town[]>([]);
   const [selectedState, setSelectedState] = useState<string>('');
@@ -45,6 +47,8 @@ const PharmacyForm: React.FC = () => {
   const [pharmFiles, setPharmFiles] = useState<File[]>([]);
   const [fharmFiles, setFharmFiles] = useState<File[]>([]);
   const [pharmaFiles, setPharmaFiles] = useState<File[]>([]);
+  const [hospitalFiles, setHospitalFiles] = useState<File[]>([]);
+  const [hosptFiles, setHosptFiles] = useState<File[]>([]);
   const [operationLicenseNumber, setOperationLicenseNumber] = React.useState('');
   const [ninNumber, setNinNumber] = React.useState('');
   const [numberOfStores, setNumberOfStores] = React.useState('');
@@ -203,18 +207,25 @@ const handlePharmFileDrop = (files: File[]) => {
   };
 
 
+  const handleHospitalFileDrop = (files: File[]) => {
+    setHospitalFiles(files);
+    console.log('Uploaded files for hospital:', files);
+  };
+
+  const handleHosptFileDrop = (acceptedFiles: File[]) => {
+    setHosptFiles(acceptedFiles);
+    console.log('Uploaded files for hospital:', acceptedFiles);
+  };
+
 
   return (
     <Box  className="w-full max-w-[600px] mx-auto lg:pt-12 pt-8 lg:p-0 p-[20px]">
-        <div>
-            <h1 className="lg:text-[20px] text-[17px] font-normal tracking-[-0.96px] lg:leading-[27.42px] leading-[25px] text-[#121933] lg:text-left text-center">For Pharmacies Registered and Operating in Nigeria</h1>
-        </div>
       <form onSubmit={handleSubmit}>
         <Box>
             <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
                 <TextField
                 name="pharmacyName"
-                label="Enter name of pharmacy"
+                label="Enter name of hospital or clinic"
                 fullWidth
                 margin="normal"
                 required
@@ -257,7 +268,7 @@ const handlePharmFileDrop = (files: File[]) => {
             <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
                  <FileUploadPharm onDrop={handlePharmFileDrop} />
                 <ul>
-                    {uploadedFiles.map((file, index) => (
+                    {pharmFiles.map((file, index) => (
                     <li key={index}>{file.name}</li>
                     ))}
                 </ul>
@@ -447,12 +458,12 @@ const handlePharmFileDrop = (files: File[]) => {
         </Box>
 
         <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
-            <FileUploadFharm onDrop={handleFharmFileDrop} />
-            <ul>
-                {uploadedFiles.map((file, index) => (
-                <li key={index}>{file.name}</li>
-                ))}
-            </ul>
+          <FileUploadHospital onDrop={handleHospitalFileDrop} />
+          <ul>
+            {hospitalFiles.map((file, index) => (
+              <li key={index}>{file.name}</li>
+            ))}
+          </ul>
         </Box>
         
         <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
@@ -474,12 +485,12 @@ const handlePharmFileDrop = (files: File[]) => {
                 },
                 }}
             >
-            <InputLabel>Number of pharmacy stores nationwide</InputLabel>
+            <InputLabel>Number of hospital or clinic</InputLabel>
             <Select
                 name="numberOfStores"
                 value={numberOfStores}
                 onChange={handleSelectChange}
-                label="Number of Pharmacy Stores Nationwide"
+                label="Number of hospital or clinic"
                 required
             >
                 <MenuItem value="1">1</MenuItem>
@@ -513,12 +524,12 @@ const handlePharmFileDrop = (files: File[]) => {
                 },
             }}
             >
-            <InputLabel>Store location in how many states</InputLabel>
+            <InputLabel>Location in How Many States?</InputLabel>
             <Select
                 name="storeLocationStates"
                 value={storeLocationStates}
                 onChange={handleSelectChange}
-                label="Store Location in How Many States"
+                label="Location in How Many States?"
                 required
             >
                 <MenuItem value="1">1</MenuItem>
@@ -555,7 +566,7 @@ const handlePharmFileDrop = (files: File[]) => {
             },
           }}
           >
-            <InputLabel>State where HQ is located</InputLabel>
+            <InputLabel>State of where HQ is located</InputLabel>
             <Select
               value={selectedState}
               onChange={handleStateChange}
@@ -592,11 +603,11 @@ const handlePharmFileDrop = (files: File[]) => {
             }}
           
           >
-            <InputLabel>City where HQ is located</InputLabel>
+            <InputLabel>City of where HQ is located</InputLabel>
             <Select
               value={selectedTown}
               onChange={handleTownChange}
-              label="City where HQ is located"
+              label="City of where HQ is located"
               required
               disabled={!selectedState} // Disable if no state is selected
             >
@@ -614,7 +625,7 @@ const handlePharmFileDrop = (files: File[]) => {
 
         <TextField
               name="receiverAddress"
-              label="Address of pharmacy headquaters"
+              label="Address of hospital or clinic headquater"
               value={receiverAddress}
               onChange={handleInputChange}
               fullWidth
@@ -644,12 +655,12 @@ const handlePharmFileDrop = (files: File[]) => {
       
         
         <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
-            <FileUploadPharma onDrop={handlePharmaFileDrop} />
-            <ul>
-                {uploadedFiles.map((file, index) => (
-                <li key={index}>{file.name}</li>
-                ))}
-            </ul>
+          <FileUploadHospt onDrop={handleHosptFileDrop} />
+          <ul>
+            {hosptFiles.map((file, index) => (
+              <li key={index}>{file.name}</li>
+            ))}
+          </ul>
         </Box>
 
         <Box display="flex" justifyContent="center" p={1}>
@@ -682,4 +693,4 @@ const handlePharmFileDrop = (files: File[]) => {
   );
 };
 
-export default PharmacyForm;
+export default HospitalForm;
