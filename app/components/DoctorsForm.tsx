@@ -334,10 +334,26 @@ const handleChange = (event: SelectChangeEvent<string>) => {
                     <MenuItem value="general practice doctor">General Practice Doctor</MenuItem>
                     <MenuItem value="geriatrics">Geriatrics</MenuItem>
                     <MenuItem value="allergy & immuniology">Allergy & Immuniology</MenuItem>
-                    <MenuItem value="dermatology">Dermatology</MenuItem>
-                    <MenuItem value="psychiatry">Psychiatry</MenuItem>
+                    <MenuItem value="anesthesiology">Anesthesiology</MenuItem>
                     <MenuItem value="cardiology">Cardiology</MenuItem>
+                    <MenuItem value="dermatology">Dermatology</MenuItem>
+                    <MenuItem value="endocrinology">Endocrinology</MenuItem>
+                    <MenuItem value="gastroenterology">Gastroenterology</MenuItem>
+                    <MenuItem value="hematology">Hematology</MenuItem>
+                    <MenuItem value="infectious disease">Infectious Disease</MenuItem>
+                    <MenuItem value="nephrology">Nephrology</MenuItem>
                     <MenuItem value="neurology">Neurology</MenuItem>
+                    <MenuItem value="oncology">Oncology</MenuItem>
+                    <MenuItem value="ophthalmology">Ophthalmology</MenuItem>
+                    <MenuItem value="orthopedics">Orthopedics</MenuItem>
+                    <MenuItem value="otolaryngology (ENT)">Otolaryngology (ENT)</MenuItem>
+                    <MenuItem value="plastic surgery">Plastic Surgery</MenuItem>
+                    <MenuItem value="psychiatry">Psychiatry</MenuItem>
+                    <MenuItem value="pulmonology">Pulmonology</MenuItem>
+                    <MenuItem value="radiology">Radiology</MenuItem>
+                    <MenuItem value="rheumatology">Rheumatology</MenuItem>
+                    <MenuItem value="urology">Urology</MenuItem>
+                    <MenuItem value="others">Others</MenuItem>
                 </Select>
                 </FormControl>
                 
@@ -500,10 +516,10 @@ const handleChange = (event: SelectChangeEvent<string>) => {
                     label="Current Employment Status"
                     onChange={handleEmploymentStatusChange}
                 >
-                    <MenuItem value="employed">Employed</MenuItem>
-                    <MenuItem value="self-employed">Self-Employed</MenuItem>
-                    <MenuItem value="unemployed">Unemployed</MenuItem>
-                    <MenuItem value="student">other</MenuItem>
+                    <MenuItem value="employed">Full Time Employment</MenuItem>
+                    <MenuItem value="self-employed">part Time Employment</MenuItem>
+                    <MenuItem value="unemployed">Self Employed</MenuItem>
+                    <MenuItem value="student">Others</MenuItem>
                 </Select>
             </FormControl>
 
