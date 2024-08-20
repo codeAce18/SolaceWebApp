@@ -42,8 +42,8 @@ const FileUploadLab: React.FC<FileUploadProps> = ({ onDrop }) => {
       <IconButton sx={{ mb: 2 }}>
         <Image src={UploadIcon} alt="UploadIcon" />
       </IconButton>
-      <Typography>
-        <span className="text-Fozanova-gold font-semibold lg:text-[17px] text-[15px]">Click to upload proof of laboratory address i.e NEPA Bill</span> or drag and drop
+      <Typography className='lg:text-[17px] text-[15px]'>
+        <span className="text-Fozanova-gold  lg:text-[17px] text-[15px]">Click to upload proof of laboratory address i.e NEPA Bill</span> or drag and drop
       </Typography>
       <Typography className="text-p-grey lg:text-[15px] text-[12px]">
         PDF, PNG or JPG (max. 50mb)

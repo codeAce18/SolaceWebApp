@@ -8,7 +8,7 @@ interface FileUploadProps {
     onDrop: (acceptedFiles: File[]) => void;
 }
 
-const FileUploadLaboratory: React.FC<FileUploadProps> = ({ onDrop }) => {
+const FileUploadDoctor: React.FC<FileUploadProps> = ({ onDrop }) => {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop: (acceptedFiles) => {
       // Call the passed onDrop function with the accepted files
@@ -18,8 +18,8 @@ const FileUploadLaboratory: React.FC<FileUploadProps> = ({ onDrop }) => {
       'application/pdf': [], // Accept PDFs
       'image/*': [],         // Accept all image types
     },
-    maxSize: 52428800, // Set maximum file size to 5MB
-  });
+    maxSize: 5242880, // Set maximum file size to 5MB
+});
 
   return (
     <Box
@@ -43,7 +43,7 @@ const FileUploadLaboratory: React.FC<FileUploadProps> = ({ onDrop }) => {
         <Image src={UploadIcon} alt="UploadIcon" />
       </IconButton>
       <Typography className='lg:text-[17px] text-[15px]'>
-        <span className="text-Fozanova-gold  lg:text-[17px] text-[15px]">Click to upload photo of license to operate laboratory</span> or drag and drop
+        <span className="text-Fozanova-gold  lg:text-[17px] text-[15px]">Click to upload your certificate here </span> or drag and drop
       </Typography>
       <Typography className="text-p-grey lg:text-[15px] text-[12px]">
         PDF, PNG or JPG (max. 50mb)
@@ -52,4 +52,4 @@ const FileUploadLaboratory: React.FC<FileUploadProps> = ({ onDrop }) => {
   );
 };
 
-export default FileUploadLaboratory;
+export default FileUploadDoctor;

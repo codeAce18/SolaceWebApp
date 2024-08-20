@@ -39,7 +39,7 @@ const JoinCareGiver = () => {
 
                                 <h1 className="text-center text-Fozanova-Black text-[17px] lg:text-[20px] leading-[27.42px] tracking-[-0.96px]">Certified Doctors</h1>
 
-                                <Link href="/">
+                                <Link href="/qualifieddoctorsform">
 
                                     <button className="text-Fozanova-gold  font-normal text-[15px] lg:text-[17px] leading-[26px] tracking-[-0.4%] ">
                                         Register Here
@@ -54,7 +54,7 @@ const JoinCareGiver = () => {
 
                                 <h1 className="text-Fozanova-Black text-[17px] lg:text-[20px] leading-[27.42px] tracking-[-0.96px]">Certified Nurses</h1>
 
-                                <Link href="/">
+                                <Link href="/qualifiednursesform">
 
                                     <button className="text-Fozanova-gold  font-normal text-[15px] lg:text-[17px] leading-[26px] tracking-[-0.4%] ">
                                         Register Here
@@ -70,7 +70,7 @@ const JoinCareGiver = () => {
 
                                 <h1 className="text-Fozanova-Black text-[17px] lg:text-[20px] leading-[27.42px] tracking-[-0.96px] text-center">Qualified Caregivers</h1>
 
-                                <Link href="/">
+                                <Link href="/nonmedicalcaregiversform">
 
                                     <button className="text-Fozanova-gold  font-normal text-[15px] lg:text-[17px] leading-[26px] tracking-[-0.4%] ">
                                         Register Here
@@ -86,7 +86,7 @@ const JoinCareGiver = () => {
 
                                 <h1 className="text-Fozanova-Black text-[17px] lg:text-[20px] leading-[27.42px] tracking-[-0.96px] text-center">Certified Therapists</h1>
 
-                                <Link href="/">
+                                <Link href="/qualifiedtherapistform">
 
                                     <button className="text-Fozanova-gold  font-normal text-[15px] lg:text-[17px] leading-[26px] tracking-[-0.4%] ">
                                         Register Here
@@ -101,7 +101,7 @@ const JoinCareGiver = () => {
 
                                 <h1 className="text-Fozanova-Black text-[17px] lg:text-[20px] leading-[27.42px] tracking-[-0.96px] text-center">Certified Nutritionist</h1>
 
-                                <Link href="/">
+                                <Link href="/certifiednutritionistform">
 
                                     <button className="text-Fozanova-gold  font-normal text-[15px] lg:text-[17px] leading-[26px] tracking-[-0.4%] ">
                                         Register Here
@@ -115,7 +115,7 @@ const JoinCareGiver = () => {
 
                                 <h1 className="text-Fozanova-Black text-[17px] lg:text-[20px] leading-[27.42px] tracking-[-0.96px] text-center">Qualified Undertakers</h1>
 
-                                <Link href="/">
+                                <Link href="/registeredundertakersform">
 
                                     <button className="text-Fozanova-gold  font-normal text-[15px] lg:text-[17px] leading-[26px] tracking-[-0.4%] ">
                                         Register Here

@@ -55,7 +55,7 @@ export function Footer() {
               Address
             </h6>
             <p className={`mx-auto pb-[30px] pt-[10px] max-w-[264px] text-white text-[17px] text-center transition-transform duration-1000 ${footerInView ? 'transform translate-x-0' : 'transform translate-x-10'}`}>
-              Plot 750, Aminu Kano Crescent, Wuse 2, Abuja.
+              No. 9 Akilo Road , Off Oba-Akran Avenue, Ikeja, Lagos State.
             </p>
           </div>
 

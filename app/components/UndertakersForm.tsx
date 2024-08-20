@@ -7,15 +7,18 @@ import {
   CircularProgress, 
   Button, 
   TextField, 
-  Box
+  Box,
+  FormControlLabel,
+  Checkbox
 } from '@mui/material';
 import { useRouter } from 'next/router'; // Import useRouter for navigation
 import { SelectChangeEvent } from '@mui/material/Select'; // Import SelectChangeEvent
 import FileUploadPharm from './FileUploadPharm';
-// import FileUploadFharm from './FileUploadFharm';
-// import FileUploadPharma from './FileUploadPharma';
-import FileUploadHospital from './FileUploadHospital';
-import FileUploadHospt from './FileUploadHospt';
+import FileUploadFharm from './FileUploadFharm';
+import FileUploadPharma from './FileUploadPharma';
+import FileUploadDoc from './FileUploadDoc';
+import FileUploadDoctor from './FileUploadDoctor';
+import FileUploadDocto from './FileUploadDocto';
 
 interface State {
   id: string;
@@ -30,7 +33,7 @@ interface Town {
 
   
 
-const HospitalForm: React.FC = () => {
+const UndertakersForm: React.FC = () => {
   const [states, setStates] = useState<State[]>([]);
   const [towns, setTowns] = useState<Town[]>([]);
   const [selectedState, setSelectedState] = useState<string>('');
@@ -47,13 +50,25 @@ const HospitalForm: React.FC = () => {
   const [pharmFiles, setPharmFiles] = useState<File[]>([]);
   const [fharmFiles, setFharmFiles] = useState<File[]>([]);
   const [pharmaFiles, setPharmaFiles] = useState<File[]>([]);
-  const [hospitalFiles, setHospitalFiles] = useState<File[]>([]);
-  const [hosptFiles, setHosptFiles] = useState<File[]>([]);
+  const [docFiles, setDocFiles] = useState<File[]>([]);
+
+  const [doctorFiles, setDoctorFiles] = useState<File[]>([]);
+  const [doctoFiles, setDoctoFiles] = useState<File[]>([]);
   const [operationLicenseNumber, setOperationLicenseNumber] = React.useState('');
   const [ninNumber, setNinNumber] = React.useState('');
   const [numberOfStores, setNumberOfStores] = React.useState('');
   const [storeLocationStates, setStoreLocationStates] = React.useState('');
   const [receiverAddress, setReceiverAddress] = useState<string>('');
+  const [specialty, setSpecialty] = React.useState('');
+  const [employmentStatus, setEmploymentStatus] = useState<string>('');
+  const [jobRole, setJobRole] = useState<string>('');
+  const [placeOfWork, setPlaceOfWork] = useState<string>('');
+  const [yearsWithEmployer, setYearsWithEmployer] = useState<number | string>('');
+  const [medicalSchool, setMedicalSchool] = useState<string>('');
+  const [yearGraduated, setYearGraduated] = useState<string>('');
+  const [referralNumber, setReferralNumber] = useState<string>('');
+  const [termsAccepted, setTermsAccepted] = useState<boolean>(false);
+
 
   const router = useRouter(); // Initialize the router
 
@@ -120,7 +135,9 @@ const HospitalForm: React.FC = () => {
         break;
         case 'receiverAddress':
             setReceiverAddress(value);
-            break;
+        break;
+      
+      
     }
   };
 
@@ -146,7 +163,12 @@ const handleSelectChange = (event: SelectChangeEvent<string>) => {
     } else if (name === 'storeLocationStates') {
       setStoreLocationStates(value);
     }
+};
+
+const handleChange = (event: SelectChangeEvent<string>) => {
+    setSpecialty(event.target.value);
   };
+
 
 
   // Check if the form is valid
@@ -159,9 +181,12 @@ const handleSelectChange = (event: SelectChangeEvent<string>) => {
         phoneNumber !== '' &&
         selectedState !== '' &&
         selectedTown !== '' &&
-        numberOfStores !== '' &&
-        storeLocationStates !== '' &&
-        File.length > 0
+        ninNumber !== '' &&
+        referralNumber !== '' &&
+        receiverAddress !== '' &&
+        docFiles.length > 0 &&
+        doctoFiles.length > 0 &&
+        termsAccepted 
         
     );
   };
@@ -176,6 +201,10 @@ const handleSelectChange = (event: SelectChangeEvent<string>) => {
     }
   };
 
+  const handleMedicalSchoolChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setMedicalSchool(event.target.value);
+  };
+
   const handlePharmacyDetailsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     if (name === 'operationLicenseNumber') {
@@ -185,65 +214,100 @@ const handleSelectChange = (event: SelectChangeEvent<string>) => {
     }
   };
 
-//   const handleFileDrop = (files: File[]) => {
-//     setUploadedFiles(files);
-//     // Further processing or uploading logic can go here
-//     console.log('Uploaded files:', files);
-//   };
-
-const handlePharmFileDrop = (files: File[]) => {
-    setPharmFiles(files);
-    console.log('Uploaded files for pharmacy:', files);
+  const handleEmploymentStatusChange = (event: SelectChangeEvent<string>) => {
+    setEmploymentStatus(event.target.value);
   };
 
-  const handleFharmFileDrop = (files: File[]) => {
-    setFharmFiles(files);
-    console.log('Uploaded files for fharm:', files);
+  const handleJobRoleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setJobRole(event.target.value);
   };
 
-  const handlePharmaFileDrop = (files: File[]) => {
-    setPharmaFiles(files);
-    console.log('Uploaded files for pharma:', files);
+  const handlePlaceOfWorkChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPlaceOfWork(event.target.value);
+  };
+
+  const handleYearsWithEmployerChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setYearsWithEmployer(value ? Number(value) : '');
+  };
+
+  const handleYearGraduatedChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setYearGraduated(event.target.value);
   };
 
 
-  const handleHospitalFileDrop = (files: File[]) => {
-    setHospitalFiles(files);
-    console.log('Uploaded files for hospital:', files);
+  const handleReferralNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setReferralNumber(event.target.value);
   };
 
-  const handleHosptFileDrop = (acceptedFiles: File[]) => {
-    setHosptFiles(acceptedFiles);
-    console.log('Uploaded files for hospital:', acceptedFiles);
+  const handleTermsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTermsAccepted(event.target.checked);
   };
+
+
+
+
+
+
+
+  const handleDocFileDrop = (files: File[]) => {
+    setDocFiles(files);
+    console.log('Uploaded files for Doc:', files);
+  };
+
+  const handleDoctorFileDrop = (acceptedFiles: File[]) => {
+    setDoctorFiles(acceptedFiles);
+    console.log('Uploaded files for doctor:', acceptedFiles);
+  };
+
+  const handleDoctoFileDrop = (acceptedFiles: File[]) => {
+    setDoctoFiles(acceptedFiles);
+    console.log('Uploaded files for doctor:', acceptedFiles);
+  };
+
+
 
 
   return (
     <Box  className="w-full max-w-[600px] mx-auto lg:pt-12 pt-8 lg:p-0 p-[20px]">
+        <div>
+            <h1 className="lg:text-[20px] text-[17px] font-normal tracking-[-0.96px] lg:leading-[27.42px] leading-[25px] text-[#121933] lg:text-left text-center">For Nigerian Undertakers Only</h1>
+        </div>
       <form onSubmit={handleSubmit}>
         <Box>
             <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
-                <TextField
-                name="pharmacyName"
-                label="Enter name of hospital or clinic"
-                fullWidth
-                margin="normal"
-                required
-                sx={{ 
-                    flex: 1,
+                <FormControl fullWidth margin="normal" sx={{ flex: 1,
                     '& .MuiOutlinedInput-root': {
-                    '&:hover fieldset': { borderColor: '#DBA73B' },
-                    '&.Mui-focused fieldset': { borderColor: '#DBA73B' },
+                      '&:hover fieldset': {
+                        borderColor: '#DBA73B', // Border color on hover
+                      },
+                      '&.Mui-focused fieldset': {
+                        borderColor: '#DBA73B', // Border color when focused
+                      },
                     },
+    
                     '& .MuiInputLabel-root': {
-                    color: '#646464', // Default label color
+                      color: '#646464', // Default label color
                     },
                     '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#646464', // Label color when focused
+                      color: '#646464', // Label color when focused
                     },
-                }}
-                />
-
+                  }}>
+                <InputLabel
+                >
+                    Do you offer understanding services?
+                </InputLabel>
+                <Select
+                    value={specialty}
+                    onChange={handleChange}
+                    label="Do you offer understanding services?"
+                    required
+                >
+                    <MenuItem value="No">No</MenuItem>
+                    <MenuItem value="yes">yes</MenuItem>
+                </Select>
+                </FormControl>
+                
                 <TextField
                 name="cacBnNumber"
                 label="Enter your CAC or BN number"
@@ -262,13 +326,13 @@ const handlePharmFileDrop = (files: File[]) => {
                     color: '#646464', // Label color when focused
                     },
                 }}
-                />
+                />            
             </Box>
             
             <Box className="lg:flex lg:flex-row flex flex-col"  mb={2}>
-                 <FileUploadPharm onDrop={handlePharmFileDrop} />
+                 <FileUploadDoc onDrop={handleDocFileDrop} />
                 <ul>
-                    {pharmFiles.map((file, index) => (
+                    {docFiles.map((file, index) => (
                     <li key={index}>{file.name}</li>
                     ))}
                 </ul>
@@ -276,7 +340,7 @@ const handlePharmFileDrop = (files: File[]) => {
 
           <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
             <TextField
-              label="First name of owner"
+              label="First name"
               name="firstName"
               value={firstName}
               onChange={handleInputChange}
@@ -306,7 +370,7 @@ const handlePharmFileDrop = (files: File[]) => {
 
 
               <TextField
-              label="Last name of owner"
+              label="Last name"
               name="lastName"
               value={lastName}
               onChange={handleInputChange}
@@ -338,7 +402,7 @@ const handlePharmFileDrop = (files: File[]) => {
 
           <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
             <TextField
-              label="Email Address of owner"
+              label="Email address"
               name="email"
               value={email}
               onChange={handleInputChange}
@@ -369,7 +433,7 @@ const handlePharmFileDrop = (files: File[]) => {
             />
 
               <TextField
-              label="Phone number of owner"
+              label="Phone number"
               name="phoneNumber"
               value={phoneNumber}
               onChange={handleInputChange}
@@ -400,36 +464,9 @@ const handlePharmFileDrop = (files: File[]) => {
             />
           </Box>
 
-
           <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
-          <TextField
-                    label="Enter operation License Number"
-                    name="operationLicenseNumber"
-                    value={operationLicenseNumber}
-                    onChange={handlePharmacyDetailsChange}
-                    fullWidth
-                    margin="normal"
-                    required
-                    type="text"
-                    sx={{
-                    '& .MuiOutlinedInput-root': {
-                        '&:hover fieldset': {
-                        borderColor: '#DBA73B', // Border color on hover
-                        },
-                        '&.Mui-focused fieldset': {
-                        borderColor: '#DBA73B', // Border color when focused
-                        },
-                    },
-                    '& .MuiInputLabel-root': {
-                        color: '#646464', // Default label color
-                    },
-                    '& .MuiInputLabel-root.Mui-focused': {
-                        color: '#646464', // Label color when focused
-                    },
-                    }}
-                />
-              <TextField
-                label="NIN number of owner"
+            <TextField
+                label="National Identity Number (NIN)"
                 name="ninNumber"
                 value={ninNumber}
                 onChange={handlePharmacyDetailsChange}
@@ -438,6 +475,7 @@ const handlePharmFileDrop = (files: File[]) => {
                 required
                 type="text"
                 sx={{
+                    flex: 1,
                 '& .MuiOutlinedInput-root': {
                     '&:hover fieldset': {
                     borderColor: '#DBA73B', // Border color on hover
@@ -453,98 +491,38 @@ const handlePharmFileDrop = (files: File[]) => {
                     color: '#646464', // Label color when focused
                 },
                 }}
-                />          
-            </Box>
-        </Box>
+            />
 
-        <Box className="lg:flex lg:flex-row flex flex-col"  mb={2}>
-          <FileUploadHospital onDrop={handleHospitalFileDrop} />
-          <ul>
-            {hospitalFiles.map((file, index) => (
-              <li key={index}>{file.name}</li>
-            ))}
-          </ul>
-        </Box>
-        
-        <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
-            <FormControl fullWidth margin="normal"
+            <TextField
+                name="referralNumber"
+                label="Referral Number (Optional)"
+                value={referralNumber}
+                onChange={handleReferralNumberChange }
+                fullWidth
+                margin="normal"
                 sx={{
+                flex: 1,
+                '& .MuiOutlinedInput-root': {
+                    '&:hover fieldset': { borderColor: '#DBA73B' },
+                    '&.Mui-focused fieldset': { borderColor: '#DBA73B' },
+                },
                 '& .MuiInputLabel-root': {
-                    color: '#646464', // Default label color
+                    color: '#646464',
                 },
                 '& .MuiInputLabel-root.Mui-focused': {
-                    color: '#646464', // Label color when focused
-                },
-                '& .MuiOutlinedInput-root': {
-                    '&:hover fieldset': {
-                    borderColor: '#DBA73B', // Border color on hover
-                    },
-                    '&.Mui-focused fieldset': {
-                    borderColor: '#DBA73B', // Border color when focused
-                    },
+                    color: '#646464',
                 },
                 }}
-            >
-            <InputLabel>Number of hospital or clinic</InputLabel>
-            <Select
-                name="numberOfStores"
-                value={numberOfStores}
-                onChange={handleSelectChange}
-                label="Number of hospital or clinic"
-                required
-            >
-                <MenuItem value="1">1</MenuItem>
-                <MenuItem value="2">2</MenuItem>
-                <MenuItem value="3">3</MenuItem>
-                <MenuItem value="4">4</MenuItem>
-                <MenuItem value="5">5</MenuItem>
-                <MenuItem value="6">6</MenuItem>
-                <MenuItem value="7">7</MenuItem>
-                <MenuItem value="8">8</MenuItem>
-                <MenuItem value="9">9</MenuItem>
-                <MenuItem value="10">10</MenuItem>
-            </Select>
-            </FormControl>
-
-            <FormControl fullWidth margin="normal"
-            sx={{
-                '& .MuiInputLabel-root': {
-                color: '#646464', // Default label color
-                },
-                '& .MuiInputLabel-root.Mui-focused': {
-                color: '#646464', // Label color when focused
-                },
-                '& .MuiOutlinedInput-root': {
-                '&:hover fieldset': {
-                    borderColor: '#DBA73B', // Border color on hover
-                },
-                '&.Mui-focused fieldset': {
-                    borderColor: '#DBA73B', // Border color when focused
-                },
-                },
-            }}
-            >
-            <InputLabel>Location in How Many States?</InputLabel>
-            <Select
-                name="storeLocationStates"
-                value={storeLocationStates}
-                onChange={handleSelectChange}
-                label="Location in How Many States?"
-                required
-            >
-                <MenuItem value="1">1</MenuItem>
-                <MenuItem value="2">2</MenuItem>
-                <MenuItem value="3">3</MenuItem>
-                <MenuItem value="4">4</MenuItem>
-                <MenuItem value="5">5</MenuItem>
-                <MenuItem value="6">6</MenuItem>
-                <MenuItem value="7">7</MenuItem>
-                <MenuItem value="8">8</MenuItem>
-                <MenuItem value="9">9</MenuItem>
-                <MenuItem value="10">10</MenuItem>
-            </Select>
-            </FormControl>
+            />
         </Box>
+
+        </Box>
+
+       
+
+
+        
+       
         
 
         <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
@@ -566,11 +544,11 @@ const handlePharmFileDrop = (files: File[]) => {
             },
           }}
           >
-            <InputLabel>State of where HQ is located</InputLabel>
+            <InputLabel>State where office is located</InputLabel>
             <Select
               value={selectedState}
               onChange={handleStateChange}
-              label="State of where HQ is located"
+              label="State where office is located"
               required
             >
               <MenuItem value="">
@@ -603,11 +581,11 @@ const handlePharmFileDrop = (files: File[]) => {
             }}
           
           >
-            <InputLabel>City of where HQ is located</InputLabel>
+            <InputLabel>City where office is located</InputLabel>
             <Select
               value={selectedTown}
               onChange={handleTownChange}
-              label="City of where HQ is located"
+              label="City where office is located"
               required
               disabled={!selectedState} // Disable if no state is selected
             >
@@ -625,7 +603,7 @@ const handlePharmFileDrop = (files: File[]) => {
 
         <TextField
               name="receiverAddress"
-              label="Address of hospital or clinic headquater"
+              label="Enter office valid address in details"
               value={receiverAddress}
               onChange={handleInputChange}
               fullWidth
@@ -655,13 +633,37 @@ const handlePharmFileDrop = (files: File[]) => {
       
         
         <Box className="lg:flex lg:flex-row flex flex-col"  mb={2}>
-          <FileUploadHospt onDrop={handleHosptFileDrop} />
-          <ul>
-            {hosptFiles.map((file, index) => (
-              <li key={index}>{file.name}</li>
-            ))}
-          </ul>
+            <FileUploadDocto onDrop={handleDoctoFileDrop} />
+            <ul>
+                {doctoFiles.map((file, index) => (
+                <li key={index}>{file.name}</li>
+                ))}
+            </ul>
         </Box>
+
+        <FormControlLabel
+            control={
+            <Checkbox
+                checked={termsAccepted}
+                onChange={handleTermsChange}
+                color="primary"
+                sx={{
+                    '& .MuiSvgIcon-root': {
+                      color: '#DBA73B', // Color of the check mark
+                    },
+                    '&:hover': {
+                      backgroundColor: 'transparent', // Remove background color on hover
+                    },
+                  }}
+            />
+            }
+            label={
+                <span className='lg:text-[12px] max-w-[578px] text-[10px] lg:leading-[18px] leading-[8px] text-p-grey'>
+                  I have read my role as a Doctor and agree with our <span className='text-[#DBA73B]'>Confidentiality</span> and <span className='text-[#DBA73B]'>Condition of Usage</span> Agreement.
+                </span>
+            }
+        />
+
 
         <Box display="flex" justifyContent="center" p={1}>
           <Button 
@@ -685,7 +687,7 @@ const handlePharmFileDrop = (files: File[]) => {
               },
             }}
             >
-            Submit  Form
+            Submit Application
           </Button>
         </Box>
       </form>
@@ -693,4 +695,4 @@ const handlePharmFileDrop = (files: File[]) => {
   );
 };
 
-export default HospitalForm;
+export default UndertakersForm;

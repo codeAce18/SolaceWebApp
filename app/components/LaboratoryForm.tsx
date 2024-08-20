@@ -256,7 +256,7 @@ const handlePharmFileDrop = (files: File[]) => {
                 />
             </Box>
             
-            <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
+            <Box className="lg:flex lg:flex-row flex flex-col"  mb={2}>
                  <FileUploadPharm onDrop={handlePharmFileDrop} />
                 <ul>
                     {pharmFiles.map((file, index) => (
@@ -448,7 +448,7 @@ const handlePharmFileDrop = (files: File[]) => {
             </Box>
         </Box>
 
-        <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
+        <Box className="lg:flex lg:flex-row flex flex-col"  mb={2}>
             <FileUploadLaboratory onDrop={handleLaboratoryFileDrop} />
             <ul>
             {laboratoryFiles.map((file, index) => (
@@ -645,7 +645,7 @@ const handlePharmFileDrop = (files: File[]) => {
 
       
         
-        <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
+        <Box className="lg:flex lg:flex-row flex flex-col"  mb={2}>
             <FileUploadLab onDrop={handleLabFileDrop} />
             <ul>
                 {labFiles.map((file, index) => (
