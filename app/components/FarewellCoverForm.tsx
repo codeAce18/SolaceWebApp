@@ -549,10 +549,15 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   value={howDidYouHear}
                   onChange={handleSelectChange}
                 >
-                  <MenuItem value="Friend/Family">Friend/Family</MenuItem>
-                  <MenuItem value="Social Media">Social Media</MenuItem>
-                  <MenuItem value="Advertisement">Advertisement</MenuItem>
-                  <MenuItem value="Others">Others</MenuItem>
+                  <MenuItem value="On Radio">On Radio</MenuItem>
+                  <MenuItem value="On Radio">On LinkedIn</MenuItem>
+                  <MenuItem value="On Youtube">On YouTube</MenuItem>
+                  <MenuItem value="On TikTok">On TikTok</MenuItem>
+                  <MenuItem value="On Instagram">On Instagram</MenuItem>
+                  <MenuItem value="On Television">On Television</MenuItem>
+                  <MenuItem value="On X (formally Twitter)">On X (formally Twitter)</MenuItem>
+                  <MenuItem value="Via Word of MouthVia Word of Mouth">Via Word of Mouth</MenuItem>
+                  <MenuItem value="On Others Platform">On Others Platform</MenuItem>
                 </Select>
               </FormControl>
             </Box>
@@ -802,10 +807,9 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
             onChange={handleGenderChange}
             placeholder='Select your gender'
             >
-            <MenuItem value="Male">Male</MenuItem>
             <MenuItem value="Female">Female</MenuItem>
+            <MenuItem value="Male">Male</MenuItem>
             <MenuItem value="Other">Other</MenuItem>
-            {/* Add other gender options if needed */}
             </Select>
         </FormControl>
                 
@@ -966,11 +970,11 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 label="Current Health Condition of Beneficiary"
                 onChange={handleHealthConditionChange}
               >
-                <MenuItem value="Good">Chronic and Metabolic disease</MenuItem>
-                <MenuItem value="Fair">Cognitive & Mental Health Issue</MenuItem>
-                <MenuItem value="Poor">Gastrointestinal Health Condition</MenuItem>
-                <MenuItem value="Other">Physical and Nutritional Health Issue</MenuItem>
-                <MenuItem value="Other">No Health Issue Whatsoever</MenuItem>
+                <MenuItem value="Chronic and Metabolic disease">Chronic and Metabolic disease</MenuItem>
+                <MenuItem value="Cognitive & Mental Health Issue">Cognitive & Mental Health Issue</MenuItem>
+                <MenuItem value="Gastrointestinal Health Condition">Gastrointestinal Health Condition</MenuItem>
+                <MenuItem value="Physical and Nutritional Health Issue">Physical and Nutritional Health Issue</MenuItem>
+                <MenuItem value="No Health Issue Whatsoever">No Health Issue Whatsoever</MenuItem>
               </Select>
             </FormControl>
 
@@ -991,19 +995,19 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   color: '#646464', // Label color when focused
                 }, 
              }}>
-              <InputLabel>How did you hear about us?</InputLabel>
+              <InputLabel>Relationship with beneficiary?</InputLabel>
               <Select
                 name="receiverReferralSource"
                 value={receiverReferralSource}
-                label="How did you hear about us?"
+                label="Relationship with beneficiary?"
                 onChange={handleReferralSourceChange}
               >
-                <MenuItem value="Social Media">Father</MenuItem>
-                <MenuItem value="Friend">Mother</MenuItem>
-                <MenuItem value="Advertisement">Uncle</MenuItem>
-                <MenuItem value="Advertisement">Auntie</MenuItem>
-                <MenuItem value="Advertisement">Grandfather</MenuItem>
-                <MenuItem value="Advertisement">Grandmother</MenuItem>
+                <MenuItem value="Father">Father</MenuItem>
+                <MenuItem value="Mother">Mother</MenuItem>
+                <MenuItem value="Uncle">Uncle</MenuItem>
+                <MenuItem value="Auntie">Auntie</MenuItem>
+                <MenuItem value="Grandfather">Grandfather</MenuItem>
+                <MenuItem value="Grandmother">Grandmother</MenuItem>
                 {/* Add other referral sources as needed */}
               </Select>
             </FormControl>

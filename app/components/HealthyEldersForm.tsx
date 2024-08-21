@@ -503,10 +503,15 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   value={howDidYouHear}
                   onChange={handleSelectChange}
                 >
-                  <MenuItem value="Friend/Family">Friend/Family</MenuItem>
-                  <MenuItem value="Social Media">Social Media</MenuItem>
-                  <MenuItem value="Advertisement">Advertisement</MenuItem>
-                  <MenuItem value="Others">Others</MenuItem>
+                  <MenuItem value="On Radio">On Radio</MenuItem>
+                  <MenuItem value="On Radio">On LinkedIn</MenuItem>
+                  <MenuItem value="On Youtube">On YouTube</MenuItem>
+                  <MenuItem value="Advertisement">On TikTok</MenuItem>
+                  <MenuItem value="Others">On Instagram</MenuItem>
+                  <MenuItem value="Others">On Television</MenuItem>
+                  <MenuItem value="Others">On X (formally Twitter)</MenuItem>
+                  <MenuItem value="Others">Via Word of Mouth</MenuItem>
+                  <MenuItem value="Others">On Others Platform</MenuItem>
                 </Select>
               </FormControl>
             </Box>

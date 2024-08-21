@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 
-import OurPartners from "../../public/assests/OurPartners.svg";
+import PartnershipOpp from "../../public/assests/patnershipopp.svg";
 import ProvidusBankLogo from "../../public/assests/Providus Bank Logo.png";
 import PaystackLogo from "../../public/assests/Paystack logo.png";
 import ZoloLogo from "../../public/assests/Zolo Logo.png";
@@ -19,14 +19,15 @@ export function Partners() {
     return (
         <div className="partners">
             <div ref={partnersTextRef} className={`flex flex-col justify-center items-center transition-opacity duration-1000 ${partnersTextInView ? 'opacity-100' : 'opacity-0'}`}>
-                <Image width={106} height={24} src={OurPartners} alt="ourpartners" />
+                <Image width={250} height={40} src={PartnershipOpp} alt="PartnershipOpp" />
 
                 <h1 className="pt-5 lg:text-[48px] text-[40px] font-normal lg:leading-[58px] leading-[50px] text-Fozanova-Black tracking-[-1px] max-w-[800px] text-center">
-                    We partnered with the best in Africa
+                    Partner with us to create global value
                 </h1>
 
                 <p className="pt-5 lg:text-[17px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4%] max-w-[720px] text-center text-p-grey">
-                    To us, partnership is key. We are able to deliver exceptional innovative elderly care solutions by partnering with the best licensed services providers all over the world. We are open to partnering with more valuable partners from all over the world.
+                At Solace, we are always open to discussing Elderhood on television, radio, social media and podcasts. Contact us via phone or email to explore why enjoying Elderhood with<br /> Solace is vital for older adults. We leverage on the best partners to deliver <br />
+                exceptional services to our users globally.
                 </p>
             </div>
 

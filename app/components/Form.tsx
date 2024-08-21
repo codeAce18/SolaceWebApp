@@ -375,20 +375,26 @@ const Form: React.FC = () => {
               label="What Interests You About LaceAI?"
               required
             >
-              <MenuItem value="Customer Service">
-                Customer Service
+              <MenuItem value="Just Curious">
+                Just Curious
               </MenuItem>
-              <MenuItem value="Personal Development">
-                Personal Development
+              <MenuItem value="My Dad&apos;s Health">
+                My Dad&apos;s Health
               </MenuItem>
-              <MenuItem value="Leadership">
-                Leadership
+              <MenuItem value="My Mom&apos;s Health">
+                My Mom&apos;s Health
               </MenuItem>
-              <MenuItem value="Community">
-                Community
+              <MenuItem value="My Personal Health">
+                My Personal Health
               </MenuItem>
-              <MenuItem value="Volunteering">
-                Volunteering
+              <MenuItem value="My Guardian&apos;s Health">
+                My Guardian&apos;s Health
+              </MenuItem>
+              <MenuItem value="My Children&apos;s Health">
+                My Children&apos;s Health
+              </MenuItem>
+              <MenuItem value="Nothing">
+                Nothing
               </MenuItem>
             </Select>
           </FormControl>
@@ -419,12 +425,15 @@ const Form: React.FC = () => {
               label="Where Did You Hear About Us?"
               required
             >
-              <MenuItem value="Social Media">Social Media</MenuItem>
-              <MenuItem value="Friends and Family">
-                Friends and Family
-              </MenuItem>
-              <MenuItem value="LaceAI Event">LaceAI Event</MenuItem>
-              <MenuItem value="Website">Website</MenuItem>
+              <MenuItem value="On Radio">On Radio</MenuItem>
+              <MenuItem value="On LinkedIn">On LinkedIn</MenuItem>
+              <MenuItem value="On Youtube">On YouTube</MenuItem>
+              <MenuItem value="On TikTok">On TikTok</MenuItem>
+              <MenuItem value="On Instagram">On Instagram</MenuItem>
+              <MenuItem value="On Television">On Television</MenuItem>
+              <MenuItem value="On X (formally Twitter)">On X (formally Twitter)</MenuItem>
+              <MenuItem value="Via Word of Mouth">Via Word of Mouth</MenuItem>
+              <MenuItem value="On Others Platform">On Others Platform</MenuItem>
             </Select>
           </FormControl>
         </Box>

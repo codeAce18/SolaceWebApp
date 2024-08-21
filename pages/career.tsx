@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import '../app/globals.css'
 
-
+import Link from "next/link"
 import CareerImage from '../public/assests/CareerImage.png'
 import CareerImg from '../public/assests/CareerImg.png'
 import CareerSvg from '../public/assests/Career.svg'
@@ -106,7 +106,7 @@ const Career = () => {
                 <div>
                   <h1 className="text-[#272422] max-w-[800px]   lg:text-[20px] text-[17px] font-normal leading-[27.42px] tracking-[-0.96px]">Business Developers</h1>
                   <h6 className="text-p-grey pt-[5px]">Full Time - <span className="text-[#121933]">Remote</span></h6>
-                  <p className="lg:text-[17px] text-[15px] text-p-grey leading-[26px] tracking-[0.4%]">Solace is in need of a result-oriented Business Developer in Lagos, Port Harcourt and Abuja. <span className="text-Fozanova-gold"> Read more.</span></p>
+                  <p className="lg:text-[17px] text-[15px] text-p-grey leading-[26px] tracking-[0.4%]">Solace is in need of a result-oriented Business Developer in Lagos, Port Harcourt and Abuja. <Link href="/"><span className="text-Fozanova-gold"> Read more.</span></Link></p>
                 </div>
 
                 <div>
@@ -121,7 +121,7 @@ const Career = () => {
                 <div>
                   <h1 className="text-[#272422] text-[20px] max-w-[800px] font-normal leading-[27.42px] tracking-[-0.96px]">Fullstack Mobile Developer</h1>
                   <h6 className="text-p-grey pt-[5px]">Full Time - <span className="text-[#121933]">Remote</span></h6>
-                  <p className="lg:text-[17px] text-[15px] text-p-grey leading-[26px] tracking-[0.4%]">Solace is in need of an experienced Fullstack mobile developer from Nigeria, Pakistan or India.<span className="text-Fozanova-gold"> Read more.</span></p>
+                  <p className="lg:text-[17px] text-[15px] text-p-grey leading-[26px] tracking-[0.4%]">Solace is in need of an experienced Fullstack mobile developer from Nigeria, Pakistan or India.<Link href="/"><span className="text-Fozanova-gold"> Read more.</span></Link></p>
                 </div>
 
                 <div>
@@ -136,7 +136,7 @@ const Career = () => {
                 <div>
                   <h1 className="text-[#272422] text-[20px] font-normal leading-[27.42px] tracking-[-0.96px]">Generative AI Engineer</h1>
                   <h6 className="text-p-grey pt-[5px]">Full Time - <span className="text-[#121933]">Remote</span></h6>
-                  <p className="lg:text-[17px] text-[15px] text-p-grey leading-[26px] tracking-[0.4%]">Solace is in need of an experienced Generative AI Engineer from Nigeria, Pakistan or India.<span className="text-Fozanova-gold"> Read more.</span></p>
+                  <p className="lg:text-[17px] text-[15px] text-p-grey leading-[26px] tracking-[0.4%]">Solace is in need of an experienced Generative AI Engineer from Nigeria, Pakistan or India. <Link href="/"><span className="text-Fozanova-gold"> Read more.</span></Link></p>
                 </div>
 
                 <div>
@@ -151,7 +151,7 @@ const Career = () => {
                 <div>
                   <h1 className="text-[#272422] text-[20px] max-w-[800px] font-normal leading-[27.42px] tracking-[-0.96px]">Funeral Managers</h1>
                   <h6 className="text-p-grey pt-[5px]">Full Time - <span className="text-[#121933]">Remote</span></h6>
-                  <p className="lg:text-[17px] text-[15px] text-p-grey leading-[26px] tracking-[0.4%]">Solace is in need of a result-oriented Funeral Manager in Lagos, Port Harcourt and Abuja.<span className="text-Fozanova-gold"> Read more.</span></p>
+                  <p className="lg:text-[17px] text-[15px] text-p-grey leading-[26px] tracking-[0.4%]">Solace is in need of a result-oriented Funeral Manager in Lagos, Port Harcourt and Abuja.<Link href="/"><span className="text-Fozanova-gold"> Read more.</span></Link></p>
                 </div>
 
                 <div>
