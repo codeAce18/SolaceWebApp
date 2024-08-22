@@ -516,10 +516,10 @@ const handleChange = (event: SelectChangeEvent<string>) => {
                     label="Current Employment Status"
                     onChange={handleEmploymentStatusChange}
                 >
-                    <MenuItem value="employed">Full Time Employment</MenuItem>
-                    <MenuItem value="self-employed">part Time Employment</MenuItem>
-                    <MenuItem value="unemployed">Self Employed</MenuItem>
-                    <MenuItem value="student">Others</MenuItem>
+                    <MenuItem value="Full Time Employment">Full Time Employment</MenuItem>
+                    <MenuItem value="Part Time Employment">Part Time Employment</MenuItem>
+                    <MenuItem value="Self Employed">Self Employed</MenuItem>
+                    <MenuItem value="Others">Others</MenuItem>
                 </Select>
             </FormControl>
 

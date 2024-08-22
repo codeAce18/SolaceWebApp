@@ -157,7 +157,9 @@ const handleSelectChange = (event: SelectChangeEvent<string>) => {
         selectedTown !== '' &&
         numberOfStores !== '' &&
         storeLocationStates !== '' &&
-        File.length > 0
+        pharmFiles.length > 0 &&
+        fharmFiles.length > 0 &&
+        pharmaFiles.length > 0 
         
     );
   };
@@ -254,7 +256,7 @@ const handlePharmFileDrop = (files: File[]) => {
                 />
             </Box>
             
-            <Box className="lg:flex lg:flex-row flex flex-col"  mb={2}>
+            <Box className="flex flex-col"  mb={2}>
                  <FileUploadPharm onDrop={handlePharmFileDrop} />
                 <ul>
                     {pharmFiles.map((file, index) => (
@@ -446,7 +448,7 @@ const handlePharmFileDrop = (files: File[]) => {
             </Box>
         </Box>
 
-        <Box className="lg:flex lg:flex-row flex flex-col"  mb={2}>
+        <Box className="flex flex-col"  mb={2}>
             <FileUploadFharm onDrop={handleFharmFileDrop} />
             <ul>
                 {fharmFiles.map((file, index) => (
@@ -643,7 +645,7 @@ const handlePharmFileDrop = (files: File[]) => {
 
       
         
-        <Box className="lg:flex lg:flex-row flex flex-col"  mb={2}>
+        <Box className="flex flex-col"  mb={2}>
             <FileUploadPharma onDrop={handlePharmaFileDrop} />
             <ul>
                 {pharmaFiles.map((file, index) => (

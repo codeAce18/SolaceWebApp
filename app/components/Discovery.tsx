@@ -37,7 +37,7 @@ export function Discovery() {
                         ref={paragraphRef}
                         className={`pt-4 lg:text-[17px] text-[15px] lg:max-w-[800px] max-w-[350px] mx-auto text-center text-p-grey font-normal lg:leading-[27px] leading-[25px] tracking-[-0.2px] transition-opacity duration-1000 ${paragraphInView ? 'opacity-100' : 'opacity-0'}`}
                     >
-                        Our competitive edge is hinged on our audacity to differentiate ourselves from others by offering exceptional services that delivers holistic value to our customers.
+                        Solace uniquely combines personalized care, tailored specifically for the elderly population, with advanced AI-driven health monitoring to empower older adults in managing their well-being holistically.
                     </p>
                 </div>
             </div>

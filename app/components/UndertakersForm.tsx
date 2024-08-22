@@ -295,12 +295,12 @@ const handleChange = (event: SelectChangeEvent<string>) => {
                   }}>
                 <InputLabel
                 >
-                    Do you offer understanding services?
+                    Do you offer undertaking services?
                 </InputLabel>
                 <Select
                     value={specialty}
                     onChange={handleChange}
-                    label="Do you offer understanding services?"
+                    label="Do you offer undertaking services?"
                     required
                 >
                     <MenuItem value="No">No</MenuItem>
@@ -329,7 +329,7 @@ const handleChange = (event: SelectChangeEvent<string>) => {
                 />            
             </Box>
             
-            <Box className="lg:flex lg:flex-row flex flex-col"  mb={2}>
+            <Box className=" flex flex-col"  mb={2}>
                  <FileUploadDoc onDrop={handleDocFileDrop} />
                 <ul>
                     {docFiles.map((file, index) => (
@@ -632,7 +632,7 @@ const handleChange = (event: SelectChangeEvent<string>) => {
 
       
         
-        <Box className="lg:flex lg:flex-row flex flex-col"  mb={2}>
+        <Box className="flex flex-col"  mb={2}>
             <FileUploadDocto onDrop={handleDoctoFileDrop} />
             <ul>
                 {doctoFiles.map((file, index) => (

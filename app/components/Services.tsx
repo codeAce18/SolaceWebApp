@@ -33,7 +33,7 @@ export function Services() {
                         <div className="lg:border-r-[1px] border-r-[#EFF0F6] lg:pr-8 flex flex-col justify-center items-center">
                             <Image className="mx-auto" width={32.58} height={36} src={SolacePremium} alt="SolacePremium" />
                             <h1 className="pt-5 text-center max-w-[262px] text-[28px] font-normal lg:leading-[32px] leading-[30px] text-Fozanova-Black">Solace Premium Farewell Cover </h1>
-                            <p className="pt-5 text-center max-w-[262px] font-normal lg:text-[17px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4%] text-p-grey">Solace Farewell Cover provides funeral expense coverage for self or subscribers&apos; loved ones in the event of their passing.</p>
+                            <p className="pt-5 text-center max-w-[262px] font-normal text-[17px]  lg:leading-[26px] leading-[22px] tracking-[-0.4%] text-p-grey">Solace Farewell Cover provides funeral expense coverage for self or subscribers&apos; loved ones in the event of their passing.</p>
                             <Link href="/cover">
                                 <button className="flex items-center gap-[5px] pt-3 lg:text-[17px] text-[15px] font-semibold lg:leading-[24px] leading-[22px] text-Fozanova-gold">
                                     See pricing

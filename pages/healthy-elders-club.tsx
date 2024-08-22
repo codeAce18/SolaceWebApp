@@ -16,12 +16,23 @@ import HowTo from '../public/assests/HowTo.svg'
 import { Navbar } from "@/app/components/Navbar";
 import { Newsletter } from "@/app/components/Newsletter";
 import { Footer } from "@/app/components/Footer";
+import { motion } from 'framer-motion';
 
 
 
 
 
 const HealthyEldersClub = () => {
+    const textVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 }
+    };
+    
+    const imageVariants = {
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: { opacity: 1, scale: 1 }
+    };
+
     return (
         <>
 
@@ -30,10 +41,20 @@ const HealthyEldersClub = () => {
         <div className="lg:pt-32 pt-16">
         
             <div className="flex flex-col items-center justify-center">
-                <h1 className="font-normal lg:text-[48px] text-[35px] tracking-[-1px] text-center lg:max-w-[935px] max-w-[600px] mx-auto text-Fozanova-Black lg:leading-[58px] leading-[50px] lg:h-[116px]">
+                <motion.h1 
+                 variants={textVariants}
+                 initial="hidden"
+                 animate="visible"
+                 transition={{ duration: 0.6 }}
+                className="font-normal lg:text-[48px] text-[35px] tracking-[-1px] text-center lg:max-w-[935px] max-w-[600px] mx-auto text-Fozanova-Black lg:leading-[58px] leading-[50px] lg:h-[116px]">
                 Healthy Elders Club gives older adults in Nigeria access to special privileges and benefits for their enjoyment.
-                </h1>
-                <p className="lg:pt-20 pt-10 text-center lg:max-w-[930px] max-w-[350px] mx-auto text-p-grey lg:text-[17px] text-[15px] leading-[22px] lg:leading-[26px] tracking-[-0.4%]">Joining the Club yourself or registering your elderly as a beneficiary of HEC is easy; pay a monthly membership fee of ₦1,000. Afterwards, a prestigious membership card will be delivered to your doorstep within a few days. This card unlocks exclusive benefits at partner pharmacies, hospitals and laboratories nationwide, including priority services, cashback on medical expenses and other privileges on the Solace app.</p>
+                </motion.h1>
+                <motion.p 
+                 variants={textVariants}
+                 initial="hidden"
+                 animate="visible"
+                 transition={{ duration: 0.6 }}
+                className="lg:pt-20 pt-10 text-center lg:max-w-[930px] max-w-[350px] mx-auto text-p-grey lg:text-[17px] text-[15px] leading-[22px] lg:leading-[26px] tracking-[-0.4%]">Joining the Club yourself or registering your elderly as a beneficiary of HEC is easy; pay a monthly membership fee of ₦1,000. Afterwards, a prestigious membership card will be delivered to your doorstep within a few days. This card unlocks exclusive benefits at partner pharmacies, hospitals and laboratories nationwide, including priority services, cashback on medical expenses and other privileges on the Solace app.</motion.p>
 
                 <Link href="/healthy-elders-subscription-form" className="lg:pt-20 pt-10 mx-auto ">
                     <button className=" bg-Fozanova-gold text-Fazanova-white lg:text-[17px] text-[15px] font-semibold leading-[24px] lg:w-[640px] rounded-[8px]   h-[56px] py-[15px] px-[37px]">
@@ -42,14 +63,24 @@ const HealthyEldersClub = () => {
                 </Link>
             </div>
 
-            <div className="lg:pt-16 pt-10 px-[20px] lg:px-0  max-w-[1058px] mx-auto">
+            <motion.div 
+                variants={imageVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.8 }}
+                className="lg:pt-16 pt-10 px-[20px] lg:px-0  max-w-[1058px] mx-auto">
                 <Image className="rounded-xl object-cover" src={HealthEldersClubImg} alt="HealthyClubImg" />
-            </div>
+            </motion.div>
 
 
 
             <div>
-                <h1 className="lg:pt-16 pt-10 font-normal lg:text-[48px] text-[40px]  lg:leading-[58px] leading-[50px] tracking-[-1px] text-center mx-auto text-Fozanova-Black max-w-[1025px]">Discover why you or your elderly loved ones should join Healthy Elders Club now.</h1>
+                <motion.h1 
+                variants={textVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.6 }}
+                className="lg:pt-16 pt-10 font-normal lg:text-[48px] text-[40px]  lg:leading-[58px] leading-[50px] tracking-[-1px] text-center mx-auto text-Fozanova-Black max-w-[1025px]">Discover why you or your elderly loved ones should join Healthy Elders Club now.</motion.h1>
 
 
 
@@ -59,8 +90,18 @@ const HealthyEldersClub = () => {
 
                     <div>
                         <div className="lg:pb-10 pb-6 p-[20px] lg:p-0 ">
-                            <h1 className=" pb-[-50px] font-normal lg:text-[48px] text-[40px] leading-[50px]  lg:leading-[58px] tracking-[-1px] text-Fozanova-Black">₦1,000.00</h1>
-                            <p className=" font-normal lg:text-[17px] text-[15px] leading-[22px] lg:leading-[26px] tracking-[-0.4%] text-p-grey">Per Month, Paid Annually</p>
+                            <motion.h1 
+                            variants={textVariants}
+                            initial="hidden"
+                            animate="visible"
+                            transition={{ duration: 0.6 }}
+                            className=" pb-[-50px] font-normal lg:text-[48px] text-[40px] leading-[50px]  lg:leading-[58px] tracking-[-1px] text-Fozanova-Black">₦1,000.00</motion.h1>
+                            <motion.p 
+                            variants={textVariants}
+                            initial="hidden"
+                            animate="visible"
+                            transition={{ duration: 0.6 }}
+                            className=" font-normal lg:text-[17px] text-[15px] leading-[22px] lg:leading-[26px] tracking-[-0.4%] text-p-grey">Per Month, Paid Annually</motion.p>
                         </div>
 
                         <div className="flex flex-col gap-y-[10px] p-[20px] lg:p-0">
@@ -103,17 +144,27 @@ const HealthyEldersClub = () => {
 
 
             <div className="pt-20">
-                <div className="flex flex-col items-center justify-center mx-auto text-center">
+                <motion.div 
+                variants={imageVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.8 }}
+                className="flex flex-col items-center justify-center mx-auto text-center">
                     <Image width={143} height={40} src={HowTo} alt="HowtoSvg" />
 
                     <h1 className="pt-[15px] font-normal lg:text-[48px] text-[40px] text-Fozanova-Black lg:leading-[58px] leading-[50px] tracking-[-1px] max-w-[824px]">Get started by following this easy steps </h1>
 
                     <p className="pt-[13px] font-normal lg:text-[17px] text-[15px] leading-[26px] tracking-[-0.4%] lg:max-w-[824px] max-w-[350px] text-p-grey">The process of joining the exclusive Health Elders Club is simple and straight forward. The benefits and privileges are carefully designed for older adults who wants premium care services and comfort.</p>
-                </div>
+                </motion.div>
 
                 <div className="p-5 pt-10">
                     <div className="flex justify-center items-center">
-                        <div className="bg-Fazanova-white rounded-[16px] border-[1px] border-[#EFF0F6] py-[47px] px-[65px] max-w-[1168px] grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-20 lg:gap-y-20 gap-y-16">
+                        <motion.div 
+                        variants={imageVariants}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{ duration: 0.8 }}
+                        className="bg-Fazanova-white rounded-[16px] border-[1px] border-[#EFF0F6] py-[47px] px-[65px] max-w-[1168px] grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-20 lg:gap-y-20 gap-y-16">
                             <div className="lg:border-r-[1px] border-r-[#EFF0F6]  lg:pr-8  flex flex-col justify-center items-center">
                                 <Image className="mx-auto" width={40} height={40} src={SignUpSvg} alt="signUpSvg" />
                                 <h1 className="pt-5 text-center max-w-[262px] lg:text-[28px] text-[24px] font-normal  lg:leading-[32px] leading-[30px] text-Fozanova-Black">Sign-up Easily</h1>
@@ -144,7 +195,7 @@ const HealthyEldersClub = () => {
                                 <h1 className="pt-5 text-center max-w-[262px] lg:text-[28px] text-[24px] font-normal  leading-[32px] text-Fozanova-Black">Activate Card</h1>
                                 <p className="pt-5 text-center max-w-[262px] font-normal lg:text-[17px] text-[15px] leading-[26px] tracking-[-0.4%] text-p-grey">Activate your membership card on the Solace app by paying for medical expense on the app.</p>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>

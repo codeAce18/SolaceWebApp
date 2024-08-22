@@ -336,13 +336,23 @@ const handleChange = (event: SelectChangeEvent<string>) => {
                     onChange={handleChange}
                     label="Select your area of specialty"
                 >
-                    <MenuItem value="general practice doctor">General Practice Doctor</MenuItem>
-                    <MenuItem value="geriatrics">Geriatrics</MenuItem>
-                    <MenuItem value="allergy & immuniology">Allergy & Immuniology</MenuItem>
-                    <MenuItem value="dermatology">Dermatology</MenuItem>
-                    <MenuItem value="psychiatry">Psychiatry</MenuItem>
-                    <MenuItem value="cardiology">Cardiology</MenuItem>
-                    <MenuItem value="neurology">Neurology</MenuItem>
+                    <MenuItem value="General Nutrition">General Nutrition</MenuItem>
+                    <MenuItem value="Clinical Nutrition">Clinical Nutrition</MenuItem>
+                    <MenuItem value="Sports Nutrition">Sports Nutrition</MenuItem>
+                    <MenuItem value="Pediatric Nutrition">Pediatric Nutrition</MenuItem>
+                    <MenuItem value="Geriatric Nutrition">Geriatric Nutrition</MenuItem>
+                    <MenuItem value="Public Health Nutrition">Public Health Nutrition</MenuItem>
+                    <MenuItem value="Oncology Nutrition">Oncology Nutrition</MenuItem>
+                    <MenuItem value="Renal  Nutrition">Renal  Nutrition</MenuItem>
+                    <MenuItem value="Oncology Nutrition">Oncology Nutrition</MenuItem>
+                    <MenuItem value="Diabetes Nutrition">Diabetes Nutrition</MenuItem>
+                    <MenuItem value="Weight Management">Weight Management</MenuItem>
+                    <MenuItem value="Eating Disorders">Eating Disorders</MenuItem>
+                    <MenuItem value="Food Allergy and Intolerance">Food Allergy and Intolerance</MenuItem>
+                    <MenuItem value="Gastrointestinal Nutrition">Gastrointestinal Nutrition</MenuItem>
+                    <MenuItem value="Corporate Wellness">Corporate Wellness</MenuItem>
+                    <MenuItem value="Culinary Nutrition">Culinary Nutrition</MenuItem>
+                    <MenuItem value="Others">Others</MenuItem>
                 </Select>
                 </FormControl>
                 
@@ -581,10 +591,10 @@ const handleChange = (event: SelectChangeEvent<string>) => {
                     label="Current Employment Status"
                     onChange={handleEmploymentStatusChange}
                 >
-                    <MenuItem value="employed">Employed</MenuItem>
-                    <MenuItem value="self-employed">Self-Employed</MenuItem>
-                    <MenuItem value="unemployed">Unemployed</MenuItem>
-                    <MenuItem value="student">other</MenuItem>
+                     <MenuItem value="Full Time Employment">Full Time Employment</MenuItem>
+                    <MenuItem value="Part Time Employment">Part Time Employment</MenuItem>
+                    <MenuItem value="Self Employed">Self Employed</MenuItem>
+                    <MenuItem value="Others">Others</MenuItem>
                 </Select>
             </FormControl>
 

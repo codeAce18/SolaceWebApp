@@ -6,6 +6,7 @@ import Link from "next/link";
 import Checksvg from '../public/assests/CheckSvg.svg';
 import { Newsletter } from "@/app/components/Newsletter";
 import { Footer } from "@/app/components/Footer";
+import { motion } from 'framer-motion';
 
 const PaymentPlans = {
   quarterly: [
@@ -38,17 +39,38 @@ const Cover = () => {
   };
 
 
+  const textVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 }
+  };
+
+
   return (
     <>
       <Navbar />
       <div className="lg:pt-32 pt-16">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="lg:max-w-[935px] max-w-[350px] lg:text-[48px] text-[40px] lg:leading-[58px] leading-[50px] tracking-[-1px] text-center text-Fozanova-Black">
+          <motion.h1 
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.6 }}
+          className="lg:max-w-[935px] max-w-[350px] lg:text-[48px] text-[40px] lg:leading-[58px] leading-[50px] tracking-[-1px] text-center text-Fozanova-Black">
             Subscribe to Solace Farewell Cover, Get Up To ₦1,000,000 Cashback on Every<br/> 5 Subscriptions Paid.
-          </h1>
-          <p className="lg:pt-[30px] pt-[20px] lg:text-[17px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4%] lg:max-w-[930px] max-w-[350px] text-p-grey text-center">
+          </motion.h1>
+          <motion.p 
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.6 }}
+          className="lg:pt-[30px] pt-[20px] lg:text-[17px] text-[15px] lg:leading-[26px] leading-[22px] tracking-[-0.4%] lg:max-w-[930px] max-w-[350px] text-p-grey text-center">
             Solace Farewell Cover (SFC) is a form of funeral management package that provides funeral expenses coverage to subscribers on behalf of themselves or their loved ones in the case of their demise. While your plan is active, we automatically reimburse you with up to ₦1,000,000 for every five subscriptions paid, depending<br/> on your plan type, if no loss of self or a loved one occurs during that period.
-          </p>
+          </motion.p>
         </div>
 
         <div className="pt-20">

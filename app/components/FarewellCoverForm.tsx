@@ -287,10 +287,12 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
     setReceiverReferralSource(event.target.value);
   };
   
-  const handleFileUpload = (acceptedFiles: File[]) => {
-    setUploadedFiles(acceptedFiles); // Set the uploaded files in the state
+  const handleFileUpload = (files: File[]) => {
+    setUploadedFiles(files); // Set the uploaded files in the state
+    console.log('Uploaded files for ', files);
   };
   
+
   
   
   const isStepValid = () => {
@@ -320,7 +322,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
         receiverAddress &&
         receiverHealthCondition &&
         receiverReferralSource &&
-        File
+        uploadedFiles.length > 0
       );
     }
     return true;
@@ -466,16 +468,26 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   },
                 }}
               />
-              <TextField
+             <TextField
                 name="phoneNumber"
                 label="Phone Number"
                 value={phoneNumber}
-                onChange={handleChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  const inputValue = e.target.value;
+                  // Allow only numbers and limit to 11 digits
+                  if (/^\d{0,11}$/.test(inputValue)) {
+                    handleChange(e);
+                  }
+                }}
                 fullWidth
                 margin="normal"
                 required
+                inputProps={{
+                  inputMode: 'numeric', // Mobile keyboards will show number pad
+                  pattern: '[0-9]*',    // Enforces numeric input
+                }}
                 sx={{ 
-                  flex: 1 ,
+                  flex: 1,
                   '& .MuiOutlinedInput-root': {
                     '&:hover fieldset': {
                       borderColor: '#DBA73B', // Border color on hover
@@ -484,11 +496,9 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                       borderColor: '#DBA73B', // Border color when focused
                     },
                   },
-  
                   '& .MuiInputLabel-root': {
                     color: '#646464', // Default label color
                   },
-                  
                   '& .MuiInputLabel-root.Mui-focused': {
                     color: '#646464', // Label color when focused
                   },
@@ -550,13 +560,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   onChange={handleSelectChange}
                 >
                   <MenuItem value="On Radio">On Radio</MenuItem>
-                  <MenuItem value="On Radio">On LinkedIn</MenuItem>
+                  <MenuItem value="On LinkedIn">On LinkedIn</MenuItem>
                   <MenuItem value="On Youtube">On YouTube</MenuItem>
                   <MenuItem value="On TikTok">On TikTok</MenuItem>
                   <MenuItem value="On Instagram">On Instagram</MenuItem>
                   <MenuItem value="On Television">On Television</MenuItem>
                   <MenuItem value="On X (formally Twitter)">On X (formally Twitter)</MenuItem>
-                  <MenuItem value="Via Word of MouthVia Word of Mouth">Via Word of Mouth</MenuItem>
+                  <MenuItem value="Via Word of Mouth">Via Word of Mouth</MenuItem>
                   <MenuItem value="On Others Platform">On Others Platform</MenuItem>
                 </Select>
               </FormControl>
@@ -682,8 +692,17 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   >
                   <MenuItem value="Mr">Mr</MenuItem>
                   <MenuItem value="Mrs">Mrs</MenuItem>
-                  <MenuItem value="Miss">Miss</MenuItem>
+                  <MenuItem value="Ms">Ms</MenuItem>
                   <MenuItem value="Dr">Dr</MenuItem>
+                  <MenuItem value="Chief">Chief</MenuItem>
+                  <MenuItem value="Prince">Prince</MenuItem>
+                  <MenuItem value="Princess">Princess</MenuItem>
+                  <MenuItem value="Rev">Rev</MenuItem>
+                  <MenuItem value="Deacon">Deacon</MenuItem>
+                  <MenuItem value="Deaconess">Deaconess</MenuItem>
+                  <MenuItem value="Pastor">Pastor</MenuItem>
+                  <MenuItem value="Bishop">Bishop</MenuItem>
+                  <MenuItem value="Elder">Elder</MenuItem>
                   {/* Add other salutations as needed */}
                   </Select>
                 </FormControl>
@@ -755,11 +774,21 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 name="receiverPhoneNumber"
                 label="Beneficiary&apos;s phone number"
                 value={receiverPhoneNumber}
-                onChange={handleReceiverChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  const inputValue = e.target.value;
+                  // Allow only numbers and limit to 11 digits
+                  if (/^\d{0,11}$/.test(inputValue)) {
+                    handleReceiverChange(e);
+                  }
+                }}
                 fullWidth
                 margin="normal"
+                inputProps={{
+                  inputMode: 'numeric', // Mobile keyboards will show number pad
+                  pattern: '[0-9]*',    // Enforces numeric input
+                }}
                 sx={{ 
-                  flex: 1 ,
+                  flex: 1,
                   '& .MuiOutlinedInput-root': {
                     '&:hover fieldset': {
                       borderColor: '#DBA73B', // Border color on hover
@@ -768,11 +797,9 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                       borderColor: '#DBA73B', // Border color when focused
                     },
                   },
-  
                   '& .MuiInputLabel-root': {
                     color: '#646464', // Default label color
                   },
-                  
                   '& .MuiInputLabel-root.Mui-focused': {
                     color: '#646464', // Label color when focused
                   },
@@ -809,7 +836,6 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
             >
             <MenuItem value="Female">Female</MenuItem>
             <MenuItem value="Male">Male</MenuItem>
-            <MenuItem value="Other">Other</MenuItem>
             </Select>
         </FormControl>
                 
@@ -1013,8 +1039,13 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
             </FormControl>
           </Box>
             
-          <Box className="lg:flex lg:flex-row flex flex-col" gap={2} mb={2}>
+          <Box className="flex flex-col" mb={2}>
             <FileUpload onDrop={handleFileUpload} />
+            <ul>
+              {uploadedFiles.map((file, index) => (
+              <li key={index}>{file.name}</li>
+              ))}
+          </ul>
           </Box>
         </Box>
       )}
@@ -1121,9 +1152,11 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     label="Renewal Option"
                     value={renewalOption}
                     onChange={handleSelectChange}
+                    inputProps={{
+                      readOnly: true,
+                    }}
                   >
                     <MenuItem value="autoRenew">Auto Renew On</MenuItem>
-                    <MenuItem value="manualRenew">Manual Renew</MenuItem>
                   </Select>
                 </FormControl>
               </Box>
@@ -1181,10 +1214,11 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     label="Payment Method"
                     value={paymentMethod}
                     onChange={handleSelectChange}
+                    inputProps={{
+                      readOnly: true,
+                    }}
                   >
                     <MenuItem value="debitCard">Pay with Debit Card</MenuItem>
-                    <MenuItem value="creditCard">Pay with Credit Card</MenuItem>
-                    <MenuItem value="bankTransfer">Pay with Bank Transfer</MenuItem>
                   </Select>
                 </FormControl>
               </Box>

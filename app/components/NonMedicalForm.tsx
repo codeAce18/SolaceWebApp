@@ -348,13 +348,13 @@ const handleChange = (event: SelectChangeEvent<string>) => {
                     onChange={handleChange}
                     label="Select your area of specialty"
                 >
-                    <MenuItem value="general practice doctor">General Practice Doctor</MenuItem>
-                    <MenuItem value="geriatrics">Geriatrics</MenuItem>
-                    <MenuItem value="allergy & immuniology">Allergy & Immuniology</MenuItem>
-                    <MenuItem value="dermatology">Dermatology</MenuItem>
-                    <MenuItem value="psychiatry">Psychiatry</MenuItem>
-                    <MenuItem value="cardiology">Cardiology</MenuItem>
-                    <MenuItem value="neurology">Neurology</MenuItem>
+                    <MenuItem value="general practice doctor">General Caregiver</MenuItem>
+                    <MenuItem value="geriatrics">Live-in Caregiver</MenuItem>
+                    <MenuItem value="allergy & immuniology">Dementia Caregiver</MenuItem>
+                    <MenuItem value="dermatology">End-of-Life Caregiver</MenuItem>
+                    <MenuItem value="psychiatry">Special Needs Caregiver</MenuItem>
+                    <MenuItem value="cardiology">HouseKeeping</MenuItem>
+                    <MenuItem value="neurology">Other</MenuItem>
                 </Select>
                 </FormControl>
                 
@@ -579,10 +579,10 @@ const handleChange = (event: SelectChangeEvent<string>) => {
                     label="Current Employment Status"
                     onChange={handleEmploymentStatusChange}
                 >
-                    <MenuItem value="employed">Employed</MenuItem>
-                    <MenuItem value="self-employed">Self-Employed</MenuItem>
-                    <MenuItem value="unemployed">Unemployed</MenuItem>
-                    <MenuItem value="student">other</MenuItem>
+                    <MenuItem value="Full Time Employment">Full Time Employment</MenuItem>
+                    <MenuItem value="Part Time Employment">Part Time Employment</MenuItem>
+                    <MenuItem value="Self Employed">Self Employed</MenuItem>
+                    <MenuItem value="Others">Others</MenuItem>
                 </Select>
             </FormControl>
 

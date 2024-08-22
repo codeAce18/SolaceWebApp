@@ -43,7 +43,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onDrop }) => {
         <Image src={UploadIcon} alt="UploadIcon" />
       </IconButton>
       <Typography>
-        <span className="text-Fozanova-gold font-semibold lg:text-[17px] text-[15px]">Click to upload</span> or drag and drop
+        <span className="text-Fozanova-gold  lg:text-[17px] text-[15px]">Click to upload beneficiary photo</span> or drag and drop
       </Typography>
       <Typography className="text-p-grey lg:text-[15px] text-[12px]">
         PDF, PNG or JPG [max. 5mb]

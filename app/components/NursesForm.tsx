@@ -331,13 +331,33 @@ const handleChange = (event: SelectChangeEvent<string>) => {
                     onChange={handleChange}
                     label="Select your area of specialty"
                 >
-                    <MenuItem value="general practice doctor">General Practice Doctor</MenuItem>
-                    <MenuItem value="geriatrics">Geriatrics</MenuItem>
-                    <MenuItem value="allergy & immuniology">Allergy & Immuniology</MenuItem>
-                    <MenuItem value="dermatology">Dermatology</MenuItem>
-                    <MenuItem value="psychiatry">Psychiatry</MenuItem>
-                    <MenuItem value="cardiology">Cardiology</MenuItem>
-                    <MenuItem value="neurology">Neurology</MenuItem>
+                    <MenuItem value="General Nurse">General Nurse</MenuItem>
+                    <MenuItem value="Genetics Nurse">Genetics Nurse</MenuItem>
+                    <MenuItem value="Cardiac Nurse">Cardiac Nurse</MenuItem>
+                    <MenuItem value="Clinical Nurse Specialist">Clinical Nurse Specialist</MenuItem>
+                    <MenuItem value="Correctional Facility Nurse">Correctional Facility Nurse</MenuItem>
+                    <MenuItem value="Critical Care Nurse">Critical Care Nurse</MenuItem>
+                    <MenuItem value="Dermatology Nurse">Dermatology Nurse</MenuItem>
+                    <MenuItem value="Diabetes Nurse">Diabetes Nurse</MenuItem>
+                    <MenuItem value="Dialysis Nurse">Dialysis Nurse</MenuItem>
+                    <MenuItem value="Emergency Room (ER) Nurse">Emergency Room (ER) Nurse</MenuItem>
+                    <MenuItem value="Family Nurse Practitioner">Family Nurse Practitioner</MenuItem>
+                    <MenuItem value="Gastroenterology Nurse">Gastroenterology Nurse</MenuItem>
+                    <MenuItem value="Hematology Nurse">Hematology Nurse</MenuItem>
+                    <MenuItem value="Infection Control Nurse">Infection Control Nurse</MenuItem>
+                    <MenuItem value="Mental Health/Psychiatric Nurse">Mental Health/Psychiatric Nurse</MenuItem>
+                    <MenuItem value="Military Nurse">Military Nurse</MenuItem>
+                    <MenuItem value="Nephrology Nurse">Nephrology Nurse</MenuItem>
+                    <MenuItem value="Dermatology Nurse">Dermatology Nurse</MenuItem>
+                    <MenuItem value="Neurology Nurse">Neurology Nurse</MenuItem>
+                    <MenuItem value="Anesthetist Nurse">Anesthetist Nurse</MenuItem>
+                    <MenuItem value="Oncology Nurse">Oncology Nurse</MenuItem>
+                    <MenuItem value="Orthopedic Nurse">Orthopedic Nurse</MenuItem>
+                    <MenuItem value="Perianesthesia Nurse">Perianesthesia Nurse</MenuItem>
+                    <MenuItem value="Transplant Nurse">Transplant Nurse</MenuItem>
+                    <MenuItem value="Travel Nurse">Travel Nurse</MenuItem>
+                    <MenuItem value="Urology Nurse">Urology Nurse</MenuItem>
+                    <MenuItem value="Others">Others</MenuItem>
                 </Select>
                 </FormControl>
                 
@@ -500,10 +520,10 @@ const handleChange = (event: SelectChangeEvent<string>) => {
                     label="Current Employment Status"
                     onChange={handleEmploymentStatusChange}
                 >
-                    <MenuItem value="employed">Employed</MenuItem>
-                    <MenuItem value="self-employed">Self-Employed</MenuItem>
-                    <MenuItem value="unemployed">Unemployed</MenuItem>
-                    <MenuItem value="student">other</MenuItem>
+                     <MenuItem value="Full Time Employment">Full Time Employment</MenuItem>
+                    <MenuItem value="Part Time Employment">Part Time Employment</MenuItem>
+                    <MenuItem value="Self Employed">Self Employed</MenuItem>
+                    <MenuItem value="Others">Others</MenuItem>
                 </Select>
             </FormControl>
 

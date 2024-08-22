@@ -336,13 +336,28 @@ const handleChange = (event: SelectChangeEvent<string>) => {
                     onChange={handleChange}
                     label="Select your area of specialty"
                 >
-                    <MenuItem value="general practice doctor">General Practice Doctor</MenuItem>
-                    <MenuItem value="geriatrics">Geriatrics</MenuItem>
-                    <MenuItem value="allergy & immuniology">Allergy & Immuniology</MenuItem>
-                    <MenuItem value="dermatology">Dermatology</MenuItem>
-                    <MenuItem value="psychiatry">Psychiatry</MenuItem>
-                    <MenuItem value="cardiology">Cardiology</MenuItem>
-                    <MenuItem value="neurology">Neurology</MenuItem>
+                    <MenuItem value="Geriatric Therapy">Geriatric Therapy</MenuItem>
+                    <MenuItem value="Dialectical Behavior Therapy">Dialectical Behavior Therapy</MenuItem>
+                    <MenuItem value="Psychodynamic Therapy">Psychodynamic Therapy</MenuItem>
+                    <MenuItem value="Humanistic Therapy">Humanistic Therapy</MenuItem>
+                    <MenuItem value="Trauma Therapy">Trauma Therapy</MenuItem>
+                    <MenuItem value="Grief Counseling">Grief Counseling</MenuItem>
+                    <MenuItem value="Eating Disorder Therapy">Eating Disorder Therapy</MenuItem>
+                    <MenuItem value="Anxiety Disorders Therapy">Anxiety Disorders Therapy</MenuItem>
+                    <MenuItem value="Depression Therapy">Depression Therapy</MenuItem>
+                    <MenuItem value="Obsessive-Compulsive Disorder ">Obsessive-Compulsive Disorder </MenuItem>
+                    <MenuItem value="Post-Traumatic Stress Disorder">Post-Traumatic Stress Disorder</MenuItem>
+                    <MenuItem value="Schizophrenia & Psychotic Disorders">Schizophrenia & Psychotic Disorders</MenuItem>
+                    <MenuItem value="Sex Therapy">Sex Therapy</MenuItem>
+                    <MenuItem value="Neurofeedback Therapy">Neurofeedback Therapy</MenuItem>
+                    <MenuItem value="Hypnotherapy">Hypnotherapy</MenuItem>
+                    <MenuItem value="Cognitive Behavioral Therapy">Cognitive Behavioral Therapy</MenuItem>
+                    <MenuItem value="Chronic Illness Counseling">Chronic Illness Counseling</MenuItem>
+                    <MenuItem value="Stress Management">Stress Management</MenuItem>
+                    <MenuItem value="Self-Esteem and Self-Worth Issues">Self-Esteem and Self-Worth Issues</MenuItem>
+                    <MenuItem value="Military and Veteran Issues">Military and Veteran Issues</MenuItem>
+                    <MenuItem value="Spirituality and Faith-Based Counseling">Spirituality and Faith-Based Counseling</MenuItem>
+                    <MenuItem value="Others">Others</MenuItem>
                 </Select>
                 </FormControl>
                 
@@ -581,10 +596,10 @@ const handleChange = (event: SelectChangeEvent<string>) => {
                     label="Current Employment Status"
                     onChange={handleEmploymentStatusChange}
                 >
-                    <MenuItem value="employed">Employed</MenuItem>
-                    <MenuItem value="self-employed">Self-Employed</MenuItem>
-                    <MenuItem value="unemployed">Unemployed</MenuItem>
-                    <MenuItem value="student">other</MenuItem>
+                    <MenuItem value="Full Time Employment">Full Time Employment</MenuItem>
+                    <MenuItem value="Part Time Employment">Part Time Employment</MenuItem>
+                    <MenuItem value="Self Employed">Self Employed</MenuItem>
+                    <MenuItem value="Others">Others</MenuItem>
                 </Select>
             </FormControl>
 

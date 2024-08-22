@@ -90,7 +90,7 @@ export function Hero() {
                             <h1 className="text-center text-[44px] font-bold leading-[58px] text-Fozanova-gold">
                                 <span ref={count1Ref}>0</span>
                             </h1>
-                            <p className="text-[17px] text-center font-semibold leading-[24px] text-Fozanova-Black">Active App Users</p>
+                            <p className="text-[17px] text-center font-semibold leading-[24px] text-Fozanova-Black">Active Subscribers</p>
                         </div>
 
                         <div className='lg:border-l-[1px] lg:border-r-[1px] lg:border-r-border-custom lg:border-l-border-custom lg:pl-20 lg:pr-20'>
