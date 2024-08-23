@@ -337,6 +337,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 onChange={handleChange}
                 fullWidth
                 margin="normal"
+                required
                 sx={{ 
                   flex: 1 ,
                   '& .MuiOutlinedInput-root': {
@@ -368,6 +369,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 onChange={handleChange}
                 fullWidth
                 margin="normal"
+                required
                 sx={{ 
                   flex: 1 ,
                   '& .MuiOutlinedInput-root': {
@@ -398,6 +400,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 onChange={handleChange}
                 fullWidth
                 margin="normal"
+                required
                 sx={{ 
                   flex: 1 ,
                   '& .MuiOutlinedInput-root': {
@@ -423,9 +426,20 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 name="phoneNumber"
                 label="Phone Number"
                 value={phoneNumber}
-                onChange={handleChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  const inputValue = e.target.value;
+                  // Allow only numbers and limit to 11 digits
+                  if (/^\d{0,11}$/.test(inputValue)) {
+                    handleChange(e);
+                  }
+                }}
                 fullWidth
                 margin="normal"
+                required
+                inputProps={{
+                  inputMode: 'numeric', // Mobile keyboards will show number pad
+                  pattern: '[0-9]*',    // Enforces numeric input
+                }}
                 sx={{ 
                   flex: 1 ,
                   '& .MuiOutlinedInput-root': {
@@ -502,6 +516,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   label="How Did You Hear About Us?"
                   value={howDidYouHear}
                   onChange={handleSelectChange}
+                  required
                 >
                   <MenuItem value="On Radio">On Radio</MenuItem>
                   <MenuItem value="On Radio">On LinkedIn</MenuItem>
@@ -524,6 +539,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
               onChange={handleChange}
               fullWidth
               margin="normal"
+              required
               sx={{ 
                 flex: 1 ,
                 '& .MuiOutlinedInput-root': {
@@ -566,6 +582,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
               onChange={handleChange}
               fullWidth
               margin="normal"
+              required
               sx={{ 
                 flex: 1 ,
                 '& .MuiOutlinedInput-root': {
@@ -694,11 +711,21 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
               />
               <TextField
                 name="receiverPhoneNumber"
-                label="Receiver's Phone Number"
+                label="Receiver&apos;s Phone Number"
                 value={receiverPhoneNumber}
-                onChange={handleReceiverChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  const inputValue = e.target.value;
+                  // Allow only numbers and limit to 11 digits
+                  if (/^\d{0,11}$/.test(inputValue)) {
+                    handleReceiverChange(e);
+                  }
+                }}
                 fullWidth
                 margin="normal"
+                inputProps={{
+                  inputMode: 'numeric', // Mobile keyboards will show number pad
+                  pattern: '[0-9]*',    // Enforces numeric input
+                }}
                 sx={{ 
                   flex: 1 ,
                   '& .MuiOutlinedInput-root': {
@@ -914,9 +941,11 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     label="Renewal Option"
                     value={renewalOption}
                     onChange={handleSelectChange}
+                    inputProps={{
+                      readOnly: true,
+                    }}
                   >
                     <MenuItem value="autoRenew">Auto Renew On</MenuItem>
-                    <MenuItem value="manualRenew">Manual Renew</MenuItem>
                   </Select>
                 </FormControl>
                 <FormControl fullWidth margin="normal" sx={{ 
@@ -944,10 +973,11 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                     label="Payment Method"
                     value={paymentMethod}
                     onChange={handleSelectChange}
+                    inputProps={{
+                      readOnly: true,
+                    }}
                   >
                     <MenuItem value="debitCard">Pay with Debit Card</MenuItem>
-                    <MenuItem value="creditCard">Pay with Credit Card</MenuItem>
-                    <MenuItem value="bankTransfer">Pay with Bank Transfer</MenuItem>
                   </Select>
                 </FormControl>
               </Box>

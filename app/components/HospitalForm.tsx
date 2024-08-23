@@ -374,10 +374,20 @@ const handlePharmFileDrop = (files: File[]) => {
               label="Phone number of owner"
               name="phoneNumber"
               value={phoneNumber}
-              onChange={handleInputChange}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                const inputValue = e.target.value;
+                // Allow only numbers and limit to 11 digits
+                if (/^\d{0,11}$/.test(inputValue)) {
+                  handleInputChange(e);
+                }
+              }}
               fullWidth
               margin="normal"
               required
+              inputProps={{
+                inputMode: 'numeric', // Mobile keyboards will show number pad
+                pattern: '[0-9]*',    // Enforces numeric input
+              }}
               type="tel"
 
               sx={{

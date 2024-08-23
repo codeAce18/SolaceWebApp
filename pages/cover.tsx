@@ -12,17 +12,17 @@ const PaymentPlans = {
   quarterly: [
     { id: 1, amount: 30000.00, plan: "Per Quarter, Per Beneficiary.", header: "Pink Diamond Plan", benefit: "2m", mortuaryExpenses: "90 days", casketType: "Basic casket provided.", tombType: "Basic tomb preparation" , noProff: 4, noDays: 1,  dayType: 1, consult: "Free consultation."},
     { id: 2, amount: 60000.00, plan: "Per Quarter, Per Beneficiary.", header: "Blue Diamond Plan", benefit: "4m", mortuaryExpenses: "180 days", casketType: "Modern casket provided.", tombType: "Basic tomb preparation", noProff: 5, noDays: 2 ,  dayType: 2, consult: "Free consultation." },
-    { id: 3, amount: 90000.00, plan: "Per Quarter, Per Beneficiary.", header: "Red Diamond Plan", benefit: "8m", mortuaryExpenses: "365 days", casketType: "High Premium casket provided.", tombType: "Advanced tomb preparation", noProff: 5, noDays: 3 , dayType: "+ streaming of funeral for up to 3", consult: "Free consultation + dedicated event manager." },
+    { id: 3, amount: 90000.00, plan: "Per Quarter, Per Beneficiary.", header: "Red Diamond Plan", benefit: "8m", mortuaryExpenses: "365 days", casketType: "High Premium casket provided.", tombType: "Advanced tomb preparation", noProff: 5, noDays: 3 , dayType: "+ streaming of funeral for up to 3", consult: "Free consultation + dedicated event manager.", homeType: "Interstate transportation to hometown" },
   ],
   biannual: [
     { id: 1, amount: 60000.00, plan: "Per Bi-Annual, Per Beneficiary.", header: "Pink Diamond Plan", benefit: "2m", mortuaryExpenses: "90 days", casketType: "Basic casket provided.", tombType: "Basic tomb preparation", noProff: 4, noDays: 1 ,  dayType: 1, consult: "Free consultation."},
     { id: 2, amount: 90000.00, plan: "Per Bi-Annual, Per Beneficiary.", header: "Blue Diamond Plan", benefit: "4m", mortuaryExpenses: "180 days", casketType: "Modern casket provided", tombType: "Basic tomb preparation", noProff: 5, noDays: 2, dayType: 2 , consult: "Free consultation."},
-    { id: 3, amount: 150000.00, plan: "Per Bi-Annual, Per Beneficiary.", header: "Red Diamond Plan", benefit: "8m", mortuaryExpenses: "365 days", casketType: "High Premium casket provided.", tombType: "Advanced tomb preparation", noProff: 5, noDays: 3 , dayType: "+ streaming of funeral for up to  3days", consult: "Free consultation + dedicated event manager."},
+    { id: 3, amount: 150000.00, plan: "Per Bi-Annual, Per Beneficiary.", header: "Red Diamond Plan", benefit: "8m", mortuaryExpenses: "365 days", casketType: "High Premium casket provided.", tombType: "Advanced tomb preparation", noProff: 5, noDays: 3 , dayType: "+ streaming of funeral for up to  3days", consult: "Free consultation + dedicated event manager.",  homeType: "Interstate transportation to hometown"},
   ],
   annual: [
     { id: 1, amount: 90000.00, plan: "Per Annual, Per Beneficiary.", header: "Pink Diamond Plan", benefit: "2m", mortuaryExpenses: "90 days", casketType: "Basic casket provided.", tombType: "Basic tomb preparation", noProff: 4, noDays: 1, dayType: 1 , consult: "Free consultation."},
     { id: 2, amount: 150000.00, plan: "Per Annual, Per Beneficiary.", header: "Blue Diamond Plan", benefit: "4m", mortuaryExpenses: "180 days", casketType: "Modern casket provided.", tombType: "Basic tomb preparation", noProff: 5, noDays: 2 , dayType: 2 , consult: "Free consultation."},
-    { id: 3, amount: 250000.00, plan: "Per Annual, Per Beneficiary.", header: "Red Diamond Plan", benefit: "8m", mortuaryExpenses: "365 days", casketType: "High Premium casket provided.", tombType: "Advanced tomb preparation", noProff: 5, noDays: 3, dayType: "+ streaming of funeral for up to 3 3days", consult: "Free consultation + dedicated event manager." },
+    { id: 3, amount: 250000.00, plan: "Per Annual, Per Beneficiary.", header: "Red Diamond Plan", benefit: "8m", mortuaryExpenses: "365 days", casketType: "High Premium casket provided.", tombType: "Advanced tomb preparation", noProff: 5, noDays: 3, dayType: "+ streaming of funeral for up to 3 3days", consult: "Free consultation + dedicated event manager.",  homeType: "Interstate transportation to hometown" },
   ],
 };
 
@@ -89,7 +89,7 @@ const Cover = () => {
           <div className="lg:pt-20 pt-[27px]">
             <div className="lg:flex lg:flex-row flex flex-col items-center justify-center gap-10">
               {selectedPlan.map(plan => (
-                <div key={plan.id} className="bg-Fazanova-white border-[1px] border-[#EFF0F6] rounded-[8px] max-w-[373px] py-[30px] px-[48px] h-[1120px] ">
+                <div key={plan.id} className="bg-Fazanova-white border-[1px] border-[#EFF0F6] rounded-[8px] max-w-[373px] py-[30px] px-[48px] h-[1250px] ">
                   <h6 className="font-semibold text-center text-[22px] text-Fozanova-Black leading-[30px] lg:leading-[36px] lg:text-[24px]">{plan.header}</h6>
                   <h1 className="text-center text-[40px] text-Fozanova-Black lg:leading-[54.84px] leading-[50px] pt-[25px]">₦{plan.amount.toLocaleString()}</h1>
                   <p className="text-center max-w-[123px] mx-auto text-[15px] text-p-grey lg:leading-[22px] leading-[20px] tracking-[-0.2px] font-normal lg:text-[17px]">{plan.plan}</p>
@@ -112,6 +112,12 @@ const Cover = () => {
                       `${plan.casketType}`,
                       "Musical band for procession.",
                       "Intrastate transportation to lying in state venue.",
+                      ...(plan.header === "Red Diamond Plan"
+                      ? [
+                          "Interstate transportation to hometown.",
+                          
+                        ]
+                      : []),
                       "Venue setup and decoration.",
                       "Intrastate transportation to church.",
                       `${plan.tombType}` ,
@@ -119,6 +125,13 @@ const Cover = () => {
                       ` ${plan.noProff} professional undertakers for ${plan.noDays} days.`,
                       `Professional video coverage for ${plan.dayType} day.`,
                        `${plan.consult}`,
+                       ...(plan.header === "Red Diamond Plan"
+                       ? [
+                        
+                          "Professional grief counseling services.",
+                           
+                         ]
+                       : []),
                     ].map((benefit, index) => (
                       <div key={index} className="pt-[20px]">
                         <div className="flex gap-[5px] items-start">
@@ -142,5 +155,4 @@ const Cover = () => {
     </>
   );
 };
-
 export default Cover;
