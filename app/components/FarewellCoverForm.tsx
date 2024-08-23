@@ -90,9 +90,14 @@ const FarewellCoverForm: React.FC = () => {
   const [loadingCities, setLoadingCities] = useState<boolean>(true);
 
   const [monthlyMembershipFee, setMonthlyMembershipFee] = useState<string>('');
-  const [totalAmount, setTotalAmount] = useState<string>('');
+  const [selectedPlan, setSelectedPlan] = useState<keyof typeof plans | ''>('');
+  const [worthOfServiceBenefit, setWorthOfServiceBenefit] = useState('');
   const [renewalOption, setRenewalOption] = useState<string>('autoRenew');
   const [paymentMethod, setPaymentMethod] = useState<string>('debitCard');
+  const [durationOptions, setDurationOptions] = useState<(keyof typeof plans['Pink Diamond Plan']['durations'])[]>([]);
+  const [selectedDuration, setSelectedDuration] = useState<keyof typeof plans['Pink Diamond Plan']['durations'] | ''>('');
+  const [totalAmount, setTotalAmount] = useState<number | string>('');
+
   const [referralName, setReferralName] = useState<string>('');
 
   const [receiverSalutation, setReceiverSalutation] = useState('');
@@ -221,6 +226,70 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
     }
   };
 
+  const plans = {
+    'Pink Diamond Plan': {
+      durations: {
+        'per quarterly': 30000,
+        'per bi-annual': 60000,
+        'per annual': 90000,
+      },
+    },
+    'Blue Diamond Plan': {
+      durations: {
+        'per quarterly': 60000,
+        'per bi-annual': 90000,
+        'per annual': 150000,
+      },
+    },
+    'Red Diamond Plan': {
+      durations: {
+        'per quarterly': 90000,
+        'per bi-annual': 150000,
+        'per annual': 250000,
+      },
+    },
+    // Add more plans as needed
+  };
+
+  
+  useEffect(() => {
+    if (selectedPlan) {
+      const { durations } = plans[selectedPlan];
+      const durationKeys = Object.keys(durations) as Array<keyof typeof durations>;
+      setDurationOptions(durationKeys);
+      setSelectedDuration(durationKeys[0]);
+      setTotalAmount(durations[durationKeys[0]]);
+    }
+  }, [selectedPlan]);
+
+  useEffect(() => {
+    if (selectedPlan && selectedDuration) {
+      const baseAmount = plans[selectedPlan].durations[selectedDuration as keyof typeof plans['Pink Diamond Plan']['durations']];
+      setTotalAmount(baseAmount);
+    }
+  }, [selectedDuration, selectedPlan]);
+
+  const handlePlanChange = (event: { target: { value: any; }; }) => {
+    const plan = event.target.value;
+    setSelectedPlan(plan);
+    
+    // Update worth of service benefit based on selected plan
+    switch (plan) {
+      case 'Pink Diamond Plan':
+        setWorthOfServiceBenefit('N2,000,000');
+        break;
+      case 'Blue Diamond Plan':
+        setWorthOfServiceBenefit('N4,000,000');
+        break;
+      case 'Red Diamond Plan':
+        setWorthOfServiceBenefit('N8,000,000');
+        break;
+      // Add more cases as needed
+      default:
+        setWorthOfServiceBenefit('');
+    }
+  };
+
   const handleReceiverChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     switch (name) {
@@ -241,6 +310,11 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
         break;
     }
   };
+
+  const handleDurationChange = (event: SelectChangeEvent<keyof typeof plans['Pink Diamond Plan']['durations']>) => {
+    setSelectedDuration(event.target.value as keyof typeof plans['Pink Diamond Plan']['durations']);
+  };
+
 
   // const handleStateChange = (event: SelectChangeEvent<string>) => {
   //   setReceiverState(event.target.value as string);
@@ -1066,13 +1140,14 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   <Select
                     name="farewellPlan"
                     label="Choose a Farewell Plan"
-                    value={farewellPlan}
-                    onChange={(e) => setFarewellPlan(e.target.value)}
+                    value={selectedPlan}
+                    onChange={handlePlanChange}
                   >
-                    <MenuItem value="Basic">Pink Diamond Plan</MenuItem>
-                    <MenuItem value="Standard">Blue Diamond Plan</MenuItem>
-                    <MenuItem value="Premium">Red Diamond Plan</MenuItem>
-                    {/* Add other options as needed */}
+                     {Object.keys(plans).map((plan) => (
+                    <MenuItem key={plan} value={plan}>
+                      {plan}
+                    </MenuItem>
+                    ))}
                   </Select>
                 </FormControl>
 
@@ -1080,8 +1155,8 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 <TextField
                   name="monthlyMembershipFee"
                   label="Worth of service benefit"
-                  value={monthlyMembershipFee}
-                  onChange={handlePaymentChange}
+                  value={worthOfServiceBenefit}
+                  InputProps={{ readOnly: true }}
                   fullWidth
                   margin="normal"
                   sx={{ 
@@ -1118,13 +1193,14 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   <Select
                     name="serviceDuration"
                     label="Select Duration of Service"
-                    value={serviceDuration}
-                    onChange={(e) => setServiceDuration(e.target.value)}
+                    value={selectedDuration}
+                    onChange={handleDurationChange} 
                   >
-                    <MenuItem value="1 Month">Per Quaterly</MenuItem>
-                    <MenuItem value="3 Months">Per Bi-Annual</MenuItem>
-                    <MenuItem value="6 Months">Per Annual</MenuItem>
-                    {/* Add other options as needed */}
+                     {durationOptions.map((duration) => (
+                      <MenuItem key={duration} value={duration}>
+                        {duration}
+                      </MenuItem>
+                    ))}
                   </Select>
                 </FormControl>
                 
@@ -1165,8 +1241,8 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 <TextField
                   name="totalAmount"
                   label="Total Amount to be Paid"
-                  value={totalAmount}
-                  onChange={handlePaymentChange}
+                  value={`N${totalAmount.toLocaleString()}`}
+                  InputProps={{ readOnly: true }}
                   fullWidth
                   margin="normal"
                   sx={{ 

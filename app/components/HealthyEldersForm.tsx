@@ -84,8 +84,8 @@ const HealthyEldersForm: React.FC = () => {
   const [loadingStates, setLoadingStates] = useState<boolean>(true);
   const [loadingCities, setLoadingCities] = useState<boolean>(true);
 
-  const [monthlyMembershipFee, setMonthlyMembershipFee] = useState<string>('');
-const [totalAmount, setTotalAmount] = useState<string>('');
+  const [monthlyMembershipFee, setMonthlyMembershipFee] = useState<string>('₦1,000');
+  const [totalAmount, setTotalAmount] = useState<string>('₦12,000');
 const [renewalOption, setRenewalOption] = useState<string>('autoRenew');
 const [paymentMethod, setPaymentMethod] = useState<string>('debitCard');
 const [referralName, setReferralName] = useState<string>('');
@@ -629,6 +629,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 value={receiverFirstName}
                 onChange={handleReceiverChange}
                 fullWidth
+                required
                 margin="normal"
                 sx={{ 
                   flex: 1 ,
@@ -657,6 +658,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 value={receiverLastName}
                 onChange={handleReceiverChange}
                 fullWidth
+                required
                 margin="normal"
                 sx={{ 
                   flex: 1 ,
@@ -687,6 +689,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                 value={receiverEmail}
                 onChange={handleReceiverChange}
                 fullWidth
+                required
                 margin="normal"
                 sx={{ 
                   flex: 1 ,
@@ -721,6 +724,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   }
                 }}
                 fullWidth
+                required
                 margin="normal"
                 inputProps={{
                   inputMode: 'numeric', // Mobile keyboards will show number pad
@@ -774,6 +778,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                    label="State of Residence"
                   value={receiverState}
                   onChange={handleStateChange}
+                  required
                 >
                   {loadingStates ? (
                     <MenuItem>Loading...</MenuItem>
@@ -812,6 +817,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   value={receiverCity}
                   onChange={handleCityChange}
                   disabled={loadingCities || !receiverState}
+                  required
                 >
                   {loadingCities ? (
                     <MenuItem>Loading...</MenuItem>
@@ -831,6 +837,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
               value={receiverAddress}
               onChange={handleReceiverChange}
               fullWidth
+              required
               margin="normal"
               sx={{ 
                 flex: 1 ,
@@ -863,6 +870,9 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   label="Monthly Membership Fee (Paid Annually)"
                   value={monthlyMembershipFee}
                   onChange={handlePaymentChange}
+                  InputProps={{
+                    readOnly: true, // Make the input field read-only
+                  }}
                   fullWidth
                   margin="normal"
                   sx={{ 
@@ -891,6 +901,9 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   label="Total Amount to be Paid"
                   value={totalAmount}
                   onChange={handlePaymentChange}
+                  InputProps={{
+                    readOnly: true, // Make the input field read-only
+                  }}
                   fullWidth
                   margin="normal"
                   sx={{ 
