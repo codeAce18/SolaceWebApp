@@ -871,7 +871,7 @@ const handlePaymentMethodChange = (event: React.ChangeEvent<{ value: unknown }>)
                   value={monthlyMembershipFee}
                   onChange={handlePaymentChange}
                   InputProps={{
-                    readOnly: true, // Make the input field read-only
+                    readOnly: true, 
                   }}
                   fullWidth
                   margin="normal"
