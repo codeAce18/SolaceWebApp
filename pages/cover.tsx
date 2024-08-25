@@ -110,7 +110,7 @@ const Cover = () => {
                 style={{
                   height: plan.header === 'Red Diamond Plan' ? '1250px' : '1070px',
                   marginTop: isDesktop ? (plan.header === 'Red Diamond Plan' ? '0px' : '-180px') : '0px',
-                  border: plan.header === 'Red Diamond Plan' ? '2px solid #DBA73B' : 'none', 
+                  border: plan.header === 'Red Diamond Plan' ? '1px solid #DBA73B' : 'none', 
                 }}
                  key={plan.id} className=" bg-Fazanova-white border-[1px] border-[#EFF0F6] rounded-[8px] max-w-[373px] py-[30px] px-[48px]  ">
                   <h6 className="font-semibold text-center text-[22px] text-Fozanova-Black leading-[30px] lg:leading-[36px] lg:text-[24px]">{plan.header}</h6>
