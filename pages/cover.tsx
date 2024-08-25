@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useState, useEffect  } from "react";
 import { Navbar } from "@/app/components/Navbar";
 import '../app/globals.css';
 import Image from "next/image";
@@ -32,6 +32,8 @@ const Cover = () => {
   const [selectedPlan, setSelectedPlan] = useState(PaymentPlans.annual);
   const [selectedButton, setSelectedButton] = useState('annual');
 
+  const [isDesktop, setIsDesktop] = useState(false); // 1024px is a common breakpoint for desktop
+
  
   const handleButtonClick = (button: PaymentPlanKey) => {
     setSelectedPlan(PaymentPlans[button]);
@@ -48,6 +50,21 @@ const Cover = () => {
     hidden: { opacity: 0, scale: 0.8 },
     visible: { opacity: 1, scale: 1 }
   };
+
+  useEffect(() => {
+    // Check if window is defined (this is only run on the client)
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        setIsDesktop(window.innerWidth >= 1024);
+      };
+
+      // Set initial state
+      handleResize();
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
 
 
   return (
@@ -87,9 +104,15 @@ const Cover = () => {
           </div>
 
           <div className="lg:pt-20 pt-[27px]">
-            <div className="lg:flex lg:flex-row flex flex-col items-center justify-center gap-10">
+            <div className="p-[20px] lg:flex lg:flex-row flex flex-col items-center justify-center gap-10">
               {selectedPlan.map(plan => (
-                <div key={plan.id} className="bg-Fazanova-white border-[1px] border-[#EFF0F6] rounded-[8px] max-w-[373px] py-[30px] px-[48px] h-[1250px] ">
+                <div
+                style={{
+                  height: plan.header === 'Red Diamond Plan' ? '1250px' : '1070px',
+                  marginTop: isDesktop ? (plan.header === 'Red Diamond Plan' ? '0px' : '-180px') : '0px',
+                  border: plan.header === 'Red Diamond Plan' ? '2px solid #DBA73B' : 'none', 
+                }}
+                 key={plan.id} className=" bg-Fazanova-white border-[1px] border-[#EFF0F6] rounded-[8px] max-w-[373px] py-[30px] px-[48px]  ">
                   <h6 className="font-semibold text-center text-[22px] text-Fozanova-Black leading-[30px] lg:leading-[36px] lg:text-[24px]">{plan.header}</h6>
                   <h1 className="text-center text-[40px] text-Fozanova-Black lg:leading-[54.84px] leading-[50px] pt-[25px]">₦{plan.amount.toLocaleString()}</h1>
                   <p className="text-center max-w-[123px] mx-auto text-[15px] text-p-grey lg:leading-[22px] leading-[20px] tracking-[-0.2px] font-normal lg:text-[17px]">{plan.plan}</p>
